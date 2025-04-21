@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Case w/ Article</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Default_Corporate_Letterhead</letterhead>
+    <name>Case w/ Article</name>
+    <style>freeForm</style>
+    <subject>Proposed Answer for Case: {!Case.CaseNumber}</subject>
+    <textOnly>Dear {!Case.Contact},
+
+
+
+In response to your recent case please review the attached pdf.
+
+If you have any additional issues or this does not fix your problem,
+
+please call or access our self-service portal.
+
+Thank you,
+
+{!User.Name}
+{!Organization.Name}
+
+
+
+
+
+{!Case.Articles_as_PDFs}
+
+
+
+
+
+
+------ Your Question / Comment ------
+
+Your Original Case Description:
+{!Case.Description}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

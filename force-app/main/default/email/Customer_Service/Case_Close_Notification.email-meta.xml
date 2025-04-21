@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Case Close Notification</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Default_Corporate_Letterhead</letterhead>
+    <name>Case Close Notification</name>
+    <style>freeForm</style>
+    <subject>Your Case #{!Case.CaseNumber} Has Been Closed</subject>
+    <textOnly>Dear {!Contact.Name},
+
+Thank you for contacting {!Organization.Name}.  Since you&apos;ve indicated that your issue is resolved, we have now closed your case.  We hope your experience with us was positive. If you have any other questions, please don&apos;t hesitate to contact us.
+
+If you have a moment, please help us improve our customer service by filling out our &lt;make this a hyperlink to your survey&gt;Customer Satisfaction Survey.
+
+Thanks again!
+
+The {!Organization.Name} Customer Engagement Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

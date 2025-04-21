@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Case Created Auto-Response</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Default_Corporate_Letterhead</letterhead>
+    <name>Case Created Auto-Response</name>
+    <style>freeForm</style>
+    <subject>Subject: {!Organization.Name} Case Confirmation: Case # {!Case.CaseNumber}</subject>
+    <textOnly>Dear {!Contact.Name},
+
+Thank you for submitting your question to us!
+
+We
+have received your email and created a case to ensure that it is
+answered quickly. Below are the details of your case for future
+reference.
+
+Case Information
+Date/Time Opened: {!Case.CreatedDate}
+Case #: {!Case.CaseNumber}
+Subject: {!Case.Subject}
+Description: {!Case.Description}
+
+We will respond as soon as possible. If you have additional comments or updates to this case, please reply to this email.
+Thank you,
+Customer Service
+{!Organization.Name}
+
+Case Reference ID: {!Case.Thread_Id}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
