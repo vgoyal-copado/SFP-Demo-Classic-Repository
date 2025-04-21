@@ -1,0 +1,232 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div if:false={cardLoaded} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: white; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="             ">
+          <div data-style-id="state0element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state0element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:case"  size="small"  extraclass="slds-icon-standard-case"  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state0element0block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element0block_element1_child"     card={card}  record={record}  merge-field=""  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-action data-style-id="state0element1block_element0_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1608754894814","type":"Custom","displayName":"{Subject}","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Case","targetAction":"view","targetId":"{recordId}"}}'  is-tracking-disabled="true"  hide-action-icon="true"  display-as-button="false"  styles='\{"label":{"fontSize":"14px","color":"#1570D2"}}'  icon-size="small"  icon-color=""  theme="slds" ></vlocity_cmt-action>
+      </div><div data-style-id="state0element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element1block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3EType:%20%7BType%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Status","operator":"!=","value":"","type":"custom"}]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element1block_element2" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element1block_element2_child"     card={card}  record={record}  placeholder=""  type="date"  label=""  format="M/D/YYYY"  field-name="lastModifiedDate"  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element1block_element3" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element1block_element3_child"     card={card}  record={record}  merge-field="%3Cdiv%3EStatus:%20%7BStatus%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Status","operator":"!=","value":"","type":"custom"}]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="             ">
+          <div data-style-id="state1element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state1element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state1element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:opportunity"  size="small"  extraclass="slds-icon-standard-opportunity"  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state1element0block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state1element0block_element1_child"     card={card}  record={record}  merge-field=""  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state1element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-action data-style-id="state1element1block_element0_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1608760687300","type":"Custom","displayName":"{Name}","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Opportunity","targetAction":"view","targetId":"{recordId}"}}'  is-tracking-disabled="true"  hide-action-icon="true"  styles='\{"label":{"fontSize":"14px","color":"#1570D2"}}'  icon-size="small"  icon-color=""  theme="slds" ></vlocity_cmt-action>
+      </div><div data-style-id="state1element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state1element1block_element1_child"     card={card}  record={record}  placeholder=""  type="date"  label=""  format="M/D/YYYY"  field-name="lastModifiedDate"  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element1block_element2" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state1element1block_element2_child"     card={card}  record={record}  merge-field="%3Cdiv%3EStage:%20%7BStage%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element1block_element3" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state1element1block_element3_child"     card={card}  record={record}  merge-field="%3Cdiv%3EAmount:%20%7BAmount%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element1block_element4" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state1element1block_element4_child"     card={card}  record={record}  merge-field="%3Cdiv%3EClose%20Date:%20%7BcloseDate%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="2" data-rindex={rindex} class="cf-vlocity-state-2 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-truncate" style="             ">
+          <div data-style-id="state2element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state2element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state2element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state2element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:orders"  size="small"  extraclass="slds-icon_container slds-icon-standard-orders "  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state2element0block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state2element0block_element1_child"     card={card}  record={record}  merge-field=""  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state2element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state2element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state2element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-action data-style-id="state2element1block_element0_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1617067396148","type":"Custom","displayName":"{Subject}","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Opportunity","targetAction":"view","targetId":"{recordId}"}}'  is-tracking-disabled="true"  hide-action-icon="true"  styles='\{"label":{"fontSize":"14px","color":"#1570D2"}}'  icon-size="small"  icon-color=""  theme="slds" ></vlocity_cmt-action>
+      </div><div data-style-id="state2element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state2element1block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3EOrder%20#:%20%7BorderNumber%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state2element1block_element2" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state2element1block_element2_child"     card={card}  record={record}  merge-field="%3Cdiv%3EStatus:%20%7BStatus%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state2element1block_element3" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state2element1block_element3_child"     card={card}  record={record}  merge-field="%3Cdiv%3EEffective%20Date:%20%7BordereffectiveDate%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state2element1block_element4" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state2element1block_element4_child"     card={card}  record={record}  placeholder=""  type="date"  label=""  format="M/D/YYYY"  field-name="lastModifiedDate"  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="3" data-rindex={rindex} class="cf-vlocity-state-3 cf-vlocity-state slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-truncate" style="             ">
+          <div data-style-id="state3element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state3element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state3element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state3element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:work_order"  size="small"  extraclass="slds-icon_container slds-icon-standard-work-order "  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state3element0block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state3element0block_element1_child"     card={card}  record={record}  merge-field=""  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state3element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state3element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state3element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-action data-style-id="state3element1block_element0_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1617067407757","type":"Custom","displayName":"{CompositeType}","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Opportunity","targetAction":"view","targetId":"{recordId}"}}'  is-tracking-disabled="true"  hide-action-icon="true"  styles='\{"label":{"fontSize":"14px","color":"#1570D2"}}'  icon-size="small"  icon-color=""  theme="slds" ></vlocity_cmt-action>
+      </div><div data-style-id="state3element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state3element1block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3EWork%20Order%20Number:%20%7BworkorderNumber%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state3element1block_element2" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state3element1block_element2_child"     card={card}  record={record}  merge-field="%3Cdiv%3EStatus:%20%7BStatus%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state3element1block_element3" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state3element1block_element3_child"     card={card}  record={record}  placeholder=""  type="date"  label=""  format="M/D/YYYY"  field-name="lastModifiedDate"  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="4" data-rindex={rindex} class="cf-vlocity-state-4 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="             ">
+          <div data-style-id="state4element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state4element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state4element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state4element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:task"  size="small"  extraclass="slds-icon-standard-task"  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state4element0block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state4element0block_element1_child"     card={card}  record={record}  merge-field=""  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state4element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state4element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state4element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-action data-style-id="state4element1block_element0_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1608760794916","type":"Custom","displayName":"{Subject}","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Task","targetAction":"view","targetId":"{recordId}"}}'  is-tracking-disabled="true"  hide-action-icon="true"  styles='\{"label":{"fontSize":"14px","color":"#1570D2"}}'  icon-size="small"  icon-color=""  theme="slds" ></vlocity_cmt-action>
+      </div><div data-style-id="state4element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state4element1block_element1_child"     card={card}  record={record}  placeholder=""  type="date"  label=""  format="M/D/YYYY"  field-name="lastModifiedDate"  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state4element1block_element2" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state4element1block_element2_child"     card={card}  record={record}  merge-field="%3Cdiv%3EStatus:%20%7BStatus%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state4element1block_element3" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state4element1block_element3_child"     card={card}  record={record}  merge-field="%3Cdiv%3EFor%20When:%20%7BScheduled%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="5" data-rindex={rindex} class="cf-vlocity-state-5 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state5element0" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state5element0_child"     card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%20slds-text-heading_small%22%3ENo%20recent%20activites%20found.%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="             ">
+          <div data-style-id="state0element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state0element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:case"  size="small"  extraclass="slds-icon-standard-case"  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state0element0block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element0block_element1_child"     card={card}  record={record}  merge-field=""  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-action data-style-id="state0element1block_element0_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1608754894814","type":"Custom","displayName":"{Subject}","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Case","targetAction":"view","targetId":"{recordId}"}}'  is-tracking-disabled="true"  hide-action-icon="true"  display-as-button="false"  styles='\{"label":{"fontSize":"14px","color":"#1570D2"}}'  icon-size="small"  icon-color=""  theme="slds" ></vlocity_cmt-action>
+      </div><div data-style-id="state0element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element1block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3EType:%20%7BType%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Status","operator":"!=","value":"","type":"custom"}]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element1block_element2" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element1block_element2_child"     card={card}  record={record}  placeholder=""  type="date"  label=""  format="M/D/YYYY"  field-name="lastModifiedDate"  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element1block_element3" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element1block_element3_child"     card={card}  record={record}  merge-field="%3Cdiv%3EStatus:%20%7BStatus%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Status","operator":"!=","value":"","type":"custom"}]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="             ">
+          <div data-style-id="state1element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state1element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state1element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:opportunity"  size="small"  extraclass="slds-icon-standard-opportunity"  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state1element0block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state1element0block_element1_child"     card={card}  record={record}  merge-field=""  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state1element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-action data-style-id="state1element1block_element0_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1608760687300","type":"Custom","displayName":"{Name}","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Opportunity","targetAction":"view","targetId":"{recordId}"}}'  is-tracking-disabled="true"  hide-action-icon="true"  styles='\{"label":{"fontSize":"14px","color":"#1570D2"}}'  icon-size="small"  icon-color=""  theme="slds" ></vlocity_cmt-action>
+      </div><div data-style-id="state1element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state1element1block_element1_child"     card={card}  record={record}  placeholder=""  type="date"  label=""  format="M/D/YYYY"  field-name="lastModifiedDate"  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element1block_element2" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state1element1block_element2_child"     card={card}  record={record}  merge-field="%3Cdiv%3EStage:%20%7BStage%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element1block_element3" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state1element1block_element3_child"     card={card}  record={record}  merge-field="%3Cdiv%3EAmount:%20%7BAmount%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element1block_element4" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state1element1block_element4_child"     card={card}  record={record}  merge-field="%3Cdiv%3EClose%20Date:%20%7BcloseDate%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="2" data-rindex={rindex} class="cf-vlocity-state-2 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-truncate" style="             ">
+          <div data-style-id="state2element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state2element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state2element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state2element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:orders"  size="small"  extraclass="slds-icon_container slds-icon-standard-orders "  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state2element0block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state2element0block_element1_child"     card={card}  record={record}  merge-field=""  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state2element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state2element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state2element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-action data-style-id="state2element1block_element0_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1617067396148","type":"Custom","displayName":"{Subject}","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Opportunity","targetAction":"view","targetId":"{recordId}"}}'  is-tracking-disabled="true"  hide-action-icon="true"  styles='\{"label":{"fontSize":"14px","color":"#1570D2"}}'  icon-size="small"  icon-color=""  theme="slds" ></vlocity_cmt-action>
+      </div><div data-style-id="state2element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state2element1block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3EOrder%20#:%20%7BorderNumber%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state2element1block_element2" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state2element1block_element2_child"     card={card}  record={record}  merge-field="%3Cdiv%3EStatus:%20%7BStatus%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state2element1block_element3" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state2element1block_element3_child"     card={card}  record={record}  merge-field="%3Cdiv%3EEffective%20Date:%20%7BordereffectiveDate%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state2element1block_element4" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state2element1block_element4_child"     card={card}  record={record}  placeholder=""  type="date"  label=""  format="M/D/YYYY"  field-name="lastModifiedDate"  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="3" data-rindex={rindex} class="cf-vlocity-state-3 cf-vlocity-state slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-truncate" style="             ">
+          <div data-style-id="state3element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state3element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state3element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state3element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:work_order"  size="small"  extraclass="slds-icon_container slds-icon-standard-work-order "  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state3element0block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state3element0block_element1_child"     card={card}  record={record}  merge-field=""  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state3element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state3element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state3element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-action data-style-id="state3element1block_element0_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1617067407757","type":"Custom","displayName":"{CompositeType}","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Opportunity","targetAction":"view","targetId":"{recordId}"}}'  is-tracking-disabled="true"  hide-action-icon="true"  styles='\{"label":{"fontSize":"14px","color":"#1570D2"}}'  icon-size="small"  icon-color=""  theme="slds" ></vlocity_cmt-action>
+      </div><div data-style-id="state3element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state3element1block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3EWork%20Order%20Number:%20%7BworkorderNumber%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state3element1block_element2" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state3element1block_element2_child"     card={card}  record={record}  merge-field="%3Cdiv%3EStatus:%20%7BStatus%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state3element1block_element3" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state3element1block_element3_child"     card={card}  record={record}  placeholder=""  type="date"  label=""  format="M/D/YYYY"  field-name="lastModifiedDate"  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="4" data-rindex={rindex} class="cf-vlocity-state-4 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="             ">
+          <div data-style-id="state4element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state4element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state4element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state4element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:task"  size="small"  extraclass="slds-icon-standard-task"  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state4element0block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state4element0block_element1_child"     card={card}  record={record}  merge-field=""  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state4element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state4element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state4element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-action data-style-id="state4element1block_element0_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1608760794916","type":"Custom","displayName":"{Subject}","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Task","targetAction":"view","targetId":"{recordId}"}}'  is-tracking-disabled="true"  hide-action-icon="true"  styles='\{"label":{"fontSize":"14px","color":"#1570D2"}}'  icon-size="small"  icon-color=""  theme="slds" ></vlocity_cmt-action>
+      </div><div data-style-id="state4element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state4element1block_element1_child"     card={card}  record={record}  placeholder=""  type="date"  label=""  format="M/D/YYYY"  field-name="lastModifiedDate"  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state4element1block_element2" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state4element1block_element2_child"     card={card}  record={record}  merge-field="%3Cdiv%3EStatus:%20%7BStatus%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state4element1block_element3" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state4element1block_element3_child"     card={card}  record={record}  merge-field="%3Cdiv%3EFor%20When:%20%7BScheduled%7D%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="5" data-rindex={rindex} class="cf-vlocity-state-5 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state5element0" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state5element0_child"     card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%20slds-text-heading_small%22%3ENo%20recent%20activites%20found.%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

@@ -1,0 +1,79 @@
+/* Salesforce Colors: */
+/* usage
+div {
+	@include font-size(14px);
+}
+*/
+.feature-multiplay .container {
+  margin: 0 auto;
+  margin-bottom: 60px;
+  max-width: 1140px; }
+  @media all and (min-width: 968px) {
+    .feature-multiplay .container {
+      background-image: url("https://vlocitydemodx-cdn.herokuapp.com/content/industry/cmt/commsB2C/family-watching-tv-isolated.png");
+      background-position: top left;
+      background-repeat: no-repeat;
+      height: 450px; } }
+  @media all and (min-width: 671px) and (max-width: 968px) {
+    .feature-multiplay .container {
+      background-image: url("https://vlocitydemodx-cdn.herokuapp.com/content/industry/cmt/commsB2C/family-watching-tv-isolated.png");
+      background-position: top left;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 350px; } }
+  @media all and (max-width: 670px) {
+    .feature-multiplay .container {
+      background-image: url("https://vlocitydemodx-cdn.herokuapp.com/content/industry/cmt/commsB2C/family-watching-tv-isolated.png");
+      background-position: -150px -50px;
+      background-repeat: no-repeat; } }
+  @media all and (max-width: 570px) {
+    .feature-multiplay .container .image {
+      height: 400px; } }
+  .feature-multiplay .container .copy {
+    flex: 0 0 auto; }
+    @media all and (min-width: 968px) {
+      .feature-multiplay .container .copy {
+        margin: 30px 0; } }
+    @media all and (min-width: 671px) and (max-width: 968px) {
+      .feature-multiplay .container .copy {
+        background-color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+        padding: 30px; } }
+    @media all and (max-width: 570px) {
+      .feature-multiplay .container .copy {
+        text-align: center; } }
+    .feature-multiplay .container .copy h1 {
+      color: var(--lwc-colorBrand);
+      font-family: t(fontFamilyHeading), "Salesforce Sans", serif;
+      font-weight: 700;
+      font-size: 32px;
+      font-size: 2rem; }
+    .feature-multiplay .container .copy p {
+      color: #666666;
+      font-family: var(--lwc-fontFamily), "Salesforce Sans", arial, serif;
+      line-height: 20px;
+      font-size: 16px;
+      font-size: 1rem; }
+    .feature-multiplay .container .copy .slds-button {
+      background-color: #EF611F;
+      color: #ffffff;
+      font-weight: 700;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-size: 1rem; }
+      .feature-multiplay .container .copy .slds-button:hover {
+        background-color: #D6561A; }
+
+.gradient {
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #f8f8f8 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #f8f8f8 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f8f8f8',GradientType=0 );
+  /* IE6-9 */
+  height: 60px; }

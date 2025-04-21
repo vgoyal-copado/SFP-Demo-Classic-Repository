@@ -1,0 +1,38 @@
+.pill-style{
+    width: fit-content;
+    background: #F4F6F9;
+}
+.empty-pill-state{
+    display: none;
+    
+}
+
+.pill-text{ 
+    color: #0070D2;
+}
+.max-100{
+    max-width: 95%;
+}
+.pill-container{
+    background: #fff;
+    flex-wrap: nowrap;
+    border: 1px solid #ccc !important;
+    align-items: center;
+    padding: 0px 4px !important;
+    overflow-x: unset;
+    width: fit-content;
+    margin-right: 3px!important;
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 4px !important;
+}
+.fit-content{
+    width: fit-content;
+    max-width: 100%;
+    position: absolute;
+    right: 1px;
+}
+.icon-placeholder{
+    width: 25px;
+    height: 25px;
+}

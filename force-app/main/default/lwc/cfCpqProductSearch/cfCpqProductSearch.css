@@ -1,0 +1,22 @@
+.margin-top{
+    margin-top: 5px;
+}
+
+.cpq__product-search-field{
+    background: #fafaf9;
+    padding: 0.5rem 0;
+    margin-top: -0.875rem;
+}
+
+.cpq__product-search-field_cart-catalog label {
+    display: none;
+}
+
+.cpq__product-search-field_cart-catalog {
+    background: #fafaf9;
+    padding: 10px 0;
+}
+
+.cpq__product-search-field_discount{
+    padding: 0.5rem 0;
+}

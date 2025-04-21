@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contextRecordType>Account</contextRecordType>
+    <filter>
+        <childNode>load</childNode>
+        <label>Filter Records</label>
+        <name>Filter_Records</name>
+        <expression>$Record.Firmware_Is_Current__c = False</expression>
+    </filter>
+    <filter>
+        <childNode>load_all</childNode>
+        <label>Filter Records</label>
+        <name>Filter_Records1</name>
+        <expression>$Record.vlocity_cmt__EnableAutopay__c = False</expression>
+    </filter>
+    <label>Update Software</label>
+    <recommendationLoad>
+        <label>load</label>
+        <name>load</name>
+        <condition>
+            <field>Name</field>
+            <operator>EQUALS</operator>
+            <value>
+                <type>TEXT</type>
+                <value>Update Device Software</value>
+            </value>
+        </condition>
+        <conditionLogic>and</conditionLogic>
+        <object>Recommendation</object>
+    </recommendationLoad>
+    <recommendationLoad>
+        <label>load all</label>
+        <name>load_all</name>
+        <condition>
+            <field>Name</field>
+            <operator>EQUALS</operator>
+            <value>
+                <type>TEXT</type>
+                <value>Auto Pay</value>
+            </value>
+        </condition>
+        <conditionLogic>and</conditionLogic>
+        <object>Recommendation</object>
+    </recommendationLoad>
+    <union>
+        <childNode>Filter_Records</childNode>
+        <childNode>Filter_Records1</childNode>
+        <label>Output</label>
+        <name>Output_25b4f5f6ef0c4bbe92375bb34a6f30dc</name>
+    </union>
+</RecommendationStrategy>

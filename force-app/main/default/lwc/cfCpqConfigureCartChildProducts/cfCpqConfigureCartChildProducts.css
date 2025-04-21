@@ -1,0 +1,39 @@
+.cpq__configure-child-product-title {
+    color: black;
+    line-height: 18.75px;
+    text-align: left;
+    width: auto;
+}
+
+.cpq__configure-child-product-version {
+    font-style: italic;
+    color: #2E2E2E;
+}
+
+.cpq__configure-child-product-description {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 32px 0px 32px 0px;
+    text-align: left;
+    height: 46px;
+    overflow: auto;
+}
+
+.cpq__configure-child-products-details {
+    color: #0070D2;
+}
+
+.cpq__configure-child-products-add__button {
+    color: #0070D2;
+}
+
+.cpq__configure-child-products-add__button button {
+    border: 1px solid #0070D2;
+}
+
+.cpq__configure-child-product-card {
+    border: 1px solid #ECEBEA;
+    box-shadow: 0px 2px 2px #ECEBEA;
+    border-radius: 4px;
+    padding: 40px 32px 32px 32px;
+}

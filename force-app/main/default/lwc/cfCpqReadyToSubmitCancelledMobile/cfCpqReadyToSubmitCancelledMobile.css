@@ -1,0 +1,16 @@
+.custom-btn{
+    width:fit-content;
+}
+
+.custom-btn .slds-button{
+    border-radius: 0px;
+}
+
+.incomplete-btn {
+    border: 1px solid #ddd;
+    height: 32px;
+    width: fit-content;
+    background: #C9C7C5;
+    color: #FFFFFF;
+    margin-right: 8px;
+}

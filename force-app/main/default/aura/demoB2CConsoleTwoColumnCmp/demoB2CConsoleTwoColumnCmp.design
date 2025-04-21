@@ -1,0 +1,9 @@
+<design:component label="Demo CI Console Two Columns">
+    <flexipage:template>
+        <flexipage:region name="left" defaultWidth="SMALL" />
+        <flexipage:region name="main" defaultWidth="SMALL" />
+    </flexipage:template>
+    <design:supportedFormFactors>
+        <design:supportedFormFactor type="Large" />
+    </design:supportedFormFactors>
+</design:component>

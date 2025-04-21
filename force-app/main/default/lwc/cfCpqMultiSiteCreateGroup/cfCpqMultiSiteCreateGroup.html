@@ -1,0 +1,145 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-card  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-text-align_center cpq__multisite-modal-new-group slds-border_bottom slds-p-top_small slds-p-bottom_small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-bottom: #cccccc 2px solid; 
+         "  data-conditions='\{"group":[{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-30","operator":"==","type":"custom","value":"create"}],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-output-field data-style-id="state0element0block_element0_child"   record={record}  card={card}  data-conditions='\{"group":[{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-30","operator":"==","type":"custom","value":"create"}],"id":"state-condition-object","isParent":true}'  merge-field="%3Cdiv%20class=%22slds-text-heading_large%22%3E%7BLabel.MSNewGroupLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  slds-text-align_center cpq__multisite-modal-update-group slds-border_bottom slds-p-top_small slds-p-bottom_small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-bottom: #cccccc 2px solid; 
+         "  data-conditions='\{"group":[{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-23","operator":"==","type":"custom","value":"update"}],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-output-field data-style-id="state0element0block_element1_child"   record={record}  card={card}  data-conditions='\{"group":[{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-23","operator":"==","type":"custom","value":"update"}],"id":"state-condition-object","isParent":true}'  merge-field="%3Cdiv%20class=%22slds-text-heading_large%22%3E%7BLabel.MSRenameGroupLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element2" class="slds-col   slds-p-top_medium slds-p-bottom_medium  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element2block_element0" class="slds-col  cpq__multisite-ungrouped-count slds-p-left_small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"group":[{"field":"Parent.selectedUngroupedRecordsCount","hasMergeField":false,"id":"state-new-condition-0","operator":">","type":"custom","value":"0"},{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-37","logicalOperator":"&&","operator":"==","type":"custom","value":"Create"}],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-output-field data-style-id="state0element0block_element2block_element0_child"   record={record}  card={card}  data-conditions='\{"group":[{"field":"Parent.selectedUngroupedRecordsCount","hasMergeField":false,"id":"state-new-condition-0","operator":">","type":"custom","value":"0"},{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-37","logicalOperator":"&&","operator":"==","type":"custom","value":"Create"}],"id":"state-condition-object","isParent":true}'  merge-field="%3Cdiv%3E%7BParent.selectedUngroupedRecordsCount%7D%20%7BLabel.MSAddSelectedItemsToNewGroupInfoLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element3" class="slds-col  cpq__create_group_name slds-p-right_small slds-p-left_xx-large slds-p-top_medium slds-m-bottom_xx-small  slds-size_10-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state0element0block_element3_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"name","value":"createGroupName"},{"id":1,"label":"value","value":"{Parent.updateGroupInfo.groupName}"}],"label":"{Label.MSGroupNameLabel}","required":true,"value":"{Parent.updateGroupInfo.groupName}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element0block_element4" class="slds-col  cpq__create_group_desc slds-p-right_small slds-p-left_xx-large slds-p-bottom_xx-large slds-m-bottom_xx-small  slds-size_10-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state0element0block_element4_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"name","value":"createGroupDescription"},{"id":1,"label":"value","value":"{Parent.updateGroupInfo.groupDescription}"}],"label":"{Label.MSGroupDescLabel}","required":false,"value":"{Parent.updateGroupInfo.groupDescription}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element0block_element5" class="slds-col   slds-p-top_xx-large  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element5_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element5block_element0" class="slds-col    slds-size_12-of-12  " data-rindex={rindex} style="background-color:#F3F2F2;      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element5block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element5block_element0block_element0" class="slds-col   slds-p-around_x-small slds-size_6-of-12  " data-rindex={rindex} style="" >
+    <vlocity_cmt-block data-style-id="state0element0block_element5block_element0block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element5block_element0block_element1" class="slds-col   slds-p-around_x-small buttons slds-size_6-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element5block_element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element5block_element0block_element1block_element0" class="slds-col  cpq__create_group_cancel slds-p-right_xxx-small slds-m-right_small custom-btn slds-size_5-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-action data-style-id="state0element0block_element5block_element0block_element1block_element0_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element5block_element0block_element1block_element0_child flexActionElement" 
+        data-action-element-class="state0element0block_element5block_element0block_element1block_element0_child" data-action-key="state0element0block_element5block_element0block_element1block_element0" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="block1block4action0"   state-obj={record}  record={record}  card={card}  action-list='\[{"actionIndex":0,"buttonVariant":"neutral","card":"{card}","displayAsButton":true,"draggable":true,"isOpen":true,"key":"1634635824309-agwy7h6g5","label":"Action","record":"{record}","stateAction":{"displayName":"{Label.MSCancelLabel}","eventName":"cpq_modify_group","id":"flex-action-1634635982476","message":"close","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":""},"stateObj":"{record}"}]'  button-variant="neutral"  display-as-button="true"  flyout-details='\{}'  hide-action-icon="true"  icon-name="utility:minimize_window"  label={Label.MSCancelLabel}  theme="slds"  ></vlocity_cmt-flex-action>
+      </div><div data-style-id="state0element0block_element5block_element0block_element1block_element1" class="slds-col  cpq__create_group_save slds-p-right_xxx-small slds-m-right_small custom-btn slds-size_5-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-action data-style-id="state0element0block_element5block_element0block_element1block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element5block_element0block_element1block_element1_child flexActionElement" 
+        data-action-element-class="state0element0block_element5block_element0block_element1block_element1_child" data-action-key="state0element0block_element5block_element0block_element1block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="block2block5action0clone0"   state-obj={record}  record={record}  card={card}  action-list='\[{"actionIndex":0,"buttonVariant":"brand","card":"{card}","displayAsButton":true,"draggable":true,"isOpen":false,"key":"1635245578309-5ovs6i30y","label":"Action","record":"{record}","stateAction":{"displayName":"{Label.MSSaveLabel}","eventName":"cpq_{recordId}_{Parent.channelType}","id":"flex-action-1635245579263","message":"modify_group","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":""},"stateObj":"{record}"},{"actionIndex":1,"card":"{card}","draggable":true,"isOpen":false,"key":"1635480929732-63t9ktyw1","label":"Action","stateAction":{"Web Page":{"targetName":"/apex"},"actionConditions":{"group":[{"field":"nameChanged","hasMergeField":false,"id":"state-new-condition-0","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true},"displayName":"Action","eventName":"setValues","fieldValues":[{"fieldName":"name","fieldValue":"{Parent.updateGroupInfo.groupName}"}],"id":"flex-action-1635480966665","openUrlIn":"Current Window","targetType":"Web Page","type":"cardAction","vlocityIcon":"standard-default"}},{"actionIndex":2,"card":"{card}","draggable":true,"isOpen":true,"key":"1635480974015-czzt3h51t","label":"Action","stateAction":{"Web Page":{"targetName":"/apex"},"actionConditions":{"group":[{"field":"descriptionChanged","hasMergeField":false,"id":"state-new-condition-7","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true},"displayName":"Action","eventName":"setValues","fieldValues":[{"fieldName":"description","fieldValue":"{Parent.updateGroupInfo.groupDescription}"}],"id":"flex-action-1635481001405","openUrlIn":"Current Window","targetType":"Web Page","type":"cardAction","vlocityIcon":"standard-default"}}]'  button-variant="brand"  display-as-button="true"  flyout-details='\{}'  hide-action-icon="true"  icon-name="utility:save"  label={Label.MSSaveLabel}  theme="slds"  ></vlocity_cmt-flex-action>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-card  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-text-align_center cpq__multisite-modal-new-group slds-border_bottom slds-p-top_small slds-p-bottom_small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-bottom: #cccccc 2px solid; 
+         "  data-conditions='\{"group":[{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-30","operator":"==","type":"custom","value":"create"}],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-output-field data-style-id="state0element0block_element0_child"   record={record}  card={card}  data-conditions='\{"group":[{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-30","operator":"==","type":"custom","value":"create"}],"id":"state-condition-object","isParent":true}'  merge-field="%3Cdiv%20class=%22slds-text-heading_large%22%3E%7BLabel.MSNewGroupLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  slds-text-align_center cpq__multisite-modal-update-group slds-border_bottom slds-p-top_small slds-p-bottom_small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-bottom: #cccccc 2px solid; 
+         "  data-conditions='\{"group":[{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-23","operator":"==","type":"custom","value":"update"}],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-output-field data-style-id="state0element0block_element1_child"   record={record}  card={card}  data-conditions='\{"group":[{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-23","operator":"==","type":"custom","value":"update"}],"id":"state-condition-object","isParent":true}'  merge-field="%3Cdiv%20class=%22slds-text-heading_large%22%3E%7BLabel.MSRenameGroupLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element2" class="slds-col   slds-p-top_medium slds-p-bottom_medium  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element2block_element0" class="slds-col  cpq__multisite-ungrouped-count slds-p-left_small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"group":[{"field":"Parent.selectedUngroupedRecordsCount","hasMergeField":false,"id":"state-new-condition-0","operator":">","type":"custom","value":"0"},{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-37","logicalOperator":"&&","operator":"==","type":"custom","value":"Create"}],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-output-field data-style-id="state0element0block_element2block_element0_child"   record={record}  card={card}  data-conditions='\{"group":[{"field":"Parent.selectedUngroupedRecordsCount","hasMergeField":false,"id":"state-new-condition-0","operator":">","type":"custom","value":"0"},{"field":"Parent.type","hasMergeField":false,"id":"state-new-condition-37","logicalOperator":"&&","operator":"==","type":"custom","value":"Create"}],"id":"state-condition-object","isParent":true}'  merge-field="%3Cdiv%3E%7BParent.selectedUngroupedRecordsCount%7D%20%7BLabel.MSAddSelectedItemsToNewGroupInfoLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element3" class="slds-col  cpq__create_group_name slds-p-right_small slds-p-left_xx-large slds-p-top_medium slds-m-bottom_xx-small  slds-size_10-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state0element0block_element3_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"name","value":"createGroupName"},{"id":1,"label":"value","value":"{Parent.updateGroupInfo.groupName}"}],"label":"{Label.MSGroupNameLabel}","required":true,"value":"{Parent.updateGroupInfo.groupName}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element0block_element4" class="slds-col  cpq__create_group_desc slds-p-right_small slds-p-left_xx-large slds-p-bottom_xx-large slds-m-bottom_xx-small  slds-size_10-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state0element0block_element4_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"name","value":"createGroupDescription"},{"id":1,"label":"value","value":"{Parent.updateGroupInfo.groupDescription}"}],"label":"{Label.MSGroupDescLabel}","required":false,"value":"{Parent.updateGroupInfo.groupDescription}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element0block_element5" class="slds-col   slds-p-top_xx-large  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element5_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element5block_element0" class="slds-col    slds-size_12-of-12  " data-rindex={rindex} style="background-color:#F3F2F2;      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element5block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element5block_element0block_element0" class="slds-col   slds-p-around_x-small slds-size_6-of-12  " data-rindex={rindex} style="" >
+    <vlocity_cmt-block data-style-id="state0element0block_element5block_element0block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element5block_element0block_element1" class="slds-col   slds-p-around_x-small buttons slds-size_6-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element5block_element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element5block_element0block_element1block_element0" class="slds-col  cpq__create_group_cancel slds-p-right_xxx-small slds-m-right_small custom-btn slds-size_5-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-action data-style-id="state0element0block_element5block_element0block_element1block_element0_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element5block_element0block_element1block_element0_child flexActionElement" 
+        data-action-element-class="state0element0block_element5block_element0block_element1block_element0_child" data-action-key="state0element0block_element5block_element0block_element1block_element0" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="block1block4action0"   state-obj={record}  record={record}  card={card}  action-list='\[{"actionIndex":0,"buttonVariant":"neutral","card":"{card}","displayAsButton":true,"draggable":true,"isOpen":true,"key":"1634635824309-agwy7h6g5","label":"Action","record":"{record}","stateAction":{"displayName":"{Label.MSCancelLabel}","eventName":"cpq_modify_group","id":"flex-action-1634635982476","message":"close","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":""},"stateObj":"{record}"}]'  button-variant="neutral"  display-as-button="true"  flyout-details='\{}'  hide-action-icon="true"  icon-name="utility:minimize_window"  label={Label.MSCancelLabel}  theme="slds"  ></vlocity_cmt-flex-action>
+      </div><div data-style-id="state0element0block_element5block_element0block_element1block_element1" class="slds-col  cpq__create_group_save slds-p-right_xxx-small slds-m-right_small custom-btn slds-size_5-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-action data-style-id="state0element0block_element5block_element0block_element1block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element5block_element0block_element1block_element1_child flexActionElement" 
+        data-action-element-class="state0element0block_element5block_element0block_element1block_element1_child" data-action-key="state0element0block_element5block_element0block_element1block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="block2block5action0clone0"   state-obj={record}  record={record}  card={card}  action-list='\[{"actionIndex":0,"buttonVariant":"brand","card":"{card}","displayAsButton":true,"draggable":true,"isOpen":false,"key":"1635245578309-5ovs6i30y","label":"Action","record":"{record}","stateAction":{"displayName":"{Label.MSSaveLabel}","eventName":"cpq_{recordId}_{Parent.channelType}","id":"flex-action-1635245579263","message":"modify_group","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":""},"stateObj":"{record}"},{"actionIndex":1,"card":"{card}","draggable":true,"isOpen":false,"key":"1635480929732-63t9ktyw1","label":"Action","stateAction":{"Web Page":{"targetName":"/apex"},"actionConditions":{"group":[{"field":"nameChanged","hasMergeField":false,"id":"state-new-condition-0","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true},"displayName":"Action","eventName":"setValues","fieldValues":[{"fieldName":"name","fieldValue":"{Parent.updateGroupInfo.groupName}"}],"id":"flex-action-1635480966665","openUrlIn":"Current Window","targetType":"Web Page","type":"cardAction","vlocityIcon":"standard-default"}},{"actionIndex":2,"card":"{card}","draggable":true,"isOpen":true,"key":"1635480974015-czzt3h51t","label":"Action","stateAction":{"Web Page":{"targetName":"/apex"},"actionConditions":{"group":[{"field":"descriptionChanged","hasMergeField":false,"id":"state-new-condition-7","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true},"displayName":"Action","eventName":"setValues","fieldValues":[{"fieldName":"description","fieldValue":"{Parent.updateGroupInfo.groupDescription}"}],"id":"flex-action-1635481001405","openUrlIn":"Current Window","targetType":"Web Page","type":"cardAction","vlocityIcon":"standard-default"}}]'  button-variant="brand"  display-as-button="true"  flyout-details='\{}'  hide-action-icon="true"  icon-name="utility:save"  label={Label.MSSaveLabel}  theme="slds"  ></vlocity_cmt-flex-action>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

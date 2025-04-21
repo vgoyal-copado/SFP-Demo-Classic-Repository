@@ -1,0 +1,289 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-theme_default slds-text-align_right " style="background-color:#FAFAF9;      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-theme_default  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label=""  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-text-align_right cpq__cart-flextable_menu slds-p-top_small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"group":[{"field":"Parent.flowType","hasMergeField":false,"id":"state-new-condition-122","operator":"!=","type":"custom","value":"bulkChange"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-34","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disconnect"},{"field":"changesNotAllowed","hasMergeField":false,"id":"state-new-condition-285","logicalOperator":"&&","operator":"==","type":"custom","value":"undefined"},{"group":[{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-88","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-134","logicalOperator":"||","operator":"==","type":"custom","value":"null"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-200","logicalOperator":"||","operator":"!=","type":"custom","value":"Cancel"}],"id":"state-new-group-89","logicalOperator":"&&"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-flex-menu data-style-id="state0element0block_element0_child" 
+    onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}  record={record}  card={card}  data-conditions='\{"group":[{"field":"Parent.flowType","hasMergeField":false,"id":"state-new-condition-122","operator":"!=","type":"custom","value":"bulkChange"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-34","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disconnect"},{"field":"changesNotAllowed","hasMergeField":false,"id":"state-new-condition-285","logicalOperator":"&&","operator":"==","type":"custom","value":"undefined"},{"group":[{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-88","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-134","logicalOperator":"||","operator":"==","type":"custom","value":"null"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-200","logicalOperator":"||","operator":"!=","type":"custom","value":"Cancel"}],"id":"state-new-group-89","logicalOperator":"&&"}],"id":"state-condition-object","isParent":true}'  flyout-obj='\{"menuItemFlyout2":{"cardName":"cpqConfigureCart","cardNode":"{record}","displayName":"Configure","flyoutLwc":"cpqConfigureCart","flyoutParams":{"cartType":"{Parent.cartType}"},"flyoutType":"childCard","hasExtraParams":true,"id":"menuItemFlyout2","openFlyoutIn":"Modal","openUrlIn":"Current Window","parent":"menu","type":"Flyout","vlocityIcon":""}}'  icon-name="utility:threedots_vertical"  icon-size="small"  overflow="true"  position="right"  size="xx-small"  type="action"  variant="" 
+    theme="slds" > 
+     <vlocity_cmt-flex-menu-item 
+    name="menu-item-1614792957513-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_0"
+     data-conditions='\{"group":[{"field":"vlocity_cmt__RecurringCharge__c.actions.applyadjustment","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"actionIndex":0,"card":"{card}","draggable":false,"isOpen":true,"key":"1641563536721-vwgtep8ss","label":"Action","reRenderFlyout":true,"stateAction":{"actionConditions":null,"cardName":"cpqManualPriceAdjustments","channelName":"close_modal","displayName":"{Label.CPQAdjustPrice}","flyoutLwc":"cpqManualPriceAdjustments","flyoutParams":{"cartId":"{Parent.cartId}","cartType":"{Parent.cartType}","id":"{Id.value}","lineItemName":"{Name}","type":"charge"},"flyoutType":"childCard","hasExtraParams":true,"id":"flex-action-1641580168551","openFlyoutIn":"Modal","openUrlIn":"Current Window","type":"Flyout","vlocityIcon":""},"stateObj":"{record}"}]'  label={Label.CPQAdjustPrice}  icon-name=""  re-render-flyout="true"  preload-flyout="undefined"  flyout-details='\{"openFlyoutIn":"Modal"}'  flyout-channel="close_modal"  class="state0element0block_element0_menuitem_0 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_0" data-action-key="state0element0block_element0_menuitem_0" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem0" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     <div slot="modalflyout" class="block2menu0menuitem0action0" > <c-cf-cpq-manual-price-adjustments data-style-id="state0element0block_element0_child"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"cartId":"{Parent.cartId}","cartType":"{Parent.cartType}","id":"{Id.value}","lineItemName":"{Name}","type":"charge"}'  ></c-cf-cpq-manual-price-adjustments></div></vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item><vlocity_cmt-flex-menu-item 
+    name="menu-item-1616393869626-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_1"
+     data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"actionIndex":0,"card":"{card}","draggable":false,"isOpen":true,"key":"1637727987805-zdb0i67c6","label":"Action","stateAction":{"actionConditions":{"group":[],"id":"state-condition-object","isParent":true},"displayName":"{Label.CPQClone}","eventName":"cpq_{recordId}","extraParams":{"cartId":"{Parent.cartId}","cartType":"{Parent.cartType}","getInputMethod":"prepareCloneItemInCartInput","handleResponseMethod":"processCloneItemInCartResponse","hierarchyPath":"{Id.value}","ipMethod":"CPQ_CloneLineItems","itemId":"{Id.value}","methodName":"cloneItemInCart","responseEventName":"cpq_cart_line_item_clone"},"hasExtraParams":true,"id":"flex-action-1637731577531","message":"cpq_ui_event","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":""},"stateObj":"{record}"}]'  label={Label.CPQClone}  icon-name=""  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element0_menuitem_1 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_1" data-action-key="state0element0block_element0_menuitem_1" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem1" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item><vlocity_cmt-flex-menu-item 
+    name="menu-item-1617193930813-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_2"
+     data-conditions='\{"group":[{"field":"Parent.flow","hasMergeField":false,"id":"state-new-condition-13","operator":"!=","type":"custom","value":"config"}],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"actionIndex":0,"card":"{card}","draggable":false,"isOpen":true,"key":"1637728013216-vy3ki7zo3","label":"Action","preloadFlyout":false,"reRenderFlyout":true,"stateAction":{"actionConditions":{"group":[],"id":"state-condition-object","isParent":true},"cardName":"cpqConfigureCart","cardNode":"{record}","channelName":"close_modal","displayName":"{Label.CPQConfigure}","flyoutLwc":"cpqConfigureCart","flyoutParams":{"cartType":"{Parent.cartType}","multisiteSelectedGroupItemsCount":"{Parent.multisiteSelectedGroupItemsCount}","multisiteSelectedGroupName":"{Parent.multisiteSelectedGroupName}"},"flyoutType":"childCard","hasExtraParams":true,"id":"flex-action-1638167803885","openFlyoutIn":"Modal","openUrlIn":"Current Window","type":"Flyout","vlocityIcon":""},"stateObj":"{record}"}]'  label={Label.CPQConfigure}  icon-name=""  re-render-flyout="true"  preload-flyout="false"  flyout-details='\{"openFlyoutIn":"Modal"}'  flyout-channel="close_modal"  class="state0element0block_element0_menuitem_2 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_2" data-action-key="state0element0block_element0_menuitem_2" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem2" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     <div slot="modalflyout" class="block2menu0menuitem2action0" > <c-cf-cpq-configure-cart data-style-id="state0element0block_element0_child"  card-node="\{record}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"cartType":"{Parent.cartType}","multisiteSelectedGroupItemsCount":"{Parent.multisiteSelectedGroupItemsCount}","multisiteSelectedGroupName":"{Parent.multisiteSelectedGroupName}"}'  ></c-cf-cpq-configure-cart></div></vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item><vlocity_cmt-flex-menu-item 
+    name="menu-item-1617699403428-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_3"
+     data-conditions='\{"group":[{"field":"actions.deleteitem","hasMergeField":false,"id":"state-new-condition-1742","operator":"!=","type":"custom","value":"undefined"},{"group":[{"field":"orderActive","hasMergeField":false,"id":"state-new-condition-1767","operator":"==","type":"custom","value":"false"},{"field":"orderActive","hasMergeField":false,"id":"state-new-condition-1799","logicalOperator":"||","operator":"==","type":"custom","value":"undefined"}],"id":"state-new-group-1768","logicalOperator":"&&"},{"group":[{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-1844","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-1897","logicalOperator":"||","operator":"==","type":"custom","value":"true"},{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-1989","logicalOperator":"||","operator":"==","type":"custom","value":"null"}],"id":"state-new-group-1845","logicalOperator":"&&"},{"group":[{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-2066","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-2147","logicalOperator":"||","operator":"!=","type":"custom","value":"cancel"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-2258","logicalOperator":"||","operator":"==","type":"custom","value":"null"}],"id":"state-new-group-2067","logicalOperator":"&&"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-222","logicalOperator":"&&","operator":"==","type":"custom","value":"Add"}],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"card":"{card}","stateAction":{"actionConditions":null,"displayName":"{Label.CPQDelete}","eventName":"cpq_{recordId}","extraParams":{"cartType":"{Parent.cartType}","getInputMethod":"prepareDeleteItemFromCartInput","handleResponseMethod":"processDeleteItemFromCartResponse","hierarchyPath":"{Id.value}","ipMethod":"CPQ_DeleteItemFromCart","itemId":"{Id.value}","methodName":"deleteItemFromCart","minQuantity":"0","parentObject":"null"},"hasExtraParams":true,"id":"flex-action-1633355107895","message":"cpq_ui_event","openUrlIn":"Current Window","parent":"menu","subType":"PubSub","type":"Event","vlocityIcon":""},"stateObj":"{record}"}]'  label={Label.CPQDelete}  icon-name="utility:delete"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element0_menuitem_3 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_3" data-action-key="state0element0block_element0_menuitem_3" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem3" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22left%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item><vlocity_cmt-flex-menu-item 
+    name="menu-item-1635235550019-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_4"
+     data-conditions='\{"group":[{"field":"actions.cancelcartitem","hasMergeField":false,"id":"state-new-condition-290","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"actionIndex":0,"card":"{card}","draggable":false,"isOpen":true,"key":"1635235550021-erfgsyyjw","label":"Action","stateAction":{"actionConditions":{"group":[{"field":"Parent.flow","hasMergeField":false,"id":"state-new-condition-22","operator":"!=","type":"custom","value":"config"}],"id":"state-condition-object","isParent":true},"displayName":"Action","eventName":"cpq_{recordId}","extraParams":{"actionObjName":"cancelcartitem","getInputMethod":"prepareCancelCartItem","handleResponseMethod":"processCancelCartItemResponse","input":"{\"ipMethod\":\"CPQ_CancelCartItem\"}","methodName":"cancelCartItem","record":"{record}"},"hasExtraParams":true,"id":"flex-action-1637728046850","message":"cpq_ui_event","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"}}]'  label="\{Label.CPQCancel}"  icon-name="utility:close"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element0_menuitem_4 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_4" data-action-key="state0element0block_element0_menuitem_4" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem4" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22left%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item><vlocity_cmt-flex-menu-item 
+    name="menu-item-1637143886520-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_5"
+     data-conditions='\{"group":[{"field":"actions.deleteitem","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"undefined"},{"group":[{"field":"orderActive","hasMergeField":false,"id":"state-new-condition-554","operator":"==","type":"custom","value":"false"},{"field":"orderActive","hasMergeField":false,"id":"state-new-condition-586","logicalOperator":"||","operator":"==","type":"custom","value":"undefined"}],"id":"state-new-group-555","logicalOperator":"&&"},{"group":[{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-646","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-699","logicalOperator":"||","operator":"==","type":"custom","value":"true"},{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-774","logicalOperator":"||","operator":"==","type":"custom","value":"null"}],"id":"state-new-group-647","logicalOperator":"&&"},{"group":[{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-920","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-1001","logicalOperator":"||","operator":"!=","type":"custom","value":"cancel"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-1137","logicalOperator":"||","operator":"==","type":"custom","value":"null"}],"id":"state-new-group-921","logicalOperator":"&&"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-1248","logicalOperator":"&&","operator":"!=","type":"custom","value":"Add"}],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"actionIndex":0,"card":"{card}","draggable":false,"isOpen":true,"key":"1637143886522-uz7q9x6r3","label":"Action","stateAction":{"actionConditions":{"group":[{"field":"Parent.flow","hasMergeField":false,"id":"state-new-condition-29","operator":"!=","type":"custom","value":"config"}],"id":"state-condition-object","isParent":true},"displayName":"Action","eventName":"cpq_{recordId}","extraParams":{"cartType":"{Parent.cartType}","getInputMethod":"prepareDeleteItemFromCartInput","handleResponseMethod":"processDeleteItemFromCartResponse","hierarchyPath":"{Id.value}","ipMethod":"CPQ_DeleteItemFromCart","itemId":"{Id.value}","methodName":"deleteItemFromCart","minQuantity":"0","parentObject":"null"},"hasExtraParams":true,"id":"flex-action-1637728063301","message":"cpq_ui_event","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"}}]'  label={Label.Disconnect}  icon-name="standard:default"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element0_menuitem_5 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_5" data-action-key="state0element0block_element0_menuitem_5" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem5" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item>
+    </vlocity_cmt-flex-menu>
+    </div><div data-style-id="state0element0block_element1" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"group":[{"field":"Parent.flow","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"config"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"==","type":"custom","value":"Disconnect"},{"field":"changesNotAllowed","hasMergeField":false,"id":"state-new-condition-23","logicalOperator":"||","operator":"==","type":"custom","value":"true"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-269","logicalOperator":"||","operator":"==","type":"custom","value":"Cancel"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Parent.flow","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"config"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"==","type":"custom","value":"Disconnect"},{"field":"changesNotAllowed","hasMergeField":false,"id":"state-new-condition-23","logicalOperator":"||","operator":"==","type":"custom","value":"true"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-269","logicalOperator":"||","operator":"==","type":"custom","value":"Cancel"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-theme_default slds-text-align_right " style="background-color:#FAFAF9;      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-theme_default  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label=""  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-text-align_right cpq__cart-flextable_menu slds-p-top_small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"group":[{"field":"Parent.flowType","hasMergeField":false,"id":"state-new-condition-122","operator":"!=","type":"custom","value":"bulkChange"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-34","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disconnect"},{"field":"changesNotAllowed","hasMergeField":false,"id":"state-new-condition-285","logicalOperator":"&&","operator":"==","type":"custom","value":"undefined"},{"group":[{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-88","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-134","logicalOperator":"||","operator":"==","type":"custom","value":"null"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-200","logicalOperator":"||","operator":"!=","type":"custom","value":"Cancel"}],"id":"state-new-group-89","logicalOperator":"&&"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-flex-menu data-style-id="state0element0block_element0_child" 
+    onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}  record={record}  card={card}  data-conditions='\{"group":[{"field":"Parent.flowType","hasMergeField":false,"id":"state-new-condition-122","operator":"!=","type":"custom","value":"bulkChange"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-34","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disconnect"},{"field":"changesNotAllowed","hasMergeField":false,"id":"state-new-condition-285","logicalOperator":"&&","operator":"==","type":"custom","value":"undefined"},{"group":[{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-88","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-134","logicalOperator":"||","operator":"==","type":"custom","value":"null"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-200","logicalOperator":"||","operator":"!=","type":"custom","value":"Cancel"}],"id":"state-new-group-89","logicalOperator":"&&"}],"id":"state-condition-object","isParent":true}'  flyout-obj='\{"menuItemFlyout2":{"cardName":"cpqConfigureCart","cardNode":"{record}","displayName":"Configure","flyoutLwc":"cpqConfigureCart","flyoutParams":{"cartType":"{Parent.cartType}"},"flyoutType":"childCard","hasExtraParams":true,"id":"menuItemFlyout2","openFlyoutIn":"Modal","openUrlIn":"Current Window","parent":"menu","type":"Flyout","vlocityIcon":""}}'  icon-name="utility:threedots_vertical"  icon-size="small"  overflow="true"  position="right"  size="xx-small"  type="action"  variant="" 
+    theme="slds" > 
+     <vlocity_cmt-flex-menu-item 
+    name="menu-item-1614792957513-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_0"
+     data-conditions='\{"group":[{"field":"vlocity_cmt__RecurringCharge__c.actions.applyadjustment","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"actionIndex":0,"card":"{card}","draggable":false,"isOpen":true,"key":"1641563536721-vwgtep8ss","label":"Action","reRenderFlyout":true,"stateAction":{"actionConditions":null,"cardName":"cpqManualPriceAdjustments","channelName":"close_modal","displayName":"{Label.CPQAdjustPrice}","flyoutLwc":"cpqManualPriceAdjustments","flyoutParams":{"cartId":"{Parent.cartId}","cartType":"{Parent.cartType}","id":"{Id.value}","lineItemName":"{Name}","type":"charge"},"flyoutType":"childCard","hasExtraParams":true,"id":"flex-action-1641580168551","openFlyoutIn":"Modal","openUrlIn":"Current Window","type":"Flyout","vlocityIcon":""},"stateObj":"{record}"}]'  label={Label.CPQAdjustPrice}  icon-name=""  re-render-flyout="true"  preload-flyout="undefined"  flyout-details='\{"openFlyoutIn":"Modal"}'  flyout-channel="close_modal"  class="state0element0block_element0_menuitem_0 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_0" data-action-key="state0element0block_element0_menuitem_0" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem0" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     <div slot="modalflyout" class="block2menu0menuitem0action0" > <c-cf-cpq-manual-price-adjustments data-style-id="state0element0block_element0_child"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"cartId":"{Parent.cartId}","cartType":"{Parent.cartType}","id":"{Id.value}","lineItemName":"{Name}","type":"charge"}'  ></c-cf-cpq-manual-price-adjustments></div></vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item><vlocity_cmt-flex-menu-item 
+    name="menu-item-1616393869626-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_1"
+     data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"actionIndex":0,"card":"{card}","draggable":false,"isOpen":true,"key":"1637727987805-zdb0i67c6","label":"Action","stateAction":{"actionConditions":{"group":[],"id":"state-condition-object","isParent":true},"displayName":"{Label.CPQClone}","eventName":"cpq_{recordId}","extraParams":{"cartId":"{Parent.cartId}","cartType":"{Parent.cartType}","getInputMethod":"prepareCloneItemInCartInput","handleResponseMethod":"processCloneItemInCartResponse","hierarchyPath":"{Id.value}","ipMethod":"CPQ_CloneLineItems","itemId":"{Id.value}","methodName":"cloneItemInCart","responseEventName":"cpq_cart_line_item_clone"},"hasExtraParams":true,"id":"flex-action-1637731577531","message":"cpq_ui_event","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":""},"stateObj":"{record}"}]'  label={Label.CPQClone}  icon-name=""  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element0_menuitem_1 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_1" data-action-key="state0element0block_element0_menuitem_1" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem1" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item><vlocity_cmt-flex-menu-item 
+    name="menu-item-1617193930813-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_2"
+     data-conditions='\{"group":[{"field":"Parent.flow","hasMergeField":false,"id":"state-new-condition-13","operator":"!=","type":"custom","value":"config"}],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"actionIndex":0,"card":"{card}","draggable":false,"isOpen":true,"key":"1637728013216-vy3ki7zo3","label":"Action","preloadFlyout":false,"reRenderFlyout":true,"stateAction":{"actionConditions":{"group":[],"id":"state-condition-object","isParent":true},"cardName":"cpqConfigureCart","cardNode":"{record}","channelName":"close_modal","displayName":"{Label.CPQConfigure}","flyoutLwc":"cpqConfigureCart","flyoutParams":{"cartType":"{Parent.cartType}","multisiteSelectedGroupItemsCount":"{Parent.multisiteSelectedGroupItemsCount}","multisiteSelectedGroupName":"{Parent.multisiteSelectedGroupName}"},"flyoutType":"childCard","hasExtraParams":true,"id":"flex-action-1638167803885","openFlyoutIn":"Modal","openUrlIn":"Current Window","type":"Flyout","vlocityIcon":""},"stateObj":"{record}"}]'  label={Label.CPQConfigure}  icon-name=""  re-render-flyout="true"  preload-flyout="false"  flyout-details='\{"openFlyoutIn":"Modal"}'  flyout-channel="close_modal"  class="state0element0block_element0_menuitem_2 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_2" data-action-key="state0element0block_element0_menuitem_2" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem2" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     <div slot="modalflyout" class="block2menu0menuitem2action0" > <c-cf-cpq-configure-cart data-style-id="state0element0block_element0_child"  card-node="\{record}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"cartType":"{Parent.cartType}","multisiteSelectedGroupItemsCount":"{Parent.multisiteSelectedGroupItemsCount}","multisiteSelectedGroupName":"{Parent.multisiteSelectedGroupName}"}'  ></c-cf-cpq-configure-cart></div></vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item><vlocity_cmt-flex-menu-item 
+    name="menu-item-1617699403428-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_3"
+     data-conditions='\{"group":[{"field":"actions.deleteitem","hasMergeField":false,"id":"state-new-condition-1742","operator":"!=","type":"custom","value":"undefined"},{"group":[{"field":"orderActive","hasMergeField":false,"id":"state-new-condition-1767","operator":"==","type":"custom","value":"false"},{"field":"orderActive","hasMergeField":false,"id":"state-new-condition-1799","logicalOperator":"||","operator":"==","type":"custom","value":"undefined"}],"id":"state-new-group-1768","logicalOperator":"&&"},{"group":[{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-1844","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-1897","logicalOperator":"||","operator":"==","type":"custom","value":"true"},{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-1989","logicalOperator":"||","operator":"==","type":"custom","value":"null"}],"id":"state-new-group-1845","logicalOperator":"&&"},{"group":[{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-2066","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-2147","logicalOperator":"||","operator":"!=","type":"custom","value":"cancel"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-2258","logicalOperator":"||","operator":"==","type":"custom","value":"null"}],"id":"state-new-group-2067","logicalOperator":"&&"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-222","logicalOperator":"&&","operator":"==","type":"custom","value":"Add"}],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"card":"{card}","stateAction":{"actionConditions":null,"displayName":"{Label.CPQDelete}","eventName":"cpq_{recordId}","extraParams":{"cartType":"{Parent.cartType}","getInputMethod":"prepareDeleteItemFromCartInput","handleResponseMethod":"processDeleteItemFromCartResponse","hierarchyPath":"{Id.value}","ipMethod":"CPQ_DeleteItemFromCart","itemId":"{Id.value}","methodName":"deleteItemFromCart","minQuantity":"0","parentObject":"null"},"hasExtraParams":true,"id":"flex-action-1633355107895","message":"cpq_ui_event","openUrlIn":"Current Window","parent":"menu","subType":"PubSub","type":"Event","vlocityIcon":""},"stateObj":"{record}"}]'  label={Label.CPQDelete}  icon-name="utility:delete"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element0_menuitem_3 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_3" data-action-key="state0element0block_element0_menuitem_3" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem3" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22left%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item><vlocity_cmt-flex-menu-item 
+    name="menu-item-1635235550019-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_4"
+     data-conditions='\{"group":[{"field":"actions.cancelcartitem","hasMergeField":false,"id":"state-new-condition-290","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"actionIndex":0,"card":"{card}","draggable":false,"isOpen":true,"key":"1635235550021-erfgsyyjw","label":"Action","stateAction":{"actionConditions":{"group":[{"field":"Parent.flow","hasMergeField":false,"id":"state-new-condition-22","operator":"!=","type":"custom","value":"config"}],"id":"state-condition-object","isParent":true},"displayName":"Action","eventName":"cpq_{recordId}","extraParams":{"actionObjName":"cancelcartitem","getInputMethod":"prepareCancelCartItem","handleResponseMethod":"processCancelCartItemResponse","input":"{\"ipMethod\":\"CPQ_CancelCartItem\"}","methodName":"cancelCartItem","record":"{record}"},"hasExtraParams":true,"id":"flex-action-1637728046850","message":"cpq_ui_event","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"}}]'  label="\{Label.CPQCancel}"  icon-name="utility:close"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element0_menuitem_4 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_4" data-action-key="state0element0block_element0_menuitem_4" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem4" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22left%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item><vlocity_cmt-flex-menu-item 
+    name="menu-item-1637143886520-0"
+    theme="slds"
+    data-style-id="state0element0block_element0_menuitem_5"
+     data-conditions='\{"group":[{"field":"actions.deleteitem","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"undefined"},{"group":[{"field":"orderActive","hasMergeField":false,"id":"state-new-condition-554","operator":"==","type":"custom","value":"false"},{"field":"orderActive","hasMergeField":false,"id":"state-new-condition-586","logicalOperator":"||","operator":"==","type":"custom","value":"undefined"}],"id":"state-new-group-555","logicalOperator":"&&"},{"group":[{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-646","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-699","logicalOperator":"||","operator":"==","type":"custom","value":"true"},{"field":"vlocity_cmt__IsChangesAllowed__c.value","hasMergeField":false,"id":"state-new-condition-774","logicalOperator":"||","operator":"==","type":"custom","value":"null"}],"id":"state-new-group-647","logicalOperator":"&&"},{"group":[{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-920","operator":"==","type":"custom","value":"undefined"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-1001","logicalOperator":"||","operator":"!=","type":"custom","value":"cancel"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-1137","logicalOperator":"||","operator":"==","type":"custom","value":"null"}],"id":"state-new-group-921","logicalOperator":"&&"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-1248","logicalOperator":"&&","operator":"!=","type":"custom","value":"Add"}],"id":"state-condition-object","isParent":true}' 
+    class="condition-element"
+    >
+    <vlocity_cmt-flex-action record={record} card={card}  action-list='\[{"actionIndex":0,"card":"{card}","draggable":false,"isOpen":true,"key":"1637143886522-uz7q9x6r3","label":"Action","stateAction":{"actionConditions":{"group":[{"field":"Parent.flow","hasMergeField":false,"id":"state-new-condition-29","operator":"!=","type":"custom","value":"config"}],"id":"state-condition-object","isParent":true},"displayName":"Action","eventName":"cpq_{recordId}","extraParams":{"cartType":"{Parent.cartType}","getInputMethod":"prepareDeleteItemFromCartInput","handleResponseMethod":"processDeleteItemFromCartResponse","hierarchyPath":"{Id.value}","ipMethod":"CPQ_DeleteItemFromCart","itemId":"{Id.value}","methodName":"deleteItemFromCart","minQuantity":"0","parentObject":"null"},"hasExtraParams":true,"id":"flex-action-1637728063301","message":"cpq_ui_event","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"}}]'  label={Label.Disconnect}  icon-name="standard:default"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element0_menuitem_5 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element0_menuitem_5" data-action-key="state0element0block_element0_menuitem_5" data-show-spinner="false" 
+    data-element-label="block2menu0menuitem5" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_cmt-flex-action>
+    </vlocity_cmt-flex-menu-item>
+    </vlocity_cmt-flex-menu>
+    </div><div data-style-id="state0element0block_element1" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"group":[{"field":"Parent.flow","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"config"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"==","type":"custom","value":"Disconnect"},{"field":"changesNotAllowed","hasMergeField":false,"id":"state-new-condition-23","logicalOperator":"||","operator":"==","type":"custom","value":"true"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-269","logicalOperator":"||","operator":"==","type":"custom","value":"Cancel"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Parent.flow","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"config"},{"field":"vlocity_cmt__Action__c.value","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"==","type":"custom","value":"Disconnect"},{"field":"changesNotAllowed","hasMergeField":false,"id":"state-new-condition-23","logicalOperator":"||","operator":"==","type":"custom","value":"true"},{"field":"vlocity_cmt__SupplementalAction__c.value","hasMergeField":false,"id":"state-new-condition-269","logicalOperator":"||","operator":"==","type":"custom","value":"Cancel"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Content:Internet</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Internet</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Content:Mobile</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Mobile</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Content:Television</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Television</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Content:Troubleshooting</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Troubleshooting</name>
+        <parentName></parentName>
+        <position>3</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Featured:Internet</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Internet</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Featured:Mobile</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Mobile</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Featured:Television</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Television</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Featured:Troubleshooting</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Troubleshooting</name>
+        <parentName></parentName>
+        <position>3</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Navigational:Internet</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Internet</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Navigational:Mobile</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Mobile</name>
+        <parentName></parentName>
+        <position>3</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Navigational:Television</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Television</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>B2C Multi-Play Internet.Navigational:Troubleshooting</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Troubleshooting</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+</ManagedTopics>

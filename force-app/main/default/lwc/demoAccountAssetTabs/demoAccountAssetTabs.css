@@ -1,0 +1,5 @@
+.demo-tabs {
+  --sds-c-tabs-scoped-color-text-active: var(--lwc-colorBrand);
+  --sds-c-tabs-item-text-color-active: var(--lwc-colorBrand);
+  --sds-c-tabs-item-text-color: #6a7da4
+; }

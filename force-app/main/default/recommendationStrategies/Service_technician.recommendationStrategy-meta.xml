@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contextRecordType>Case</contextRecordType>
+    <filter>
+        <childNode>Load_Service_Technicians</childNode>
+        <label>Filter Records</label>
+        <name>Filter_Records</name>
+        <expression>(CONTAINS($Record.Subject, &apos;broken&apos;) || CONTAINS($Record.Subject, &apos;problems&apos;) || CONTAINS($Record.Subject, &apos;issues&apos;)) &amp;&amp; TEXT ($Record.Status) = &apos;New&apos;</expression>
+    </filter>
+    <label>Service Technician</label>
+    <map>
+        <childNode>Filter_Records</childNode>
+        <label>Personalize</label>
+        <name>Personalize</name>
+        <mapExpression>
+            <expression>Description + &apos; &apos; + $Record.Contact.Name</expression>
+            <name>Description</name>
+            <type>Text</type>
+        </mapExpression>
+    </map>
+    <recommendationLoad>
+        <label>Load Service Technicians</label>
+        <name>Load_Service_Technicians</name>
+        <condition>
+            <field>Name</field>
+            <operator>EQUALS</operator>
+            <value>
+                <type>TEXT</type>
+                <value>Technician</value>
+            </value>
+        </condition>
+        <conditionLogic>and</conditionLogic>
+        <object>Recommendation</object>
+    </recommendationLoad>
+    <union>
+        <childNode>Personalize</childNode>
+        <label>Output</label>
+        <name>Output_2e28d66c484c4eac9cb7892a7a774a47</name>
+    </union>
+</RecommendationStrategy>

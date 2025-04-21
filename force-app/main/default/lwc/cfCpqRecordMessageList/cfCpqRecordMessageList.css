@@ -1,0 +1,9 @@
+.cpq__record-message-list_learn-more .slds-popover {
+    width: 20rem;
+    position: absolute;
+    z-index: 3;
+}
+
+.cpq__record-message-list_learn-more .slds-nubbin_top-left:before {
+    background: #FE9339;
+}

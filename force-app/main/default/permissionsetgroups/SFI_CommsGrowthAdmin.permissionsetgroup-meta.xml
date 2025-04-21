@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Bundles the unmanaged permission sets required by the Administrators to access Communication Cloud features.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Communications Cloud Growth Administrator Group</label>
+    <permissionSets>Base_Runtime_ReadOnly</permissionSets>
+    <permissionSets>Base_Runtime_ViewAndManageBillPayment</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

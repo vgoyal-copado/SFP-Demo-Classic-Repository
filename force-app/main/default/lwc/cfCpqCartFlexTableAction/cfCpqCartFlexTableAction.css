@@ -1,0 +1,138 @@
+.cpq__flex-table-slashed_price{
+    text-decoration: line-through;
+    text-decoration-color: #706E6B;
+    color: #706E6B;
+    font-size: 12px;
+    padding-top: 0px;
+}
+.cpq__cart-root_checkbox{
+    width:2%;
+    margin-top:1.1rem;
+}
+.cpq__parent-recurring_charge{
+    flex: 1 1 auto;
+}
+.cpq__parent-onetime_charge {
+    flex: 1 1 auto;
+}
+.cpq__parent-usage_value, .cpq__parent-one-time_value ,.cpq__parent-recurring_value, .cpq__parent-hierarchy_quantity{
+    font-weight: bold;
+}
+.cpq__flex-table-hierarchy_quantity .slds-form-element__help, .cpq__parent-hierarchy_quantity .slds-form-element__help{
+     width: 30rem;
+}
+.cpq__flex-table_block{
+    padding-left: 0;
+    box-shadow: 0px 2px 2px 0px #0000001A;
+}
+.cpq__flex-table-block_withpromo{
+    border-radius: 0px 0px 3px 3px;
+    border-top: 0px;
+}
+.cpq__parent-hierarchy_quantity{
+    border-right: 1px solid #cccccc;
+}
+.cpq__cart-collapse_icon{
+    width:32px;
+}
+.cpq__parent-hierarchy_name{
+    flex:1 1 auto;
+    font-size: 15px;
+}
+.cpq__parent-hierarchy-name_strikethrough{
+    text-decoration: line-through;
+}
+.cpq__cart-root-item_warning svg{
+    fill:#FFB75D;
+}
+.cpq__root-item_charge {
+    padding-top: 4px;
+    font-size: 16px;
+}
+.cpq__parent-hierarchy_menu{
+    width: 5%;
+}
+.cpq__parent-hierarchy_action-status{
+    width: 8%;
+}
+.cpq__parent-hierarchy-item-status_icon{
+    padding-top: 18px;
+    width: 3%;
+}
+
+@media screen and (max-width: 64rem){
+    .cpq__parent-item_container{
+        padding-left: 2%;
+    }
+    .cpq__cart-collapse_icon{
+        z-index: 3;
+        padding-top: 4px;
+    }
+    .cpq__root-item_charge{
+        text-align: left;
+    }
+    .cpq__flex-table-hierarchy_name, .cpq__parent-hierarchy_name{
+        padding-left:0;
+        padding-top: 4px;
+        width: 55%;
+        padding-bottom:12px;
+    }
+    .cpq__parent-hierarchy_name{
+        padding-left: 4px;
+        width: 80%;
+        flex:1 1 auto;
+    }
+    .cpq__parent-hierarchy_action-status{
+        width: 30%;
+        margin: 0px;
+        padding-left: 0px;
+    }
+    .cpq__parent-hierarchy_quantity{
+        width: 70%;
+        border-right:0px;
+        padding-left: 0px;
+    }
+    .cpq__parent-usage_charge{
+        border-left:0 !important;
+    }
+    .cpq__flex-table-hierarchy-recurring_charge, .cpq__flex-table-hierarchy-one-time_charge{
+        width:50%;
+        text-align:left;
+    }
+    .cpq__parent-onetime_charge, .cpq__parent-recurring_charge, .cpq__parent-usage_charge{
+        width: 30%;
+        text-align: left;
+    }
+    .cpq__flex-table-hierarchy-recurring_charge span{
+         font-weight: bold;
+    }
+    .cpq__flex-table-hierarchy-one-time_charge span{
+         font-weight: bold;
+    }
+    .cpq__parent-hierarchy_menu{
+        position: absolute;
+        padding-top: 0px;
+        width: calc(96% - 16px);
+        text-align: end;
+        z-index: 2;
+    }
+    .cpq__flex-table-hierarchy_quantity{
+        width: 53%;
+    }
+    .cpq__flex-table-slashed_price{
+        text-align: left;
+    }
+    .cpq__parent-hierarchy-item-status_icon{
+        width: 7%;
+        z-index: 3;
+        padding-top: 6px;
+        padding-left: 0px;
+    }
+    .cpq__parent-hierarchy-item-status_icon-blank{
+        display: none;
+    }
+    .cpq__cart-root_checkbox{
+        width:5%;
+        margin-top:0.5rem;
+    }
+}

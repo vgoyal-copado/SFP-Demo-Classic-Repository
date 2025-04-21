@@ -1,0 +1,41 @@
+.cpq__promotionheader{
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: bold;
+    color: #000000;
+}
+.cpq__promotionsubheader{
+    font-size: 13px;
+    line-height: 20px;
+    color:  #3E3E3C;
+    font-weight: bold;
+}
+
+/* .cpq-promotionsubheader-listview-desktop-state {
+    display: inital;
+}
+
+
+@media (max-width: 1024px) {
+  .cpq-promotionsubheader-listview-desktop-state {
+  	display: none;
+  }
+} */
+
+.flexcards-container_small .cpq-promotionsubheader-listview {
+    display: none;
+}
+
+.flexcards-container_medium   .cpq-promotionsubheader-listview {
+    display: none;
+}
+
+.flexcards-container_large   .cpq-promotionsubheader-listview {
+    display: initial;
+
+}
+
+.cpq-promotionblock {
+    max-height: 1250px;
+    overflow-y: scroll;
+}

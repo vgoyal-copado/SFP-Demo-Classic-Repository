@@ -1,0 +1,7 @@
+.toggle-block-container .block-container .slds-grid {
+    justify-content: flex-end;
+}
+
+.paperless-toggle .slds-checkbox_toggle.slds-grid{
+    justify-content: space-between;
+}

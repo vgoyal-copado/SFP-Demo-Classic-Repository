@@ -1,0 +1,65 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-m-around_none " style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-size_12-of-12 condition-element" data-rindex={rindex} style=""  data-conditions='\{"group":[{"field":"Parent.cartType","hasMergeField":false,"id":"state-new-condition-0","operator":"==","type":"custom","value":"shoppingCart"},{"field":"Parent.multisiteSelectedGroupName","hasMergeField":false,"id":"state-new-condition-5","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"},{"field":"Parent.multisiteSelectedGroupItemsCount","hasMergeField":false,"id":"state-new-condition-15","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}' ><c-cf-cpq-multi-site-group-card-cart-configurator data-style-id="state0element0_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node=""  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  data-conditions='\{"group":[{"field":"Parent.cartType","hasMergeField":false,"id":"state-new-condition-0","operator":"==","type":"custom","value":"shoppingCart"},{"field":"Parent.multisiteSelectedGroupName","hasMergeField":false,"id":"state-new-condition-5","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"},{"field":"Parent.multisiteSelectedGroupItemsCount","hasMergeField":false,"id":"state-new-condition-15","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}'  is-child-card-tracking-enabled="false"  parent-attribute='\{"multisiteSelectedGroupItemsCount":"{Parent.multisiteSelectedGroupItemsCount}","multisiteSelectedGroupName":"{Parent.multisiteSelectedGroupName}"}'  object-api-name={objectApiName}  theme="slds"  omni-json-def={omniJsonDef} omni-script-header-def={omniScriptHeaderDef} omni-custom-state={omniCustomState} omni-json-data={omniJsonData} omni-support-key={record._flex.uniqueKey}   onupdateparent={updateParentData}></c-cf-cpq-multi-site-group-card-cart-configurator>
+    </div><div data-style-id="state0element1" class="slds-col    slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><c-cf-cpq-configure-cart-item data-style-id="state0element1block_element0_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node="\{record}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  parent-attribute='\{"cartType":"{Parent.cartType}","flowType":"{Parent.flowType}","id":"{Id.value}"}'  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-cpq-configure-cart-item>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-m-around_none " style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-size_12-of-12 condition-element" data-rindex={rindex} style=""  data-conditions='\{"group":[{"field":"Parent.cartType","hasMergeField":false,"id":"state-new-condition-0","operator":"==","type":"custom","value":"shoppingCart"},{"field":"Parent.multisiteSelectedGroupName","hasMergeField":false,"id":"state-new-condition-5","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"},{"field":"Parent.multisiteSelectedGroupItemsCount","hasMergeField":false,"id":"state-new-condition-15","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}' ><c-cf-cpq-multi-site-group-card-cart-configurator data-style-id="state0element0_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node=""  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  data-conditions='\{"group":[{"field":"Parent.cartType","hasMergeField":false,"id":"state-new-condition-0","operator":"==","type":"custom","value":"shoppingCart"},{"field":"Parent.multisiteSelectedGroupName","hasMergeField":false,"id":"state-new-condition-5","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"},{"field":"Parent.multisiteSelectedGroupItemsCount","hasMergeField":false,"id":"state-new-condition-15","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}'  is-child-card-tracking-enabled="false"  parent-attribute='\{"multisiteSelectedGroupItemsCount":"{Parent.multisiteSelectedGroupItemsCount}","multisiteSelectedGroupName":"{Parent.multisiteSelectedGroupName}"}'  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-cpq-multi-site-group-card-cart-configurator>
+    </div><div data-style-id="state0element1" class="slds-col    slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><c-cf-cpq-configure-cart-item data-style-id="state0element1block_element0_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node="\{record}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  parent-attribute='\{"cartType":"{Parent.cartType}","flowType":"{Parent.flowType}","id":"{Id.value}"}'  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-cpq-configure-cart-item>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

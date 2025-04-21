@@ -1,0 +1,95 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap cpq__cart-applied-disc_container slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   cpq__cart-applied-discount_block  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  action='\null'  collapsed-by-default="false"  collapsible="true"  label="\{Label.CPQAppliedDiscounts} ({totalSize})"  styles='\{"label":{"color":"#181818"}}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-size_12-of-12 condition-element" data-rindex={rindex} style=""  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' ><c-cf-cpq-cart-discount data-style-id="state0element0block_element0_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node="\{record.records}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  data-preload-conditional-element="false"  is-child-card-tracking-enabled="false"  parent-attribute='\{"cartId":"{Parent.cartId}"}'  object-api-name={objectApiName}  theme="slds"  if:true={record._flex.state0element0block_element0_child} onupdateparent={updateParentData}></c-cf-cpq-cart-discount>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap cpq__cart-applied-disc_container slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state1element0" class="slds-col   cpq__cart-applied-discount_block  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state1element0_child"  record={record}  card={card}  action='\null'  collapsed-by-default="false"  collapsible="true"  label="\{Label.CPQAppliedDiscounts} (0)"  styles='\{"label":{"color":"#181818"}}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element0" class="slds-col  slds-text-align_center slds-p-around_x-small cpq__cart-applied-discounts_empty-text slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element0_child"   record={record}  card={card}  merge-field="%3Ch4%20class=%22slds-text-heading_medium%22%3E%3Cspan%20class=%22slds-text-heading_medium%22%3E%7BLabel.CPQNoAppliedDiscountsEmptyText%7D%3C/span%3E%3C/h4%3E%0A%3Ch4%3E%3Cspan%20class=%22slds-text-heading_medium%22%3E%7BLabel.CPQNoAppliedDiscMissingOut%7D%3C/span%3E%3C/h4%3E%0A%3Cp%3E%3Cspan%20class=%22slds-text-body_regular%22%20style=%22color:%20#3e3e3c;%22%3E%7BLabel.CPQNoAppliedDiscountText%7D%3C/span%3E%3C/p%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1" class="slds-col  slds-text-align_center  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-action data-style-id="state1element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state1element0block_element1_child flexActionElement" 
+        data-action-element-class="state1element0block_element1_child" data-action-key="state1element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="block1action1"   state-obj={record}  record={record}  card={card}  action-list='\[{"actionIndex":0,"draggable":false,"isOpen":true,"key":"1652852616756-z2h3q118r","label":"Open Add Discount Flyout","stateAction":{"cardName":"cpqDiscount","channelName":"close_modal_apply_discount","flyoutLwc":"cpqDiscount","flyoutParams":{"cartId":"{Parent.cartId}"},"flyoutType":"childCard","hasExtraParams":true,"id":"flex-action-1656593153293","openFlyoutIn":"Modal","openUrlIn":"Current Window","type":"Flyout"}}]'  button-variant="outline-brand"  display-as-button="true"  flyout-channel="close_modal_apply_discount"  flyout-details='\{"openFlyoutIn":"Modal"}'  icon-color="#0176D3"  icon-name="utility:add"  icon-size="x-small"  label="\{Label.CPQAddNewDiscount}"  styles='\{"label":{"color":"#0176D3"}}'  theme="slds"  ><div slot="modalflyout" class="block1action1action0" > <c-cf-cpq-discount data-style-id="state1element0block_element1_child"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"cartId":"{Parent.cartId}"}'  ></c-cf-cpq-discount></div></vlocity_cmt-flex-action>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap cpq__cart-applied-disc_container slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   cpq__cart-applied-discount_block  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  action='\null'  collapsed-by-default="false"  collapsible="true"  label="\{Label.CPQAppliedDiscounts} ({totalSize})"  styles='\{"label":{"color":"#181818"}}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-size_12-of-12 condition-element" data-rindex={rindex} style=""  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' ><c-cf-cpq-cart-discount data-style-id="state0element0block_element0_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node="\{record.records}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  data-preload-conditional-element="false"  is-child-card-tracking-enabled="false"  parent-attribute='\{"cartId":"{Parent.cartId}"}'  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-cpq-cart-discount>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap cpq__cart-applied-disc_container slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state1element0" class="slds-col   cpq__cart-applied-discount_block  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state1element0_child"  record={record}  card={card}  action='\null'  collapsed-by-default="false"  collapsible="true"  label="\{Label.CPQAppliedDiscounts} (0)"  styles='\{"label":{"color":"#181818"}}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element0" class="slds-col  slds-text-align_center slds-p-around_x-small cpq__cart-applied-discounts_empty-text slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element0_child"   record={record}  card={card}  merge-field="%3Ch4%20class=%22slds-text-heading_medium%22%3E%3Cspan%20class=%22slds-text-heading_medium%22%3E%7BLabel.CPQNoAppliedDiscountsEmptyText%7D%3C/span%3E%3C/h4%3E%0A%3Ch4%3E%3Cspan%20class=%22slds-text-heading_medium%22%3E%7BLabel.CPQNoAppliedDiscMissingOut%7D%3C/span%3E%3C/h4%3E%0A%3Cp%3E%3Cspan%20class=%22slds-text-body_regular%22%20style=%22color:%20#3e3e3c;%22%3E%7BLabel.CPQNoAppliedDiscountText%7D%3C/span%3E%3C/p%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1" class="slds-col  slds-text-align_center  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-action data-style-id="state1element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state1element0block_element1_child flexActionElement" 
+        data-action-element-class="state1element0block_element1_child" data-action-key="state1element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="block1action1"   state-obj={record}  record={record}  card={card}  action-list='\[{"actionIndex":0,"draggable":false,"isOpen":true,"key":"1652852616756-z2h3q118r","label":"Open Add Discount Flyout","stateAction":{"cardName":"cpqDiscount","channelName":"close_modal_apply_discount","flyoutLwc":"cpqDiscount","flyoutParams":{"cartId":"{Parent.cartId}"},"flyoutType":"childCard","hasExtraParams":true,"id":"flex-action-1656593153293","openFlyoutIn":"Modal","openUrlIn":"Current Window","type":"Flyout"}}]'  button-variant="outline-brand"  display-as-button="true"  flyout-channel="close_modal_apply_discount"  flyout-details='\{"openFlyoutIn":"Modal"}'  icon-color="#0176D3"  icon-name="utility:add"  icon-size="x-small"  label="\{Label.CPQAddNewDiscount}"  styles='\{"label":{"color":"#0176D3"}}'  theme="slds"  ><div slot="modalflyout" class="block1action1action0" > <c-cf-cpq-discount data-style-id="state1element0block_element1_child"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"cartId":"{Parent.cartId}"}'  ></c-cf-cpq-discount></div></vlocity_cmt-flex-action>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

@@ -1,0 +1,46 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div if:false={cardLoaded} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: white; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                      <vlocity_cmt-flex-card-state   data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="" data-rindex={rindex} style=""><vlocity_cmt-data-table data-style-id="state0element0_child"     issearchavailable="true"  issortavailable="true"  cell-level-edit="false"  pagelimit="3"  group-order="asc"  user-selectable-row="false"  user-selectable-column="false"  row-level-edit="false"  hide-table-header="false"  row-delete="false"  columns='\[{"fieldName":"Id","label":"Id","searchable":false,"sortable":true,"type":"text"},{"fieldName":"Name","label":"Name","searchable":false,"sortable":true,"type":"text"},{"fieldName":"Phone","label":"Phone","searchable":false,"sortable":true,"type":"text"},{"fieldName":"BillingCity","label":"BillingCity","searchable":false,"sortable":true,"type":"text"},{"fieldName":"BillingCountry","label":"BillingCountry","searchable":true,"sortable":true,"type":"text"}]'  records={records}  theme="slds"  ></vlocity_cmt-data-table>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                </template>
+                <template if:false={hasRecords}>
+                      <vlocity_cmt-flex-card-state   data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="" data-rindex={rindex} style=""><vlocity_cmt-data-table data-style-id="state0element0_child"     issearchavailable="true"  issortavailable="true"  cell-level-edit="false"  pagelimit="3"  group-order="asc"  user-selectable-row="false"  user-selectable-column="false"  row-level-edit="false"  hide-table-header="false"  row-delete="false"  columns='\[{"fieldName":"Id","label":"Id","searchable":false,"sortable":true,"type":"text"},{"fieldName":"Name","label":"Name","searchable":false,"sortable":true,"type":"text"},{"fieldName":"Phone","label":"Phone","searchable":false,"sortable":true,"type":"text"},{"fieldName":"BillingCity","label":"BillingCity","searchable":false,"sortable":true,"type":"text"},{"fieldName":"BillingCountry","label":"BillingCountry","searchable":true,"sortable":true,"type":"text"}]'  records={records}  theme="slds"  ></vlocity_cmt-data-table>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

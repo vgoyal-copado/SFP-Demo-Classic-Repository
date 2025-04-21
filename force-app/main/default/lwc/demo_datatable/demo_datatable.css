@@ -1,0 +1,20 @@
+.demo-datatable-container {
+    height: 500px;
+}
+
+/* Styling of the lightning-datatable component can be achieved by using the following overrides in OmniScript
+
+	Setup -> Styling Options -> Lightning Design System Token Overrides
+
+	// lightning-datatable SLDS/LWC Token Overrides	
+	--lwc-tableColorTextHeader: #fff;               // Header Text          
+	--lwc-tableColorBackgroundHeader: #151824;      // Header Background
+	--lwc-tableColorBackgroundHeaderHover: #6E6E6E; // Header Background (on hover)
+	--lwc-colorTextWeak: #fff;                      // Row Text
+	--lwc-colorBackgroundAlt: #151824;              // Row Background
+	--lwc-colorBackgroundRowHover: #6E6E6E;         // Row Background (on hover)
+	--lwc-colorBackgroundRowSelected: #6E6E6E;      // Row Background (on selection)
+	--lwc-colorBorder: #fff;                        // Border Color
+	--sds-c-checkbox-mark-color-foreground: #fff;   // Checkmark Color
+	
+*/

@@ -1,0 +1,97 @@
+.cpq__promotiondetailview-modal-header{
+    background-color: #1589EE;
+    border-radius: 4px 4px 0px 0px;
+}
+.cpq__discount-deatil-view-icon {
+    width: 3%;
+    margin-top: 2px;
+}
+.cpq__discount-description-container {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.cpq__discount-detailview-modal-header {
+    font-family: Salesforce Sans;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #080707;
+
+}
+.cpq__discount-detailview-heading{
+    font-family: Salesforce Sans;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 2px;
+    color: #FE9339;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+}
+.cpq__promotiondetailview-modal-body{
+    height: 350px;
+    border: 1px solid #ECEBEA;
+}
+.cpq__promotiondetailview-modal-body-promotion-namecode{
+    font-family: Salesforce Sans;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+.cpq__discount-description{
+    font-family: Salesforce Sans;
+    font-size: 13px;
+    line-height: 15px;
+    color: #706E6B;
+}
+.cpq__discount-end-date {
+    font-family: Salesforce Sans;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000000;
+}
+.cpq__discount-dates-label{
+    font-family: Salesforce Sans;
+    font-size: 12px;
+    line-height: 14px;
+    color: #706E6B;
+}
+.cpq__promotiondetailview-modal-body-promotion-dates{
+    font-family: Salesforce Sans;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.cpq__promotiondetailview-modal-body-promotion-code-label{
+    font-family: Salesforce Sans;
+    font-size: 12px;
+    line-height: 14px;
+    color: #706E6B;
+}
+.cpq__category-container {
+width: 20.6%;
+}
+.cpq__promotiondetailview-modal-footer-button-block
+{
+width: fit-content;
+margin-left: auto;
+
+}
+.cpq__discount-detail_view {
+    text-transform: uppercase;
+}
+.cpq__promotiondetailview-modal-footer-buttons{
+ width: fit-content;   
+}
+.cpq__promotiondetailview-cancelbuttom-tempchange{
+ display: none;   
+}
+.cpq__discount-items {
+    font-family: Salesforce Sans;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}

@@ -1,0 +1,103 @@
+<template>
+	<div class="slds-col slds-p-bottom_large demo-offer-tiles">
+		<template iterator:offer={catalog}>
+
+			<div key={offer.value.ui.code} data-product-code={offer.value.ui.code} class="demo-offer-tile" onclick={selectOffer} if:true={offer.value.ui.show}>
+
+				<!-- Badge Section -->
+				<div class="badge-header">
+
+					<!-- Recommended Badge -->
+					<div class="recommend-icon">
+						<span class="slds-badge" if:true={offer.value.ui.recommend}>
+							<!-- this value can be dynamic & pulled from OS -->
+							Recommended
+						</span>
+					</div>
+					
+					<!-- Selection Checkbox -->
+					<div data-checkbox={offer.value.ui.code} class="selection-icon" if:true={offer.value.ui.selected}>
+						<span class="slds-icon_container slds-icon_container--circle slds-icon-action-following">
+							<svg class="slds-icon" aria-hidden="true">
+								<use xlink:href="/_slds/icons/action-sprite/svg/symbols.svg#approval"></use>
+							</svg>
+						</span>
+					</div>
+				</div>
+
+				<div class="demo-offer-card">
+
+						<!-- Image -->
+						<template if:false={hideImages}>
+							<div class="offer-header">                        
+								<div class="image" if:true={offer.value.ui.productImage}>
+									<img src={offer.value.ui.productImage.url} alt={offer.value.ui.productImage.title}>
+								</div>
+								<div class="image" if:false={offer.value.ui.productImage}>
+									<p>--Image--</p>
+								</div>
+							</div>
+						</template>
+
+						<!-- Offer Name (if Image is hidden) -->
+						<template if:true={hideImages}>
+							<div class="offer-header">								
+								<div class="product-name">
+									<p>{offer.value.ui.name}</p>
+								</div>
+							</div>
+						</template>	
+
+						<!-- Body -->
+						<template if:false={hideBody}>
+							<div class="offer-body">
+								<hr>
+								<div class="description">
+									<p>{offer.value.ui.description}</p>
+									<ul class="features">
+										<template iterator:feature={offer.value.ui.features}>
+											<li key={feature.value}>{feature.value}</li>
+										</template>                                
+									</ul>
+								</div>
+							</div>
+						</template>
+
+						<!-- Footer -->
+						<div class="offer-footer" if:false={hideFooter}>
+
+							<!-- Pricing -->
+							<div class="offer-pricing" if:false={hidePricing}>
+
+								<p class="pricing">
+									<strong>{offer.value.ui.pricingText}</strong>							
+								</p>
+
+							</div>
+
+							<template if:false={hideButtons}>
+
+								<!-- Select Button -->
+								<div class="offer-buttons" if:false={offer.value.ui.selected}>
+									<button type="button" class="vlocity-btn slds-button slds-button_brand">{addButtonLabel}</button>
+								</div>
+						
+								<!-- Remove Button -->
+								<div class="offer-buttons" if:true={offer.value.ui.selected}>
+									<button type="button" class="vlocity-btn slds-button slds-button_brand">{removeButtonLabel}</button>
+								</div>
+							</template>
+							
+						</div>
+				
+				</div>
+			</div>
+
+		</template>
+
+		<!-- Spinner -->
+		<template if:true={_spinnerEnabled}>
+			<vlocity_cmt-spinner variant="brand" alternative-text="Loading.." size="medium"></vlocity_cmt-spinner>
+		</template>
+	</div>
+</template>

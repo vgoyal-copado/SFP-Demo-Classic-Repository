@@ -1,0 +1,154 @@
+.cpq__tilelistview-promotion{
+    border-radius: 4px;
+}
+.cpq__tilelistview-header-promotionheading{
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 2px;
+    color: #444444;
+    background-color: #EAF5FE;
+    border-radius: 4px 4px 0px 0px;
+    height: 31px;
+    font-weight: bolder;
+}
+.cpq__tilelistview-body-promotionname{
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+.cpq__tilelistview-body-promotiondescription{
+    font-size: 13px;
+    line-height: 15px;
+    color: #706E6B;
+
+    height: 17px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.cpq__tileview-body-promotion-dates-label{
+    font-size: 12px;
+    line-height: 18px;
+    color: #444444;
+}
+.cpq__listview-body-promotion-dates-label{
+    font-size: 12px;
+    line-height: 18px;
+    color: #444444;
+}
+.cpq__tileview-body-promotion-dates{
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+.cpq__listview-body-promotion-dates{
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+.cpq__tileview-promotion-dates-box{
+    width: fit-content;
+    margin-right: auto;
+}
+.cpq__tilelistview-body-seedetailsbutton{
+    font-size: 13px;
+    line-height: 15px;
+    color: #0070D2;
+}
+.cpq__promo-error-icon {
+    width: fit-content;
+}
+.cpq__promo-error-msg {
+    text-align: left;
+    color: #8C4B02;
+    padding-left: 10px;
+}
+
+
+
+
+/* @media (max-width: 768px) {
+  .cpq-promotion-listview-seedetailsbutton-mobilestate {
+  	 position: absolute;
+    bottom: 5px;
+    margin-top: 25px;
+  }
+  .cpq-promotion-listview-addtocartsbutton-mobilestate {
+    margin-top: 25px;
+  }
+} */
+
+
+.flexcards-container_large .cpqpromotionlistview-name {
+    width:17%
+}
+
+.flexcards-container_medium .cpqpromotionlistview-name {
+    width:34%
+}
+
+.flexcards-container_small .cpqpromotionlistview-name {
+    width:100%
+}
+
+.flexcards-container_large .cpqpromotionlistview-description {
+    width:42%
+}
+
+.flexcards-container_medium .cpqpromotionlistview-description {
+    width:66%
+}
+
+.flexcards-container_small .cpqpromotionlistview-description {
+    width:100%
+}
+
+.flexcards-container_large .cpqpromotionlistview-dates {
+    width:25%
+}
+
+.flexcards-container_medium .cpqpromotionlistview-dates {
+    width:67%
+}
+
+
+.flexcards-container_small .cpqpromotionlistview-dates {
+    width:100%
+}
+
+.flexcards-container_large .cpqpromotionlistview-addtocart {
+    width:16%
+}
+
+
+.flexcards-container_medium .cpqpromotionlistview-addtocart {
+    width:33%
+}
+
+
+.flexcards-container_small .cpqpromotionlistview-addtocart {
+    margin-top: 25px;
+    width:100%
+}
+
+.flexcards-container_small   .cpq-promotionlistview-seedetails {
+  	position: absolute;
+    bottom: 5px;
+    margin-top: 25px;
+  }
+
+  .flexcards-container_large .cpqpromotiontileviewstate {
+      width: 33%;
+  }
+
+
+  .flexcards-container_medium .cpqpromotiontileviewstate {
+      width:50%
+  }
+
+
+  .flexcards-container_small .cpqpromotiontileviewstate {
+      width:100%;
+  }

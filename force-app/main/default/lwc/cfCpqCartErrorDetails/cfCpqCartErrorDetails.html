@@ -1,0 +1,125 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_xx-small slds-m-around_none " style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#706E6B;      
+     height:40px;    " >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-text-align_center cpq__cart-error-message_icon slds-p-top_xxx-small  slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-icon data-style-id="state0element0block_element0_child"   record={record}  extraclass="slds-icon_container slds-icon__svg--default "  icon-name="utility:info_alt"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  cpq__cart-error-message_desc  slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20class=%22slds-text-color_inverse%22%20style=%22font-size:%2012pt;%20color:%20#ffffff;%22%3E%7Bmessage%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_xx-small slds-m-around_none " style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state1element0" class="slds-col   slds-p-around_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFB75D;      
+     height:40px;    " >
+    <vlocity_cmt-block data-style-id="state1element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element0" class="slds-col  slds-text-align_center cpq__cart-error-message_icon slds-p-top_xxx-small  slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-icon data-style-id="state1element0block_element0_child"   record={record}  color="#000000"  extraclass="slds-icon_container slds-icon__svg--default "  icon-name="utility:warning"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state1element0block_element1" class="slds-col  cpq__cart-error-message_desc  slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20style=%22color:%20#000000;%20font-size:%2012pt;%22%3E%7Bmessage%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="2" data-rindex={rindex} class="cf-vlocity-state-2 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_xx-small slds-m-around_none " style="      
+     height:40px;    ">
+          <div data-style-id="state2element0" class="slds-col   slds-p-around_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#706e6b;      
+     height:40px;    " >
+    <vlocity_cmt-block data-style-id="state2element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state2element0block_element0" class="slds-col  slds-text-align_center cpq__cart-error-message_icon slds-p-top_xxx-small  slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-icon data-style-id="state2element0block_element0_child"   record={record}  extraclass="slds-icon_container slds-icon__svg--default "  icon-name="utility:info_alt"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state2element0block_element1" class="slds-col  cpq__cart-error-message_desc  slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state2element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20class=%22%22%20style=%22color:%20#ffffff;%20font-size:%2012pt;%22%3E%7Bmessage%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_xx-small slds-m-around_none " style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#706E6B;      
+     height:40px;    " >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-text-align_center cpq__cart-error-message_icon slds-p-top_xxx-small  slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-icon data-style-id="state0element0block_element0_child"   record={record}  extraclass="slds-icon_container slds-icon__svg--default "  icon-name="utility:info_alt"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  cpq__cart-error-message_desc  slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20class=%22slds-text-color_inverse%22%20style=%22font-size:%2012pt;%20color:%20#ffffff;%22%3E%7Bmessage%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_xx-small slds-m-around_none " style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state1element0" class="slds-col   slds-p-around_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFB75D;      
+     height:40px;    " >
+    <vlocity_cmt-block data-style-id="state1element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element0" class="slds-col  slds-text-align_center cpq__cart-error-message_icon slds-p-top_xxx-small  slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-icon data-style-id="state1element0block_element0_child"   record={record}  color="#000000"  extraclass="slds-icon_container slds-icon__svg--default "  icon-name="utility:warning"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state1element0block_element1" class="slds-col  cpq__cart-error-message_desc  slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20style=%22color:%20#000000;%20font-size:%2012pt;%22%3E%7Bmessage%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="2" data-rindex={rindex} class="cf-vlocity-state-2 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_xx-small slds-m-around_none " style="      
+     height:40px;    ">
+          <div data-style-id="state2element0" class="slds-col   slds-p-around_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#706e6b;      
+     height:40px;    " >
+    <vlocity_cmt-block data-style-id="state2element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state2element0block_element0" class="slds-col  slds-text-align_center cpq__cart-error-message_icon slds-p-top_xxx-small  slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-icon data-style-id="state2element0block_element0_child"   record={record}  extraclass="slds-icon_container slds-icon__svg--default "  icon-name="utility:info_alt"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state2element0block_element1" class="slds-col  cpq__cart-error-message_desc  slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state2element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20class=%22%22%20style=%22color:%20#ffffff;%20font-size:%2012pt;%22%3E%7Bmessage%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

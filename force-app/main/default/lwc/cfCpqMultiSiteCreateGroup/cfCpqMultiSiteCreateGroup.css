@@ -1,0 +1,13 @@
+.buttons{
+    margin-left: auto;
+    width:fit-content;
+}
+.custom-btn{
+    width:fit-content;
+    width: -moz-fit-content; /* Support Mozilla Firefox Browser */
+}
+
+.custom-btn .slds-button{
+    border-radius: 0px;
+    margin-right: 5px;
+}

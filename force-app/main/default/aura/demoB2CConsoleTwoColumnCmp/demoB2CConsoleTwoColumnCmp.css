@@ -1,0 +1,11 @@
+.THIS .slds-tabs_card {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.THIS .slds-tabs_default, .THIS .slds-tabs--default {
+    background-color:#FBFCFD;
+    padding: .75rem;
+    border-radius: .25rem;
+}

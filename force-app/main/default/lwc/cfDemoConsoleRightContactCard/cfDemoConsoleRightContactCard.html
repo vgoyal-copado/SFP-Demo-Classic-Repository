@@ -1,0 +1,102 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div if:false={cardLoaded} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: white; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_4-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap  slds-p-around_small slds-m-right_x-small slds-m-bottom_medium " style="background-color:#ffffff;      
+    border-radius:4px;     box-shadow: 0 0 0.25rem 0 rgba(0,0,0, 0.15);">
+          <div data-style-id="state0element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state0element0block_element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:contact"  size="medium"  extraclass="slds-icon_container slds-icon-standard-contact "  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element0_child"     card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_left%22%3E%3Cstrong%3E%3Cspan%20style=%22font-size:%2010pt;%20color:%20#5f7399;%22%3E%7BFirstName%7D%20%7BLastName%7D%3C/span%3E%3C/strong%3E%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%2010pt;%22%3E%7BTitle%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element1block_element0_child"     card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20class=%22slds-text-title_caps%22%20style=%22font-size:%208pt;%22%3EEmail%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element1block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%208pt;%22%3E%7BEmail%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element2" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element2block_element0_child"     card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3E%3Cspan%20style=%22font-size:%208pt;%22%3EPhone%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element2block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element2block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%208pt;%22%3E%7BPhone%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_4-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap  slds-p-around_small slds-m-right_x-small slds-m-bottom_medium " style="background-color:#ffffff;      
+    border-radius:4px;     box-shadow: 0 0 0.25rem 0 rgba(0,0,0, 0.15);">
+          <div data-style-id="state0element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-flex-icon data-style-id="state0element0block_element0block_element0_child"     record={record}  icon-type="Salesforce SVG"  icon-name="standard:contact"  size="medium"  extraclass="slds-icon_container slds-icon-standard-contact "  variant="inverse"  imgsrc=""  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element0_child"     card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_left%22%3E%3Cstrong%3E%3Cspan%20style=%22font-size:%2010pt;%20color:%20#5f7399;%22%3E%7BFirstName%7D%20%7BLastName%7D%3C/span%3E%3C/strong%3E%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%2010pt;%22%3E%7BTitle%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element1block_element0_child"     card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20class=%22slds-text-title_caps%22%20style=%22font-size:%208pt;%22%3EEmail%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element1block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element1block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%208pt;%22%3E%7BEmail%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element2" class="" data-rindex={rindex} style="">
+    <vlocity_cmt-block data-style-id="state0element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds" ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element2block_element0_child"     card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3E%3Cspan%20style=%22font-size:%208pt;%22%3EPhone%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element2block_element1" class="" data-rindex={rindex} style=""><vlocity_cmt-output-field data-style-id="state0element2block_element1_child"     card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%208pt;%22%3E%7BPhone%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

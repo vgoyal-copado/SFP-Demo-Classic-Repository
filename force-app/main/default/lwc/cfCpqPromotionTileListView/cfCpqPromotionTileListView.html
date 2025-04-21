@@ -1,0 +1,303 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative containersize">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-m-bottom_x-small" style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state0element0" class="slds-col   cpq__listview-promotion slds-box slds-p-around_none slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-border_bottom slds-p-top_x-small slds-p-left_small cpq__tilelistview-header-promotionheading slds-size_12-of-12  " data-rindex={rindex} style="     border-bottom: #1589EE 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3E%7BLabel.CPQPromotion%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col    slds-p-around_x-small slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="slds-col  slds-p-around_xxx-small slds-p-right_small slds-m-bottom_medium cpq__tilelistview-body-promotionname cpqpromotionlistview-name slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element0_child"   record={record}  card={card}  merge-field="%3Ch3%3E%7BName%7D%3C/h3%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1" class="slds-col   slds-p-around_xxx-small cpqpromotionlistview-description slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element1block_element0" class="slds-col  cpq__tilelistview-body-promotiondescription slds-m-bottom_small  slds-p-right_small slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element1block_element0_child"   record={record}  card={card}  field-name="description"  label=""  placeholder="\{Label.CPQDescriptionOfPromotionPlaceholder}"  type="text"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1block_element1" class="slds-col  slds-text-align_left cpq__tilelistview-body-seedetailsbutton   cpq-promotionlistview-seedetails slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-action data-style-id="state0element0block_element1block_element1block_element1_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="outline-brand"  display-as-button="false"  hide-action-icon="true"  state-action='\{"cardName":"cpqPromotionDetailView","cardNode":"{record}","displayName":"{Label.CPQSeeDetailsLabel}","flyoutLwc":"cpqPromotionDetailView","flyoutParams":{"cartId":"{Parent.cartId}"},"flyoutType":"childCard","hasExtraParams":true,"id":"flex-action-1624304412609","openFlyoutIn":"Modal","openUrlIn":"Current Window","type":"Flyout","vlocityIcon":"standard-default"}'  theme="slds" ><div slot="flyout">  <c-cf-cpq-promotion-detail-view data-style-id="state0element0block_element1block_element1block_element1_child"  card-node="\{record}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"cartId":"{Parent.cartId}"}'  ></c-cf-cpq-promotion-detail-view></div></vlocity_cmt-action>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element1block_element2" class="slds-col    cpqpromotionlistview-dates slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element2block_element0" class="slds-col   slds-p-right_xx-small  slds-p-top_xxx-small slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element2block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element2block_element0block_element0" class="slds-col  cpq__listview-body-promotion-dates-label slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element2block_element0block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQOfferStartsLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1block_element2block_element0block_element1" class="slds-col  cpq__listview-body-promotion-dates slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element2block_element0block_element1_child"   record={record}  card={card}  field-name="vlocity_cmt__effectivestartdate__c"  format="M/D/YYYY"  label=""  mask=""  placeholder="\{Label.CPQStartDateOfPromotionPlaceholder}"  type="datetime"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element1block_element2block_element1" class="slds-col   slds-p-top_xxx-small slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element2block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element2block_element1block_element0" class="slds-col  slds-text-align_left cpq__listview-body-promotion-dates-label slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element2block_element1block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQOfferEndsLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1block_element2block_element1block_element1" class="slds-col  slds-text-align_left cpq__listview-body-promotion-dates slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element2block_element1block_element1_child"   record={record}  card={card}  field-name="vlocity_cmt__effectiveenddate__c"  format="M/D/YYYY"  label=""  mask=""  placeholder="\{Label.CPQEndDateOfPromotionPlaceholder}"  type="datetime"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element1block_element3" class="slds-col   slds-p-around_xx-small  cpqpromotionlistview-addtocart slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element3_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element3block_element0" class="slds-col  slds-text-align_right cpq-promotion-listview-addtocartsbutton-mobilestate  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"actions.addtocart","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"undefined"},{"field":"category","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disqualified"}],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-action data-style-id="state0element0block_element1block_element3block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="outline-brand"  data-conditions='\{"group":[{"field":"actions.addtocart","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"undefined"},{"field":"category","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disqualified"}],"id":"state-condition-object","isParent":true}'  display-as-button="true"  hide-action-icon="true"  state-action='\{"displayName":"{Label.AddToCart}","eventName":"cpq_{recordId}","extraParams":{"actionObjName":"addtocart","cartId":"{Parent.cartId}","getInputMethod":"prepareAddPromotionToCartInput","handleResponseMethod":"addPromotionToCartResponseHandler","input":"{}","methodName":"addToCartPromoItem","record":"{record}","remoteMethod":"postCartsPromoItems","responseEventName":"cpq_addpromo_response"},"hasExtraParams":true,"id":"flex-action-1625931703220","message":"cpq_ui_event","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"}'  theme="slds"  ></vlocity_cmt-action>
+        </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element1block_element4" class="slds-col   slds-p-around_x-small slds-size_12-of-12 condition-element" data-rindex={rindex} style=""  data-conditions='\{"group":[{"field":"category","hasMergeField":false,"id":"state-new-condition-0","operator":"==","type":"custom","value":"Disqualified"},{"field":"messages[0]","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"},{"field":"messages[0].message","hasMergeField":false,"id":"state-new-condition-17","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element4_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"category","hasMergeField":false,"id":"state-new-condition-0","operator":"==","type":"custom","value":"Disqualified"},{"field":"messages[0]","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"},{"field":"messages[0].message","hasMergeField":false,"id":"state-new-condition-17","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element4block_element0" class="slds-col  cpq__promo-error-icon slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-icon data-style-id="state0element0block_element1block_element4block_element0_child"   record={record}  card={card}  extraclass="slds-icon_container slds-icon__svg--default "  icon-name="utility:warning"  icon-type="Salesforce SVG"  imgsrc=""  size="xx-small"  variant="warning"  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state0element0block_element1block_element4block_element1" class="slds-col  cpq__promo-error-msg slds-size_11-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element4block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Bmessages%5B0%5D.message%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-m-bottom_x-small slds-m-right_x-small  " style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state1element0" class="slds-col   cpq__tilelistview-promotion slds-box slds-p-around_none slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state1element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element0" class="slds-col  slds-border_bottom slds-p-top_x-small slds-p-left_small cpq__tilelistview-header-promotionheading slds-size_12-of-12  " data-rindex={rindex} style="     border-bottom: #1589EE 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3E%7BLabel.CPQPromotion%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1" class="slds-col    slds-p-around_small slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFFFFF;      
+     height:288px;    " >
+    <vlocity_cmt-block data-style-id="state1element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element1block_element0" class="slds-col  cpq__tilelistview-body-promotionname slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element0_child"   record={record}  card={card}  merge-field="%3Ch3%3E%7BName%7D%3C/h3%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1block_element1" class="slds-col  cpq__tilelistview-body-promotiondescription slds-m-top_medium slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element1_child"   record={record}  card={card}  field-name="description"  label=""  placeholder="\{Label.CPQDescriptionOfPromotionPlaceholder}"  styles='\{"value":{"color":"","fontFamily":"","fontSize":""}}'  type="text"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1block_element2" class="slds-col   slds-m-top_large  slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         
+" >
+    <vlocity_cmt-block data-style-id="state1element0block_element1block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element1block_element2block_element0" class="slds-col  cpq__tileview-body-promotion-dates-label slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element2block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQOfferStartsLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1block_element2block_element1" class="slds-col  cpq__tileview-body-promotion-dates    slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element2block_element1_child"   record={record}  card={card}  field-name="vlocity_cmt__effectivestartdate__c"  format="M/D/YYYY"  label=""  placeholder="\{Label.CPQStartDateOfPromotionPlaceholder}"  type="datetime"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element0block_element1block_element3" class="slds-col   slds-m-top_small slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         
+" >
+    <vlocity_cmt-block data-style-id="state1element0block_element1block_element3_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element1block_element3block_element0" class="slds-col  cpq__tileview-body-promotion-dates-label slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element3block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQOfferEndsLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1block_element3block_element1" class="slds-col  cpq__tileview-body-promotion-dates   slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element3block_element1_child"   record={record}  card={card}  field-name="vlocity_cmt__effectiveenddate__c"  format="M/D/YYYY"  label=""  placeholder="\{Label.CPQEndDateOfPromotionPlaceholder}"  type="datetime"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element0block_element2" class="slds-col    slds-p-left_small  slds-p-right_small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFFFFF;      
+         " >
+    <vlocity_cmt-block data-style-id="state1element0block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element2block_element0" class="slds-col   slds-border_top slds-p-top_small  slds-p-bottom_small slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state1element0block_element2block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element2block_element0block_element0" class="slds-col  cpq__tilelistview-body-seedetailsbutton slds-p-top_x-small slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-action data-style-id="state1element0block_element2block_element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="neutral"  display-as-button="false"  hide-action-icon="true"  state-action='\{"cardName":"cpqPromotionDetailView","cardNode":"{record}","displayName":"{Label.CPQSeeDetailsLabel}","flyoutLwc":"cpqPromotionDetailView","flyoutParams":{"cartId":"{Parent.cartId}"},"flyoutType":"childCard","hasExtraParams":true,"id":"flex-action-1624304416977","openFlyoutIn":"Modal","openUrlIn":"Current Window","type":"Flyout","vlocityIcon":"standard-default"}'  theme="slds" ><div slot="flyout">  <c-cf-cpq-promotion-detail-view data-style-id="state1element0block_element2block_element0block_element0_child"  card-node="\{record}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"cartId":"{Parent.cartId}"}'  ></c-cf-cpq-promotion-detail-view></div></vlocity_cmt-action>
+    </div><div data-style-id="state1element0block_element2block_element0block_element1" class="slds-col  slds-text-align_right  slds-size_7-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"actions.addtocart","hasMergeField":false,"id":"state-new-condition-17","operator":"!=","type":"custom","value":"undefined"},{"field":"category","hasMergeField":false,"id":"state-new-condition-24","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disqualified"}],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-action data-style-id="state1element0block_element2block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="outline-brand"  data-conditions='\{"group":[{"field":"actions.addtocart","hasMergeField":false,"id":"state-new-condition-17","operator":"!=","type":"custom","value":"undefined"},{"field":"category","hasMergeField":false,"id":"state-new-condition-24","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disqualified"}],"id":"state-condition-object","isParent":true}'  display-as-button="true"  hide-action-icon="true"  state-action='\{"displayName":"{Label.AddToCart}","eventName":"cpq_{recordId}","extraParams":{"actionObjName":"addtocart","cartId":"{Parent.cartId}","getInputMethod":"prepareAddPromotionToCartInput","handleResponseMethod":"addPromotionToCartResponseHandler","input":"{}","methodName":"addToCartPromoItem","record":"{record}","remoteMethod":"postCartsPromoItems","responseEventName":"cpq_addpromo_response"},"hasExtraParams":true,"id":"flex-action-1625931714111","message":"cpq_ui_event","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"}'  theme="slds"  ></vlocity_cmt-action>
+        </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element0block_element2block_element1" class="slds-col   slds-p-around_x-small slds-size_12-of-12 " data-rindex={rindex} style="" >
+    <vlocity_cmt-block data-style-id="state1element0block_element2block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element2block_element1block_element0" class="slds-col  cpq__promo-error-icon slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-icon data-style-id="state1element0block_element2block_element1block_element0_child"   record={record}  card={card}  extraclass="slds-icon_container slds-icon__svg--default "  icon-name="utility:warning"  icon-type="Salesforce SVG"  imgsrc=""  size="xx-small"  variant="warning"  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state1element0block_element2block_element1block_element1" class="slds-col  cpq__promo-error-msg slds-size_11-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element2block_element1block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Bmessages%5B0%5D.message%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-m-bottom_x-small" style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state0element0" class="slds-col   cpq__listview-promotion slds-box slds-p-around_none slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-border_bottom slds-p-top_x-small slds-p-left_small cpq__tilelistview-header-promotionheading slds-size_12-of-12  " data-rindex={rindex} style="     border-bottom: #1589EE 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3E%7BLabel.CPQPromotion%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col    slds-p-around_x-small slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="slds-col  slds-p-around_xxx-small slds-p-right_small slds-m-bottom_medium cpq__tilelistview-body-promotionname cpqpromotionlistview-name slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element0_child"   record={record}  card={card}  merge-field="%3Ch3%3E%7BName%7D%3C/h3%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1" class="slds-col   slds-p-around_xxx-small cpqpromotionlistview-description slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element1block_element0" class="slds-col  cpq__tilelistview-body-promotiondescription slds-m-bottom_small  slds-p-right_small slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element1block_element0_child"   record={record}  card={card}  field-name="description"  label=""  placeholder="\{Label.CPQDescriptionOfPromotionPlaceholder}"  type="text"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1block_element1" class="slds-col  slds-text-align_left cpq__tilelistview-body-seedetailsbutton   cpq-promotionlistview-seedetails slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-action data-style-id="state0element0block_element1block_element1block_element1_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="outline-brand"  display-as-button="false"  hide-action-icon="true"  state-action='\{"cardName":"cpqPromotionDetailView","cardNode":"{record}","displayName":"{Label.CPQSeeDetailsLabel}","flyoutLwc":"cpqPromotionDetailView","flyoutParams":{"cartId":"{Parent.cartId}"},"flyoutType":"childCard","hasExtraParams":true,"id":"flex-action-1624304412609","openFlyoutIn":"Modal","openUrlIn":"Current Window","type":"Flyout","vlocityIcon":"standard-default"}'  theme="slds" ><div slot="flyout">  <c-cf-cpq-promotion-detail-view data-style-id="state0element0block_element1block_element1block_element1_child"  card-node="\{record}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"cartId":"{Parent.cartId}"}'  ></c-cf-cpq-promotion-detail-view></div></vlocity_cmt-action>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element1block_element2" class="slds-col    cpqpromotionlistview-dates slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element2block_element0" class="slds-col   slds-p-right_xx-small  slds-p-top_xxx-small slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element2block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element2block_element0block_element0" class="slds-col  cpq__listview-body-promotion-dates-label slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element2block_element0block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQOfferStartsLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1block_element2block_element0block_element1" class="slds-col  cpq__listview-body-promotion-dates slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element2block_element0block_element1_child"   record={record}  card={card}  field-name="vlocity_cmt__effectivestartdate__c"  format="M/D/YYYY"  label=""  mask=""  placeholder="\{Label.CPQStartDateOfPromotionPlaceholder}"  type="datetime"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element1block_element2block_element1" class="slds-col   slds-p-top_xxx-small slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element2block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element2block_element1block_element0" class="slds-col  slds-text-align_left cpq__listview-body-promotion-dates-label slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element2block_element1block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQOfferEndsLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1block_element2block_element1block_element1" class="slds-col  slds-text-align_left cpq__listview-body-promotion-dates slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element2block_element1block_element1_child"   record={record}  card={card}  field-name="vlocity_cmt__effectiveenddate__c"  format="M/D/YYYY"  label=""  mask=""  placeholder="\{Label.CPQEndDateOfPromotionPlaceholder}"  type="datetime"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element1block_element3" class="slds-col   slds-p-around_xx-small  cpqpromotionlistview-addtocart slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element3_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element3block_element0" class="slds-col  slds-text-align_right cpq-promotion-listview-addtocartsbutton-mobilestate  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"actions.addtocart","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"undefined"},{"field":"category","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disqualified"}],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-action data-style-id="state0element0block_element1block_element3block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="outline-brand"  data-conditions='\{"group":[{"field":"actions.addtocart","hasMergeField":false,"id":"state-new-condition-0","operator":"!=","type":"custom","value":"undefined"},{"field":"category","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disqualified"}],"id":"state-condition-object","isParent":true}'  display-as-button="true"  hide-action-icon="true"  state-action='\{"displayName":"{Label.AddToCart}","eventName":"cpq_{recordId}","extraParams":{"actionObjName":"addtocart","cartId":"{Parent.cartId}","getInputMethod":"prepareAddPromotionToCartInput","handleResponseMethod":"addPromotionToCartResponseHandler","input":"{}","methodName":"addToCartPromoItem","record":"{record}","remoteMethod":"postCartsPromoItems","responseEventName":"cpq_addpromo_response"},"hasExtraParams":true,"id":"flex-action-1625931703220","message":"cpq_ui_event","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"}'  theme="slds"  ></vlocity_cmt-action>
+        </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element0block_element1block_element4" class="slds-col   slds-p-around_x-small slds-size_12-of-12 condition-element" data-rindex={rindex} style=""  data-conditions='\{"group":[{"field":"category","hasMergeField":false,"id":"state-new-condition-0","operator":"==","type":"custom","value":"Disqualified"},{"field":"messages[0]","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"},{"field":"messages[0].message","hasMergeField":false,"id":"state-new-condition-17","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element0block_element1block_element4_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"category","hasMergeField":false,"id":"state-new-condition-0","operator":"==","type":"custom","value":"Disqualified"},{"field":"messages[0]","hasMergeField":false,"id":"state-new-condition-7","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"},{"field":"messages[0].message","hasMergeField":false,"id":"state-new-condition-17","logicalOperator":"&&","operator":"!=","type":"custom","value":"undefined"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element4block_element0" class="slds-col  cpq__promo-error-icon slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-icon data-style-id="state0element0block_element1block_element4block_element0_child"   record={record}  card={card}  extraclass="slds-icon_container slds-icon__svg--default "  icon-name="utility:warning"  icon-type="Salesforce SVG"  imgsrc=""  size="xx-small"  variant="warning"  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state0element0block_element1block_element4block_element1" class="slds-col  cpq__promo-error-msg slds-size_11-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1block_element4block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Bmessages%5B0%5D.message%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-m-bottom_x-small slds-m-right_x-small  " style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state1element0" class="slds-col   cpq__tilelistview-promotion slds-box slds-p-around_none slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state1element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element0" class="slds-col  slds-border_bottom slds-p-top_x-small slds-p-left_small cpq__tilelistview-header-promotionheading slds-size_12-of-12  " data-rindex={rindex} style="     border-bottom: #1589EE 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3E%7BLabel.CPQPromotion%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1" class="slds-col    slds-p-around_small slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFFFFF;      
+     height:288px;    " >
+    <vlocity_cmt-block data-style-id="state1element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element1block_element0" class="slds-col  cpq__tilelistview-body-promotionname slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element0_child"   record={record}  card={card}  merge-field="%3Ch3%3E%7BName%7D%3C/h3%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1block_element1" class="slds-col  cpq__tilelistview-body-promotiondescription slds-m-top_medium slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element1_child"   record={record}  card={card}  field-name="description"  label=""  placeholder="\{Label.CPQDescriptionOfPromotionPlaceholder}"  styles='\{"value":{"color":"","fontFamily":"","fontSize":""}}'  type="text"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1block_element2" class="slds-col   slds-m-top_large  slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         
+" >
+    <vlocity_cmt-block data-style-id="state1element0block_element1block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element1block_element2block_element0" class="slds-col  cpq__tileview-body-promotion-dates-label slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element2block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQOfferStartsLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1block_element2block_element1" class="slds-col  cpq__tileview-body-promotion-dates    slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element2block_element1_child"   record={record}  card={card}  field-name="vlocity_cmt__effectivestartdate__c"  format="M/D/YYYY"  label=""  placeholder="\{Label.CPQStartDateOfPromotionPlaceholder}"  type="datetime"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element0block_element1block_element3" class="slds-col   slds-m-top_small slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         
+" >
+    <vlocity_cmt-block data-style-id="state1element0block_element1block_element3_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element1block_element3block_element0" class="slds-col  cpq__tileview-body-promotion-dates-label slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element3block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQOfferEndsLabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state1element0block_element1block_element3block_element1" class="slds-col  cpq__tileview-body-promotion-dates   slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element1block_element3block_element1_child"   record={record}  card={card}  field-name="vlocity_cmt__effectiveenddate__c"  format="M/D/YYYY"  label=""  placeholder="\{Label.CPQEndDateOfPromotionPlaceholder}"  type="datetime"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element0block_element2" class="slds-col    slds-p-left_small  slds-p-right_small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFFFFF;      
+         " >
+    <vlocity_cmt-block data-style-id="state1element0block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element2block_element0" class="slds-col   slds-border_top slds-p-top_small  slds-p-bottom_small slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state1element0block_element2block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element2block_element0block_element0" class="slds-col  cpq__tilelistview-body-seedetailsbutton slds-p-top_x-small slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-action data-style-id="state1element0block_element2block_element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="neutral"  display-as-button="false"  hide-action-icon="true"  state-action='\{"cardName":"cpqPromotionDetailView","cardNode":"{record}","displayName":"{Label.CPQSeeDetailsLabel}","flyoutLwc":"cpqPromotionDetailView","flyoutParams":{"cartId":"{Parent.cartId}"},"flyoutType":"childCard","hasExtraParams":true,"id":"flex-action-1624304416977","openFlyoutIn":"Modal","openUrlIn":"Current Window","type":"Flyout","vlocityIcon":"standard-default"}'  theme="slds" ><div slot="flyout">  <c-cf-cpq-promotion-detail-view data-style-id="state1element0block_element2block_element0block_element0_child"  card-node="\{record}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"cartId":"{Parent.cartId}"}'  ></c-cf-cpq-promotion-detail-view></div></vlocity_cmt-action>
+    </div><div data-style-id="state1element0block_element2block_element0block_element1" class="slds-col  slds-text-align_right  slds-size_7-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"actions.addtocart","hasMergeField":false,"id":"state-new-condition-17","operator":"!=","type":"custom","value":"undefined"},{"field":"category","hasMergeField":false,"id":"state-new-condition-24","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disqualified"}],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-action data-style-id="state1element0block_element2block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="outline-brand"  data-conditions='\{"group":[{"field":"actions.addtocart","hasMergeField":false,"id":"state-new-condition-17","operator":"!=","type":"custom","value":"undefined"},{"field":"category","hasMergeField":false,"id":"state-new-condition-24","logicalOperator":"&&","operator":"!=","type":"custom","value":"Disqualified"}],"id":"state-condition-object","isParent":true}'  display-as-button="true"  hide-action-icon="true"  state-action='\{"displayName":"{Label.AddToCart}","eventName":"cpq_{recordId}","extraParams":{"actionObjName":"addtocart","cartId":"{Parent.cartId}","getInputMethod":"prepareAddPromotionToCartInput","handleResponseMethod":"addPromotionToCartResponseHandler","input":"{}","methodName":"addToCartPromoItem","record":"{record}","remoteMethod":"postCartsPromoItems","responseEventName":"cpq_addpromo_response"},"hasExtraParams":true,"id":"flex-action-1625931714111","message":"cpq_ui_event","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"}'  theme="slds"  ></vlocity_cmt-action>
+        </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element0block_element2block_element1" class="slds-col   slds-p-around_x-small slds-size_12-of-12 " data-rindex={rindex} style="" >
+    <vlocity_cmt-block data-style-id="state1element0block_element2block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element2block_element1block_element0" class="slds-col  cpq__promo-error-icon slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-icon data-style-id="state1element0block_element2block_element1block_element0_child"   record={record}  card={card}  extraclass="slds-icon_container slds-icon__svg--default "  icon-name="utility:warning"  icon-type="Salesforce SVG"  imgsrc=""  size="xx-small"  variant="warning"  theme="slds"  ></vlocity_cmt-flex-icon>
+      </div><div data-style-id="state1element0block_element2block_element1block_element1" class="slds-col  cpq__promo-error-msg slds-size_11-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-output-field data-style-id="state1element0block_element2block_element1block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Bmessages%5B0%5D.message%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

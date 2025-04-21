@@ -1,0 +1,97 @@
+/* Salesforce Colors: */
+/* usage
+div {
+	@include font-size(14px);
+}
+*/
+.square {
+  fill: #a7b3bc;
+}
+
+.needle {
+  fill: #333333;
+}
+
+.low .square1 {
+  fill: #95e993;
+}
+
+.low .square2 {
+  fill: #2fb338;
+}
+
+.low .shake {
+  animation: shake-low .5s;
+  animation-iteration-count: infinite;
+}
+
+.medium .square1 {
+  fill: #95e993;
+}
+
+.medium .square2 {
+  fill: #95e993;
+}
+
+.medium .square3 {
+  fill: #2fb338;
+}
+
+.medium .needle {
+  transform: translate(-203.891px, -4.381px);
+}
+
+.medium .shake {
+  animation: shake-medium .5s;
+  animation-iteration-count: infinite;
+}
+
+.high .square1,
+.high .square2,
+.high .square3,
+.high .square4 {
+  fill: #95e993;
+}
+
+.high .square5 {
+  fill: #2fb338;
+}
+
+.high .needle {
+  transform: translate(-418.351px, -3.668px);
+}
+
+.high .shake {
+  animation: shake-high .5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake-low {
+  40% {
+    transform: matrix(1, -0.026, 0.026, 1, -13.044, 11.555);
+  }
+
+  60% {
+    transform: matrix(1, 0.026, -0.026, 1, 13.3, -11.231);
+  }
+}
+
+@keyframes shake-medium {
+  40% {
+    transform: matrix(1, -0.017, 0.017, 1, -212.644, 6.844);
+  }
+
+  60% {
+    transform: matrix(0.999, 0.035, -0.035, 0.999, -185.812, -26.375);
+  }
+}
+
+@keyframes shake-high {
+  40% {
+    transform: matrix(0.999, -0.035, 0.035, 0.999, -435.523, 26.417);
+  }
+
+  60% {
+    transform: matrix(0.999, 0.035, -0.035, 0.999, -400.143, -33.147);
+  }
+}

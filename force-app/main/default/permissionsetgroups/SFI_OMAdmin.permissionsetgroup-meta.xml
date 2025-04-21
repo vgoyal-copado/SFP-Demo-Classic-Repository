@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Groups permission sets based on OM admin user job functions.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>SFI OM Admin</label>
+    <permissionSets>XOMAccessOMPlusAdministrationRun</permissionSets>
+    <permissionSets>XOMAccessOMPlusUIRun</permissionSets>
+    <permissionSets>XOMExecuteAdminJobsRun</permissionSets>
+    <permissionSets>XOMExecuteHealthCheckRun</permissionSets>
+    <permissionSets>XOMExecuteQueryRun</permissionSets>
+    <permissionSets>XOMManageEncryptionKeysDesign</permissionSets>
+    <permissionSets>XOMManageExternalCredentialsDesign</permissionSets>
+    <permissionSets>XOMSynchroniseCatalogueRun</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

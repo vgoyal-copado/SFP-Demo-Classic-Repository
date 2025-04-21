@@ -1,0 +1,235 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap  slds-m-bottom_x-small cpq__catalog-block_no-padding" style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_x-small cpq__catalog-view_mobile slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-4","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-4","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   cpq__category-button_selection slds-size_12-of-12  " data-rindex={rindex} style="      
+       max-height:41px;  " ><vlocity_cmt-action data-style-id="state0element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="neutral"  display-as-button="true"  re-render-flyout="true"  state-action='\{"displayName":"{Label.CPQSelectCategory}","eventName":"setValues","extraParams":{"value":"true"},"fieldValues":[{"fieldName":"Session.cataloglayover","fieldValue":"true"}],"hasExtraParams":true,"id":"flex-action-1617261482676","message":"catalog_mobile_select","openUrlIn":"New Tab/Window","subType":"PubSub","type":"cardAction","vlocityIcon":"utility:notebook"}'  styles='\{"label":{"fontSize":"13px","textAlign":"left","textDecoration":""}}'  theme="slds"   onselectcards={updateSelectedCards} onsetvalue={updateAction} ></vlocity_cmt-action>
+        </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1" class="slds-col   slds-card slds-p-around_x-small cpq__catalog-view_mobile-hidden cpq__catalog-block_border slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="slds-col   slds-card cpq_catalog-layover_mobile slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0block_element0" class="slds-col   slds-p-around_x-small cpq__catalog-header_mobile cpq__catalog-view_mobile slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-54","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element1block_element0block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-54","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0block_element0block_element0" class="slds-col  cpq__catalog-button_done cpq_catalog-button_done-position_mobile slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-action data-style-id="state0element1block_element0block_element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="brand"  display-as-button="true"  hide-action-icon="true"  state-action='\{"displayName":"{Label.CPQDone}","eventName":"setValues","extraParams":{"value":"false"},"fieldValues":[{"fieldName":"Session.cataloglayover","fieldValue":"false"}],"hasExtraParams":true,"id":"flex-action-1617261370017","message":"catalog_mobile_done","openUrlIn":"Current Window","subType":"PubSub","type":"cardAction","vlocityIcon":"standard-default"}'  theme="slds"   onselectcards={updateSelectedCards} onsetvalue={updateAction} ></vlocity_cmt-action>
+        </div><div data-style-id="state0element1block_element0block_element0block_element1" class="slds-col  cpq__catalog-heading_mobile slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element1block_element0block_element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%2018pt;%22%3E%7BLabel.CPQBrowseCategories%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1block_element0block_element1" class="slds-col   slds-p-around_x-small cpq__catalog-item-wrapper_mobile cpq__catalog-block_no-padding slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1block_element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0block_element1block_element0" class="slds-col  slds-scrollable cpq__catalog-item cpq__catalog-navigation-header cpq__catalog-back-label cpq_catalog-state_mobile cpq__catalog-view_mobile-hidden slds-size_12-of-12 " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-custom-lwc-wrapper class="" element-name="vlocity_cmt-tree-list-selector" property='\{"channel":"cpq_{recordId}","defaultRootLevelSelectionId":"{Session.default_id}","extraFields":"{Parent.view}","items":"{response}","registeredPubsubChannel":"cpq_{recordId}"}' data-rindex={rindex} records={records} record={record} record-id={recordId} card={card} ><vlocity_cmt-tree-list-selector   child-items-path="childCatalogs.records"  custom-event-name="cpq_catalog_item_select_browse"  highlight-without-selection-on-load="true"  select-root-level-default-on-load="true"  theme="slds" ></vlocity_cmt-tree-list-selector></vlocity_cmt-custom-lwc-wrapper>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-bottom_x-small cpq__catalog-block_no-padding" style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state1element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-4","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state1element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-4","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element0" class="slds-col   cpq__category-button_selection slds-size_12-of-12  " data-rindex={rindex} style="      
+       max-height:41px;  " ><vlocity_cmt-action data-style-id="state1element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="neutral"  display-as-button="true"  re-render-flyout="true"  state-action='\{"displayName":"{Label.CPQSelectCategory}","eventName":"setValues","extraParams":{"value":"true"},"fieldValues":[{"fieldName":"Session.cataloglayover","fieldValue":"true"}],"hasExtraParams":true,"id":"flex-action-1619509365133","message":"catalog_mobile_select","openUrlIn":"New Tab/Window","subType":"PubSub","type":"cardAction","vlocityIcon":"utility:notebook"}'  styles='\{"label":{"fontSize":"13px","textAlign":"left","textDecoration":""}}'  theme="slds"   onselectcards={updateSelectedCards} onsetvalue={updateAction} ></vlocity_cmt-action>
+        </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element1" class="slds-col   slds-p-around_x-small cpq__catalog-block_no-padding slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state1element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element0" class="slds-col   slds-p-around_x-small cpq__catalog-view_desktop cpq__catalog-block_no-padding slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-10","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state1element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-10","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element0block_element0" class="slds-col   slds-p-around_x-small cpq__catalog-block_reverse-grid cpq__catalog-header_cart-phase_padding slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state1element1block_element0block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element0block_element0block_element0" class="slds-col  cpq__catalog-button_done cpq_catalog-button_done-position slds-large-size_1-of-12  slds-medium-size_1-of-12  slds-small-size_1-of-12  slds-size_1-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-action data-style-id="state1element1block_element0block_element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="brand"  display-as-button="true"  hide-action-icon="true"  state-action='\{"displayName":"{Label.CPQDone}","eventName":"setValues","extraParams":{"value":"false"},"fieldValues":[{"fieldName":"Session.cataloglayover","fieldValue":"false"}],"hasExtraParams":true,"id":"flex-action-1618493263096","message":"catalog_mobile_done","openUrlIn":"Current Window","subType":"PubSub","type":"cardAction","vlocityIcon":"standard-default"}'  theme="slds"   onselectcards={updateSelectedCards} onsetvalue={updateAction} ></vlocity_cmt-action>
+        </div><div data-style-id="state1element1block_element0block_element0block_element1" class="slds-col  cpq__catalog-heading_cart slds-col_bump-right slds-large-size_11-of-12  slds-medium-size_11-of-12  slds-small-size_11-of-12  slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element1block_element0block_element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%2018pt;%22%3E%7BLabel.CPQSelectCategory%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element1block_element1" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-23","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state1element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-23","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element1block_element0" class="slds-col   slds-card cpq_catalog-layover_mobile slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state1element1block_element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element1block_element0block_element0" class="slds-col   slds-p-around_x-small cpq__catalog-header_mobile cpq__catalog-view_mobile slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-54","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state1element1block_element1block_element0block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-54","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element1block_element0block_element0block_element0" class="slds-col  cpq__catalog-button_done cpq_catalog-button_done-position_mobile slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-action data-style-id="state1element1block_element1block_element0block_element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="brand"  display-as-button="true"  hide-action-icon="true"  state-action='\{"displayName":"{Label.CPQDone}","eventName":"setValues","extraParams":{"value":"false"},"fieldValues":[{"fieldName":"Session.cataloglayover","fieldValue":"false"}],"hasExtraParams":true,"id":"flex-action-1617261387905","message":"catalog_mobile_done","openUrlIn":"Current Window","subType":"PubSub","type":"cardAction","vlocityIcon":"standard-default"}'  theme="slds"   onselectcards={updateSelectedCards} onsetvalue={updateAction} ></vlocity_cmt-action>
+        </div><div data-style-id="state1element1block_element1block_element0block_element0block_element1" class="slds-col  cpq__catalog-heading_mobile slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element1block_element1block_element0block_element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%2018pt;%22%3E%7BLabel.CPQBrowseCategories%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element1block_element1block_element0block_element1" class="slds-col   slds-p-around_x-small cpq__catalog-item-wrapper_mobile cpq__catalog-block_no-padding slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state1element1block_element1block_element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element1block_element0block_element1block_element0" class="slds-col  slds-scrollable cpq__catalog-item cpq__catalog-navigation-header cpq__catalog-back-label cpq_catalog-state_mobile cpq__catalog-view_mobile-hidden slds-size_12-of-12 " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-custom-lwc-wrapper class="" element-name="vlocity_cmt-tree-list-selector" property='\{"channel":"cpq_{recordId}","defaultRootLevelSelectionId":"{Session.default_id}","extraFields":"{Parent.view}","items":"{response}","registeredPubsubChannel":"cpq_{recordId}"}' data-rindex={rindex} records={records} record={record} record-id={recordId} card={card} ><vlocity_cmt-tree-list-selector   child-items-path="childCatalogs.records"  custom-event-name="cpq_catalog_item_select_cart"  highlight-without-selection-on-load="true"  select-root-level-default-on-load="true"  theme="slds" ></vlocity_cmt-tree-list-selector></vlocity_cmt-custom-lwc-wrapper>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap  slds-m-bottom_x-small cpq__catalog-block_no-padding" style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_x-small cpq__catalog-view_mobile slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-4","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-4","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   cpq__category-button_selection slds-size_12-of-12  " data-rindex={rindex} style="      
+       max-height:41px;  " ><vlocity_cmt-action data-style-id="state0element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="neutral"  display-as-button="true"  re-render-flyout="true"  state-action='\{"displayName":"{Label.CPQSelectCategory}","eventName":"setValues","extraParams":{"value":"true"},"fieldValues":[{"fieldName":"Session.cataloglayover","fieldValue":"true"}],"hasExtraParams":true,"id":"flex-action-1617261482676","message":"catalog_mobile_select","openUrlIn":"New Tab/Window","subType":"PubSub","type":"cardAction","vlocityIcon":"utility:notebook"}'  styles='\{"label":{"fontSize":"13px","textAlign":"left","textDecoration":""}}'  theme="slds"   onselectcards={updateSelectedCards} onsetvalue={updateAction} ></vlocity_cmt-action>
+        </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1" class="slds-col   slds-card slds-p-around_x-small cpq__catalog-view_mobile-hidden cpq__catalog-block_border slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="slds-col   slds-card cpq_catalog-layover_mobile slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0block_element0" class="slds-col   slds-p-around_x-small cpq__catalog-header_mobile cpq__catalog-view_mobile slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-54","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element1block_element0block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-54","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0block_element0block_element0" class="slds-col  cpq__catalog-button_done cpq_catalog-button_done-position_mobile slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-action data-style-id="state0element1block_element0block_element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="brand"  display-as-button="true"  hide-action-icon="true"  state-action='\{"displayName":"{Label.CPQDone}","eventName":"setValues","extraParams":{"value":"false"},"fieldValues":[{"fieldName":"Session.cataloglayover","fieldValue":"false"}],"hasExtraParams":true,"id":"flex-action-1617261370017","message":"catalog_mobile_done","openUrlIn":"Current Window","subType":"PubSub","type":"cardAction","vlocityIcon":"standard-default"}'  theme="slds"   onselectcards={updateSelectedCards} onsetvalue={updateAction} ></vlocity_cmt-action>
+        </div><div data-style-id="state0element1block_element0block_element0block_element1" class="slds-col  cpq__catalog-heading_mobile slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element1block_element0block_element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%2018pt;%22%3E%7BLabel.CPQBrowseCategories%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1block_element0block_element1" class="slds-col   slds-p-around_x-small cpq__catalog-item-wrapper_mobile cpq__catalog-block_no-padding slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1block_element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0block_element1block_element0" class="slds-col  slds-scrollable cpq__catalog-item cpq__catalog-navigation-header cpq__catalog-back-label cpq_catalog-state_mobile cpq__catalog-view_mobile-hidden slds-size_12-of-12 " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-custom-lwc-wrapper class="" element-name="vlocity_cmt-tree-list-selector" property='\{"channel":"cpq_{recordId}","defaultRootLevelSelectionId":"{Session.default_id}","extraFields":"{Parent.view}","items":"{response}","registeredPubsubChannel":"cpq_{recordId}"}' data-rindex={rindex} records={records} record={record} record-id={recordId} card={card} ><vlocity_cmt-tree-list-selector   child-items-path="childCatalogs.records"  custom-event-name="cpq_catalog_item_select_browse"  highlight-without-selection-on-load="true"  select-root-level-default-on-load="true"  theme="slds" ></vlocity_cmt-tree-list-selector></vlocity_cmt-custom-lwc-wrapper>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-bottom_x-small cpq__catalog-block_no-padding" style="     : #ccc 1px solid; 
+         ">
+          <div data-style-id="state1element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-4","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state1element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-4","operator":"==","type":"custom","value":"false"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element0block_element0" class="slds-col   cpq__category-button_selection slds-size_12-of-12  " data-rindex={rindex} style="      
+       max-height:41px;  " ><vlocity_cmt-action data-style-id="state1element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="neutral"  display-as-button="true"  re-render-flyout="true"  state-action='\{"displayName":"{Label.CPQSelectCategory}","eventName":"setValues","extraParams":{"value":"true"},"fieldValues":[{"fieldName":"Session.cataloglayover","fieldValue":"true"}],"hasExtraParams":true,"id":"flex-action-1619509365133","message":"catalog_mobile_select","openUrlIn":"New Tab/Window","subType":"PubSub","type":"cardAction","vlocityIcon":"utility:notebook"}'  styles='\{"label":{"fontSize":"13px","textAlign":"left","textDecoration":""}}'  theme="slds"   onselectcards={updateSelectedCards} onsetvalue={updateAction} ></vlocity_cmt-action>
+        </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element1" class="slds-col   slds-p-around_x-small cpq__catalog-block_no-padding slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state1element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element0" class="slds-col   slds-p-around_x-small cpq__catalog-view_desktop cpq__catalog-block_no-padding slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-10","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state1element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-10","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element0block_element0" class="slds-col   slds-p-around_x-small cpq__catalog-block_reverse-grid cpq__catalog-header_cart-phase_padding slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state1element1block_element0block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element0block_element0block_element0" class="slds-col  cpq__catalog-button_done cpq_catalog-button_done-position slds-large-size_1-of-12  slds-medium-size_1-of-12  slds-small-size_1-of-12  slds-size_1-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-action data-style-id="state1element1block_element0block_element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="brand"  display-as-button="true"  hide-action-icon="true"  state-action='\{"displayName":"{Label.CPQDone}","eventName":"setValues","extraParams":{"value":"false"},"fieldValues":[{"fieldName":"Session.cataloglayover","fieldValue":"false"}],"hasExtraParams":true,"id":"flex-action-1618493263096","message":"catalog_mobile_done","openUrlIn":"Current Window","subType":"PubSub","type":"cardAction","vlocityIcon":"standard-default"}'  theme="slds"   onselectcards={updateSelectedCards} onsetvalue={updateAction} ></vlocity_cmt-action>
+        </div><div data-style-id="state1element1block_element0block_element0block_element1" class="slds-col  cpq__catalog-heading_cart slds-col_bump-right slds-large-size_11-of-12  slds-medium-size_11-of-12  slds-small-size_11-of-12  slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element1block_element0block_element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%2018pt;%22%3E%7BLabel.CPQSelectCategory%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element1block_element1" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-23","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state1element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-23","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element1block_element0" class="slds-col   slds-card cpq_catalog-layover_mobile slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state1element1block_element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element1block_element0block_element0" class="slds-col   slds-p-around_x-small cpq__catalog-header_mobile cpq__catalog-view_mobile slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-54","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state1element1block_element1block_element0block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"Session.cataloglayover","id":"state-new-condition-54","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element1block_element0block_element0block_element0" class="slds-col  cpq__catalog-button_done cpq_catalog-button_done-position_mobile slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-action data-style-id="state1element1block_element1block_element0block_element0block_element0_child"  tracking-obj={_childCardTrackingObj}   state-obj={record}  record={record}  card={card}  button-variant="brand"  display-as-button="true"  hide-action-icon="true"  state-action='\{"displayName":"{Label.CPQDone}","eventName":"setValues","extraParams":{"value":"false"},"fieldValues":[{"fieldName":"Session.cataloglayover","fieldValue":"false"}],"hasExtraParams":true,"id":"flex-action-1617261387905","message":"catalog_mobile_done","openUrlIn":"Current Window","subType":"PubSub","type":"cardAction","vlocityIcon":"standard-default"}'  theme="slds"   onselectcards={updateSelectedCards} onsetvalue={updateAction} ></vlocity_cmt-action>
+        </div><div data-style-id="state1element1block_element1block_element0block_element0block_element1" class="slds-col  cpq__catalog-heading_mobile slds-size_11-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state1element1block_element1block_element0block_element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%2018pt;%22%3E%7BLabel.CPQBrowseCategories%7D%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state1element1block_element1block_element0block_element1" class="slds-col   slds-p-around_x-small cpq__catalog-item-wrapper_mobile cpq__catalog-block_no-padding slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state1element1block_element1block_element0block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state1element1block_element1block_element0block_element1block_element0" class="slds-col  slds-scrollable cpq__catalog-item cpq__catalog-navigation-header cpq__catalog-back-label cpq_catalog-state_mobile cpq__catalog-view_mobile-hidden slds-size_12-of-12 " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-custom-lwc-wrapper class="" element-name="vlocity_cmt-tree-list-selector" property='\{"channel":"cpq_{recordId}","defaultRootLevelSelectionId":"{Session.default_id}","extraFields":"{Parent.view}","items":"{response}","registeredPubsubChannel":"cpq_{recordId}"}' data-rindex={rindex} records={records} record={record} record-id={recordId} card={card} ><vlocity_cmt-tree-list-selector   child-items-path="childCatalogs.records"  custom-event-name="cpq_catalog_item_select_cart"  highlight-without-selection-on-load="true"  select-root-level-default-on-load="true"  theme="slds" ></vlocity_cmt-tree-list-selector></vlocity_cmt-custom-lwc-wrapper>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

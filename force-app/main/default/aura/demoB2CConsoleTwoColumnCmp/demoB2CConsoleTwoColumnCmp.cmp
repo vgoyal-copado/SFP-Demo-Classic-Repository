@@ -1,0 +1,20 @@
+<aura:component implements="lightning:recordHomeTemplate"
+    description="Two column layout with a fixed left column width of 300px and main column width to fill the rest"
+    access="global">
+    <aura:attribute name="left" type="Aura.Component[]" access="global" />
+    <aura:attribute name="main" type="Aura.Component[]" access="global" />
+    <div style="margin: -.75rem;">
+        <lightning:layout >
+            <lightning:layoutItem flexibility="auto, no-grow">
+                <section style="width: 300px; max-width: 350px;">
+                    {!v.left}
+                </section>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto">
+                <section>
+                    {!v.main}
+                </section>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

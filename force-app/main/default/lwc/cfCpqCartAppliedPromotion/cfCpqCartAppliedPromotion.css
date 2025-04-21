@@ -1,0 +1,13 @@
+.cpq__cart-applied-promo_container{
+    background-color: #FAFAF9;
+}
+.cpq__cart-applied-promotions_empty-text {
+    text-align: center;
+}
+
+@media screen and (max-width: 48rem){
+    .cpq__cart-applied-promotions_empty-text {
+        text-align: left;
+        padding-left: 16px;
+    }
+}

@@ -1,0 +1,152 @@
+/* Offer Container */
+.demo-offer-tiles {
+  display: flex;
+  flex-flow: row wrap;
+
+  align-content: start;
+  justify-content: start;
+  position: relative;
+}
+
+/* Offer Tiles */
+.demo-offer-tile {
+  flex: 0 1 auto;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /*max-width: 25%;*/
+  position: relative;
+}
+
+/* Badges */
+.badge-header {
+  position: absolute;
+  width: 100%;
+}
+
+/* Recommend Badge */
+.recommend-icon {
+  height: 20px;
+  text-align: center;
+}
+
+.recommend-icon .slds-badge {
+  background-color: #EF611F;
+  color: #fff;
+  font-size: 11px;
+  font-size: 0.6875rem;
+  padding: 5px 25px;
+  position: relative;
+  top: -13px;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+/* Selection Badge */
+.selection-icon {
+  position: relative;
+  right: -10px;
+  text-align: right;
+  top: -30px;
+}
+
+.selection-icon .slds-icon-action-following {
+  background-color: var(--lwc-colorBrand);
+}
+
+.selection-icon .slds-icon-action-following .slds-icon {
+  height: 14px;
+  width: 14px;
+}
+
+/* Offer Card */
+.demo-offer-card {
+  width: 275px;
+  background-color: #fff;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+}
+.demo-offer-card:hover {
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+/* Image */
+.offer-header {
+  flex: 1;
+  height: 120px;
+  padding: 13px 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offer-header .image {
+  flex: 1;
+  min-height: 100%;
+  max-height: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.offer-header .image img {
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.offer-header .product-name p {
+  color: var(--lwc-colorBrand);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* Offer Card Body */
+.offer-body {
+  height: 175px;
+  padding: 0 20px;
+  overflow: auto;
+}
+
+.offer-body hr {
+  border-top: 1px solid #E6E6E6;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.features {
+  margin-top: 10px;
+}
+
+/* Offer Footer */
+.offer-footer {
+  margin: 0 auto;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  border-radius: inherit;
+}
+
+.offer-pricing {
+  height: 40px;
+}
+
+.offer-pricing .pricing {
+  color: #343a40;
+  font-weight: 700;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+.offer-buttons {
+  height: 70px;
+}
+
+/* Cart Button */
+.offer-buttons button {
+  margin-top: 20px;
+  width: 50%;
+}

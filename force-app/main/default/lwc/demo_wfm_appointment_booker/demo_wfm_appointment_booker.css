@@ -1,0 +1,26 @@
+/* Appointment Container */
+.demo-appointment-tiles {
+    display: flex;
+    flex-flow: column;
+}
+
+/* Day Container */
+.demo-appointment-tiles .day {
+
+    flex: 1 0 auto;
+}
+
+/* Timeslot Container */
+.demo-appointment-tiles .slots {
+
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+}
+
+/* Timeslot */
+.demo-appointment-tiles .slot {
+
+    min-width: 25%;
+    padding: 0.5rem;
+}

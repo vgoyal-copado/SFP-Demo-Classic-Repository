@@ -1,0 +1,52 @@
+.cpq_multi_site_group_template_label{
+font-size: 13px;
+line-height: 20px;
+}
+.cpq_multi_site_group_template_group_name{
+font-weight: bold;
+font-size: 18px;
+line-height: 22px;
+color: #000000;
+}
+.cpq_multi_site_group_template_background{
+    background: #EBEEF2;
+}
+.cpq_multi_site_group_template_button{
+border: 1px solid #AEAEAE;;
+box-sizing: border-box;
+border-radius: 4px;
+width: auto;
+}
+.cpq_multi_site_group_template_button_disabled{
+border: 1px solid #ddd;
+height: 32px;
+box-sizing: border-box;
+border-radius: 4px;
+background: #C9C7C5;
+color: #FFFFFF;
+width: 112px;
+padding-left: 15px;
+padding-top: 5px;   
+}
+.cpq_multi_site_group_template_button_menu{
+width: 32px;
+background: #FFFFFF;
+border: 1px solid #AEAEAE;
+box-sizing: border-box;
+border-radius: 0px 4px 4px 0px;
+padding-left: 6px;
+}
+.cpq_multi_site_group_template_button_container{
+    width: auto; 
+    margin-left: auto;
+    padding-top: 15px;
+    margin-right: 12px
+}
+.cpq__multisite-group-template-accordion-chevron{
+    width: 1.125rem;
+    margin: auto 0;
+}
+.cpq__multisite-group-template-status-icon{
+    width: 2.5rem;
+    margin: auto 0;
+}

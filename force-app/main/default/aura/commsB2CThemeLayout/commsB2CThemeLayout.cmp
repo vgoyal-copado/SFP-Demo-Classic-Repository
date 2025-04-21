@@ -1,0 +1,30 @@
+<aura:component implements="forceCommunity:themeLayout">
+	<aura:attribute name="search" type="Aura.Component[]" required="false" />
+  	<aura:attribute name="profileMenu" type="Aura.Component[]" required="false" />
+  	<aura:attribute name="navBar" type="Aura.Component[]" required="false" />
+
+	<div class="outer-container">
+		<div class="flex-container">
+		
+			<!-- ****** header ***** -->		
+			<header class="header navbar">
+				<div class="container slds-grid slds-gutters">
+					<nav class="slds-col slds-size_2-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12 nav">{!v.navBar}</nav>
+					<div class="slds-col slds-size_8-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12 nav logo"><c:DE_BrandLogoCmp></c:DE_BrandLogoCmp></div>
+					<div class="slds-col slds-medium-size_4-of-12 slds-large-size_4-of-12 slds-show_medium slds-show_large nav profileMenu">{!v.profileMenu}</div>
+				</div>
+			</header>
+
+			<!-- ****** body ***** -->
+			<section class="container main">
+				{!v.body}
+			</section>
+
+			<!-- ****** footer ***** -->
+			<footer>
+				<c:deFooterBasic></c:deFooterBasic>
+			</footer>
+
+		</div>
+	</div>
+</aura:component>

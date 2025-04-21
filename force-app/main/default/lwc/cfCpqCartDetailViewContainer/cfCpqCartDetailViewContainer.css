@@ -1,0 +1,202 @@
+/* cpqManualPriceAdjustments */
+.cpq__chargetype-tab-button_active, .cpq__chargetype-tab-button_inactive{
+    width: fit-content;
+    .slds-button{
+        --sds-c-button-brand-color-background: #0176D3;
+        --sds-c-button-brand-color-border: #0176D3;
+    }
+}
+
+.cpq__chargetype-tab-button-leftmost .slds-button{
+    border-radius: 3px 0px 0px 3px;
+}
+
+.cpq__chargetype-tab-button-mid .slds-button{
+    border-radius: 0px 0px 0px 0px;
+    border-left:none;
+    border-right:none;
+}
+
+.cpq__chargetype-tab-button-rightmost .slds-button{
+    border-radius: 0px 3px 3px 0px;
+}
+
+/* cpqManualPriceAdjustmentsActions */
+.cpq__adjust-pricing-add-button_enabled .slds-button{
+    width: 100%;
+    --sds-c-button-outline-brand-color-border: #0176D3;
+    --sds-c-button-text-color: #0176D3;
+}
+.cpq__adjust-pricing-add-button_disabled .slds-button{
+    width: 100%;
+}
+.cpq__adjust-pricing-add-button_disabled .slds-button__icon{
+    height: 14px;
+    width: 14px;
+}
+
+/* cpqManualPriceAdjustmentsActionsChild */
+.cpq__chargetype-button .slds-form-element__label{
+    display: none;
+}
+.cpq__chargetype-button .slds-radio_button-group,
+.cpq__chargetype-button .slds-radio_button,
+.cpq__chargetype-button .slds-radio_button__label{
+    width: 100%;
+}
+.cpq__chargetype-button{
+    .slds-radio_button [type=radio]:checked+.slds-radio_button__label{ 
+        background-color: #0176D3;
+    }
+}
+.cpq__chargetype-button .slds-radio_faux{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/* cpqCartErrorPanel */
+@media screen and (max-width: 48rem){
+    .cpq__cart-error-panel_desc .slds-rich-text-editor__output span{
+        font-size:14px !important;
+        line-height:32px;
+    }
+    .cpq__error-panel-warning_icon .slds-icon_container{
+        height: 24px;
+        width: 24px;
+        padding-top: 8px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .cpq__cart-error_panel{
+        padding: 2px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+
+/* cpqCartFlexTable */
+.cpq__parent-recurring_charge_value label, .cpq__parent-onetime_charge_value label, .cpq__parent-usage_charge_value label{
+    padding-right:0;
+    margin-right:0
+}
+.cpq__parent-hierarchy_quantity .slds-form-element__label{
+    margin-right:0;
+    padding-right:0;
+}
+.cpq__parent-hierarchy_quantity .slds-form-element__control-animated-label{
+    width:65%;
+}
+.cpq__parent-hierarchy_quantity .slds-input{
+    padding-right: 0px;
+}
+.cpq__parent-recurring_charge label, .cpq__parent-onetime_charge label, .cpq__parent-usage_charge label{
+    padding-right:0 !important;
+    margin-right:0 !important;
+}
+.cpq__root-item-charge_strikethrough .field-value{
+    text-decoration: line-through;
+}
+.cpq__cart-flex-table_inline-promotions .slds-card{
+    background: #EAF5FE;
+    border-radius: 0px;
+    border-bottom: none;
+    padding-left: 91px;
+}
+.cpq__cart-flex-table_inline-promotions .cpq__cart-line-item_promo{
+    box-shadow: inset 0px -1px 0px #5EB4FF;
+    border-radius: 0px;
+}
+.cpq__cart-flex-table_inline-promotions .cpq__cart-line-item-promo_name{
+    padding-left: 0px;
+}
+.cpq__cart-messages_popover .slds-popover_full-width {
+    width: var(--lwc-sizeMedium,20rem);
+    position: absolute;
+    z-index: 10;
+    left: -16px;
+    top: 4px;
+}
+
+@media screen and (max-width: 64rem){
+    .cpq__flex-table-hierarchy_quantity .slds-form-element__help,  .cpq__parent-hierarchy_quantity .slds-form-element__help{
+        width:100%;
+    }
+    .cpq__parent-hierarchy_quantity{
+        width: 70%;
+        border-right:0px;
+        padding-left: 0px;
+    }
+    .cpq__parent-hierarchy_quantity .slds-form-element__control-animated-label{
+        width:40%;
+    }
+    .cpq__line-items-prices_container{
+        width:100%;
+        padding-top: 8px;
+        padding-bottom: 4px;
+        padding-left: 0px;
+    }
+    .cpq__cart-flex-table_inline-promotions .slds-card{
+        padding-left: 10px;
+    }
+}
+
+/* cpqCartItems */
+.cpq__flex-table-hierarchy_quantity .slds-form-element__label{
+    margin-right:0;
+    padding-right:0;
+    display: none;
+}
+.cpq__flex-table-hierarchy_quantity .slds-form-element__control-animated-label{	
+    width:65%;	
+}
+.cpq__flex-table-hierarchy_quantity .slds-input{
+    padding-right: 0px;
+}
+.cpq__line-item_base-charge{
+    font-size: 16px;
+    padding-top: 8px;
+}
+.cpq__line-item_base-charge .slds-form-element__label{
+    display: none;
+}
+.cpq__line-item-base-charge_strikethrough .field-value{
+    text-decoration: line-through;
+}
+.cpq__cart-item_inline-promotions .cpq__cart-line-item_promo{
+    box-shadow: 0px -1px 0px #0070D2;
+    padding-left: 10px;
+}
+.cpq__cart-item-bottom_border {
+   padding:0;
+}
+.cpq__flex-table-hierarchy_state .cpq__cart-item-bottom_border {
+    margin-left: 4%!important;
+}
+.cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__cart-item-bottom_border {
+    margin-left: 6%!important;
+}
+.cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__cart-item-bottom_border {
+    margin-left: 8%!important;
+}
+.cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__cart-item-bottom_border {
+   margin-left: 10%!important;
+}
+.cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__cart-item-bottom_border {
+    margin-left: 12%!important;
+}
+.cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__flex-table-hierarchy_state .cpq__cart-item-bottom_border {
+    margin-left: 14%!important;
+}
+
+@media screen and (max-width: 64rem){
+    .cpq__flex-table-hierarchy_quantity .slds-form-element__control-animated-label{
+        width:40%;
+    }
+    .cpq__line-item_base-charge .slds-form-element__label{
+        display: inline;
+    }
+}

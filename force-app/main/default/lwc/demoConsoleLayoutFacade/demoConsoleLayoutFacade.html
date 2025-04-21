@@ -1,0 +1,17 @@
+<template>
+  <section if:true={isHomeActive}>
+    <c-demo-console-layout-home record-id={recordId}></c-demo-console-layout-home>
+  </section>
+  <section if:true={isStatementsActive}>
+    <c-demo-console-layout-statements record-id={recordId}></c-demo-console-layout-statements>
+  </section>
+  <section if:true={isAssetsActive}>
+    <c-demo-console-layout-assets record-id={recordId}></c-demo-console-layout-assets>
+  </section>
+  <section if:true={isCasesActive}>
+    <c-demo-console-layout-cases record-id={recordId}></c-demo-console-layout-cases>
+  </section>
+  <section if:true={isOrdersActive}>
+    <c-demo-console-layout-orders record-id={recordId}></c-demo-console-layout-orders>
+  </section>
+</template>

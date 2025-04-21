@@ -1,0 +1,23 @@
+.cpq__price-adjustment-body {
+  padding: 35px;
+  text-align: left;
+}
+
+@media only screen and (max-width: 64rem) {
+  .cpq__price-adjustment-body {
+    max-height: 40rem;
+  }
+}
+
+@media only screen and (max-width: 55rem) {
+  .cpq__price-adjustment-body {
+    max-height: 30rem;
+  }
+}
+
+@media only screen and (max-width: 48rem) {
+  /* For desktop: */
+  .cpq__price-adjustment-body {
+    padding: 16px;
+  }
+}

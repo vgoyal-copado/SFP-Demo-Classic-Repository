@@ -1,0 +1,17 @@
+<template>
+    <lightning-tabset class="demo-tabs">
+        <lightning-tab  label="Services">
+            <c-cf-demo-account-asset-detail-services-container record-id={recordId}></c-cf-demo-account-asset-detail-services-container>
+        </lightning-tab>
+        <lightning-tab label="Usage">
+            <c-cf-demo-account-asset-detail-usage record-id={recordId}></c-cf-demo-account-asset-detail-usage>
+        </lightning-tab>
+        <lightning-tab label="Statements">
+            <c-cf-demo-account-asset-detail-statements-current record-id={recordId}></c-cf-demo-account-asset-detail-statements-current>
+            <c-cf-demo-account-asset-detail-statements record-id={recordId}></c-cf-demo-account-asset-detail-statements>
+        </lightning-tab>
+        <lightning-tab label="Equipment">
+            <c-cf-demo-account-asset-detail-equipment record-id={recordId}></c-cf-demo-account-asset-detail-equipment>
+        </lightning-tab>
+    </lightning-tabset>
+</template>

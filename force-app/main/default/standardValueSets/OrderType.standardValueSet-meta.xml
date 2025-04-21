@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Change Number</fullName>
+        <default>false</default>
+        <label>Change Number</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Replace SIM</fullName>
+        <default>false</default>
+        <label>Replace SIM</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Resume Lost or Stolen SIM</fullName>
+        <default>false</default>
+        <label>Resume Lost or Stolen SIM</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales</fullName>
+        <default>false</default>
+        <label>Sales</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Suspend Lost or Stolen SIM</fullName>
+        <default>false</default>
+        <label>Suspend Lost or Stolen SIM</label>
+    </standardValue>
+</StandardValueSet>

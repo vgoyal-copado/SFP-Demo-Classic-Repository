@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Groups permission sets based on OM Runtime user job functions.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>SFI OMRuntime User</label>
+    <permissionSets>XOMExecuteDecompositionRun</permissionSets>
+    <permissionSets>XOMManageOrchestrationItemRun</permissionSets>
+    <permissionSets>XOMUpdateFulfilmentRun</permissionSets>
+    <permissionSets>XOMViewDecompositionRun</permissionSets>
+    <permissionSets>XOMViewOrchestrationPlanRun</permissionSets>
+    <permissionSets>XOMViewTechnicalInventoryRun</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

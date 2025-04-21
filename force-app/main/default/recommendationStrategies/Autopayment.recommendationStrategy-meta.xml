@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contextRecordType>Account</contextRecordType>
+    <filter>
+        <childNode>load</childNode>
+        <label>Filter Records</label>
+        <name>Filter_Records</name>
+        <expression>$Record.vlocity_cmt__EnableAutopay__c = False</expression>
+    </filter>
+    <label>Autopayment</label>
+    <recommendationLoad>
+        <label>load</label>
+        <name>load</name>
+        <condition>
+            <field>Name</field>
+            <operator>EQUALS</operator>
+            <value>
+                <type>TEXT</type>
+                <value>123</value>
+            </value>
+        </condition>
+        <conditionLogic>and</conditionLogic>
+        <object>Recommendation</object>
+    </recommendationLoad>
+    <union>
+        <childNode>Filter_Records</childNode>
+        <label>Output</label>
+        <name>Output_d4122d21efd243a1a454ae0a9051608f</name>
+    </union>
+</RecommendationStrategy>

@@ -1,0 +1,30 @@
+.cpq__cart-applied-discount-one-time_charge .slds-form-element__label, .cpq__cart-applied-discount-recurring_charge .slds-form-element__label{
+    margin-right:0;
+    padding-right:0;
+}
+.cpq__cart-applied-disc_container{
+    background-color: #FAFAF9;
+}
+.cpq__cart-applied-discounts_empty-text{
+    text-align: center;
+}
+.cpq__cart-applied-disc_container{
+    background-color: #FAFAF9;
+}
+.cpq__add-new-discount{
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    width: fit-content;
+    width: -moz-fit-content; /* Support Mozilla Firefox Browser */
+}
+.cpq__add-new-discount__cnd{
+    z-index: 89;
+}
+
+@media screen and (max-width: 48rem){
+    .cpq__cart-applied-discounts_empty-text{
+        text-align: left;
+        padding-left: 16px;
+    }
+}

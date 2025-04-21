@@ -1,0 +1,45 @@
+.cpq-discounts-list_container{
+    border-bottom: 1px solid #DDDBDA !important;
+    border-radius: 0px;
+    padding: 13px 18px 13px 40px;
+}
+.cpq-discounts_fields label{
+    font-size: 10px;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.6);
+}
+.cpq-discounts_fields.uppercase label{
+    text-transform: uppercase;
+}
+.cpq-discounts_fields .field-value{
+    font-size: 16px;
+    color: #000000;
+}
+button.vlocity-btn.slds-button.slds-button_brand{
+    border-radius: 6px !important;
+}
+.cpq_discount_applies_all{
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.cpq__discount-error-icon{
+    width: fit-content;
+}
+.cpq__discount-error-message{
+    color: #8C4B02;
+    padding-left: 10px;
+    text-align: left;
+}
+@media only screen and (max-width: 48em) {
+    .cpq-discounts_fields .field-value{
+        font-size: 12px;
+    }
+    .cpq-discounts_fields label{
+        font-size: 9px;
+    }
+}
+@media only screen and (max-width: 480px) {
+  .cpq-discounts-list_container{
+      padding: 0px;
+  }
+}

@@ -1,0 +1,15 @@
+.cpq__cart-line-item_promo{
+    background-color: #EAF5FE;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.cpq__cart-item-border_container{
+    height:1px;
+}
+.cpq__cart-line-item-promo_name{
+    font-size: 14px;
+    padding-left:1%;
+}
+.cpq__cart-item-bottom_border{
+    padding-left:0
+}

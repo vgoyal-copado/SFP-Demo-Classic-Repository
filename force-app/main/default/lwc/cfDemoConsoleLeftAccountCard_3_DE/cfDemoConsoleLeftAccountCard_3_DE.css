@@ -1,0 +1,14 @@
+.image-fade-down > div {
+    position:relative;
+}
+
+.image-fade-down > div::before {
+  width:100%;
+  content:'';
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 69%);
+  height:100%;
+}

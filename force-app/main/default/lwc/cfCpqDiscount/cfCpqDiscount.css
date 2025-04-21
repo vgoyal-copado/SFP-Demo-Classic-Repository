@@ -1,0 +1,46 @@
+.cpq-discount-container{
+    background-color: #F6F6F6;
+}
+.cpq__available-discount_tab  {
+    font-size: 13px;
+    line-height: 20px;
+    color: #080707;
+    padding: 5px 0px;
+}
+.cpq-discount-title{
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    padding: 15px 0px;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgb(221, 219, 218);
+}
+.cpq-discount-block{
+    margin-bottom: 20px;
+    padding: 0px;
+    border: 1px solid rgb(221, 219, 218);
+}
+.cpq-discount-body{
+    padding: 34px;
+    max-height: 560px;
+    overflow-y: scroll;
+}
+.cpq-discounts_items-section{
+    max-height: 250px;
+    min-height: 106px;
+    overflow-y: auto;
+}
+.cpq-discount-icon{
+    width: 24px;
+}
+svg.slds-icon.slds-icon_container.slds-icon__svg--default{
+    fill:rgb(21, 137, 238) !important;
+}
+@media only screen and (max-width: 48em){
+    .cpq-discount-body{
+        padding: 0px;
+    }
+}
+.slds-backdrop_open, .slds-backdrop--open{
+    opacity: 0;
+}

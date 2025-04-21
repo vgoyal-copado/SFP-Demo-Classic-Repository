@@ -1,0 +1,19 @@
+/* Salesforce Colors: */
+/* usage
+div {
+	@include font-size(14px);
+}
+*/
+h4 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #666666;
+  margin-bottom: 20px;
+  margin-top: 40px; }
+
+svg {
+  height: auto;
+  width: 100%; }
+  svg .bar {
+    fill: var(--lwc-colorBrand);
+    width: 15px; }

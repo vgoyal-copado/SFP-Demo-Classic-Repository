@@ -1,0 +1,52 @@
+.cpq__promotiondetailview-modal-header{
+    background-color: #1589EE;
+    border-radius: 4px 4px 0px 0px;
+}
+.cpq__promotiondetailview-modal-header-promotionheading{
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
+.cpq__promotiondetailview-modal-body{
+    height: 350px;
+    border: 1px solid #ECEBEA;
+}
+.cpq__promotiondetailview-modal-body-promotion-namecode{
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+.cpq__promotiondetailview-modal-body-promotion-description{
+    font-size: 13px;
+    line-height: 15px;
+    color: #706E6B;
+}
+.cpq__promotiondetailview-modal-body-promotion-dates-label{
+    width: fit-content;
+    font-size: 12px;
+    line-height: 14px;
+    color: #706E6B;
+}
+.cpq__promotiondetailview-modal-body-promotion-dates{
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+.cpq__promotiondetailview-modal-body-promotion-code-label{
+    font-size: 12px;
+    line-height: 14px;
+    color: #706E6B;
+}
+.cpq__promotiondetailview-modal-footer-button-block
+{
+width: fit-content;
+margin-left: auto;
+
+}
+.cpq__promotiondetailview-modal-footer-buttons{
+ width: fit-content;   
+}
+.cpq__promotiondetailview-cancelbuttom-tempchange{
+ display: none;   
+}

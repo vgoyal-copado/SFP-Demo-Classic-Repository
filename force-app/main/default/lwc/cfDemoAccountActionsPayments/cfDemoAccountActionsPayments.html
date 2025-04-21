@@ -1,0 +1,73 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small " style="             background-color: transparent; border: none;">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_medium  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFFFFF;      
+         box-shadow: rgb(0 0 0 / 16%) 0px 0px 6px 0px;" >
+    <vlocity_cmt-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-p-bottom_xx-small slds-m-vertical_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="            color:#666; " ><vlocity_cmt-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_small%22%3E%3Cspan%20style=%22font-size:%2012pt;%22%3E%3Cstrong%3EPayment%20Options%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  slds-p-vertical_xx-small slds-m-top_xx-small branded-link slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-action data-style-id="state0element0block_element1_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1617050353561","type":"Custom","displayName":"Enroll in Auto Pay","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"}}'  hide-action-icon="true"  styles='\{"label":{"fontSize":".75rem","color":""}}'  theme="slds"  ></vlocity_cmt-action>
+        </div><div data-style-id="state0element0block_element2" class="slds-col  slds-p-vertical_xx-small slds-m-top_xx-small branded-link slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-action data-style-id="state0element0block_element2_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1617050377999","type":"Custom","displayName":"Change Billing Methods","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"}}'  hide-action-icon="true"  styles='\{"label":{"fontSize":".75rem","color":""}}'  theme="slds"  ></vlocity_cmt-action>
+        </div><div data-style-id="state0element0block_element3" class="slds-col  slds-p-vertical_xx-small slds-m-top_xx-small branded-link slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-action data-style-id="state0element0block_element3_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1617050411940","type":"Custom","displayName":"Go Paperless","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"}}'  hide-action-icon="true"  styles='\{"label":{"fontSize":".75rem","color":""}}'  theme="slds"  ></vlocity_cmt-action>
+        </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small " style="             background-color: transparent; border: none;">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_medium  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFFFFF;      
+         box-shadow: rgb(0 0 0 / 16%) 0px 0px 6px 0px;" >
+    <vlocity_cmt-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-p-bottom_xx-small slds-m-vertical_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="            color:#666; " ><vlocity_cmt-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_small%22%3E%3Cspan%20style=%22font-size:%2012pt;%22%3E%3Cstrong%3EPayment%20Options%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  slds-p-vertical_xx-small slds-m-top_xx-small branded-link slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-action data-style-id="state0element0block_element1_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1617050353561","type":"Custom","displayName":"Enroll in Auto Pay","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"}}'  hide-action-icon="true"  styles='\{"label":{"fontSize":".75rem","color":""}}'  theme="slds"  ></vlocity_cmt-action>
+        </div><div data-style-id="state0element0block_element2" class="slds-col  slds-p-vertical_xx-small slds-m-top_xx-small branded-link slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-action data-style-id="state0element0block_element2_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1617050377999","type":"Custom","displayName":"Change Billing Methods","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"}}'  hide-action-icon="true"  styles='\{"label":{"fontSize":".75rem","color":""}}'  theme="slds"  ></vlocity_cmt-action>
+        </div><div data-style-id="state0element0block_element3" class="slds-col  slds-p-vertical_xx-small slds-m-top_xx-small branded-link slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-action data-style-id="state0element0block_element3_child"  tracking-obj={_childCardTrackingObj}   record={record}  card={card}  state-obj={record}  state-action='\{"id":"flex-action-1617050411940","type":"Custom","displayName":"Go Paperless","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"}}'  hide-action-icon="true"  styles='\{"label":{"fontSize":".75rem","color":""}}'  theme="slds"  ></vlocity_cmt-action>
+        </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

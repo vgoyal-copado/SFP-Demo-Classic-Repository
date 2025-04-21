@@ -1,0 +1,78 @@
+/* Salesforce Colors: */
+/* usage
+div {
+	@include font-size(14px);
+}
+*/
+.THIS .flex-container {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+  .THIS .flex-container .header {
+    background-color: #fff;
+    box-shadow: 0px 0px 3px 0px rgba(102, 102, 102, 0.6);
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(102, 102, 102, 0.6);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(102, 102, 102, 0.6);
+    margin-bottom: 0; }
+    @media all and (max-width: 670px) {
+      .THIS .flex-container .header .slds-list_vertical, .THIS .flex-container .header .comm-navigation__list {
+        background-color: var(--lwc-colorBrand); }
+        .THIS .flex-container .header .slds-list_vertical a *, .THIS .flex-container .header .comm-navigation__list a * {
+          color: #fff; } }
+    @media all and (max-width: 670px) {
+      .THIS .flex-container .header .slds-list_vertical .slds-is-active, .THIS .flex-container .header .comm-navigation__list .slds-is-active {
+        color: #fff; } }
+    .THIS .flex-container .header .container {
+      margin: 0 auto;
+      padding: 10px 0;
+      max-width: 1140px; }
+      .THIS .flex-container .header .container .slds-gutters .slds-col {
+        padding-right: 0;
+        padding-left: 0; }
+      .THIS .flex-container .header .container .forceCommunityGlobalNavigation {
+        background-color: transparent; }
+      .THIS .flex-container .header .container .forceCommunityGlobalNavigation a {
+        color: token(colorTextDefault);
+        font-weight: 500; }
+      .THIS .flex-container .header .container .forceCommunityGlobalNavigation a:focus,
+      .THIS .flex-container .header .container .forceCommunityGlobalNavigation a:hover {
+        background-color: transparent;
+        color: #495057; }
+      .THIS .flex-container .header .container .selfServiceProfileMenuTrigger {
+        padding-top: 2px;
+        text-align: right; }
+        .THIS .flex-container .header .container .selfServiceProfileMenuTrigger a {
+          color: token(colorTextDefault); }
+        .THIS .flex-container .header .container .selfServiceProfileMenuTrigger .trigger-link {
+          padding: 0; }
+          .THIS .flex-container .header .container .selfServiceProfileMenuTrigger .trigger-link .selfServiceProfileMenuTrigger .profileIcon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            vertical-align: middle; }
+      .THIS .flex-container .header .container .uiMenuList--default.uiMenuList {
+        float: right;
+        position: absolute;
+        right: 50%;
+        transform: translateX(-20%); }
+  .THIS .flex-container section.main {
+    flex-grow: 2; }
+    
+  /* Large Screens */
+  .THIS .flex-container .slds-large-nowrap {
+      /*max-width: 1140px !important; */
+      margin-left: 10vw;
+      margin-right: 10vw;
+  }
+  /* Smaller Screens i.e. iPad, etc. */
+  @media only screen and (max-width: 1024px) {
+    .THIS .flex-container .slds-large-nowrap {
+      margin-left: 1vw;
+      margin-right: 1vw;
+    }
+  }
+  .THIS .flex-container .demo-tabs .slds-tabs_default__link {
+    font-size: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; }

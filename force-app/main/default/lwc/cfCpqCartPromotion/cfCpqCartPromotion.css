@@ -1,0 +1,35 @@
+.cpq__cart-applied-promo_menu .slds-dropdown{
+    text-align:left;
+}
+.cpq__cart-applied_promo{
+    background-color: #FAFAF9;
+}
+.cpq__cart-applied-promo-description_text .vloc-min-height div{
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cpq__cart-applied-promo_color{
+    border-color:#5EB4FF;
+    background-color:#D8EDFF;
+}
+@media screen and (max-width: 48rem){
+.cpq__cart-applied-promo_name{
+    width:100%;
+}
+.cpq__cart-applied-promo-description_text{
+    width:100%;
+}
+.cpq__cart-applied-promo_date{
+    width:100%;
+}
+.cpq__cart-applied-promo_description{
+    width: 90%;
+}
+.cpq__cart-applied-promo_menu{
+     position: absolute;
+    width: 95%;
+    text-align: end;
+}
+}

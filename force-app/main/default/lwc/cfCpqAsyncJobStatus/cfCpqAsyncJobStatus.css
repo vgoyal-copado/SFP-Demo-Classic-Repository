@@ -1,0 +1,58 @@
+.cpq__bulk-processing-status_collapse-icon{
+    width:40px;
+}
+.cpq__bulk-processing-status_child-card .cpq__step-expand_icon {
+    padding-top: 0px;
+    padding-left: 0px;
+}
+.cpq__bulk-processing-status_child-card {
+    overflow-y: scroll;
+    max-height: 400px;
+}
+.cpq__async-job-status_close-button {
+    padding-right: 12px;
+    padding-top: 6px;
+}
+.cpq__async-job-status-message_text {
+    flex: 1 1 auto;
+}
+/* Layover */
+.cpq__bulk-processing-status_spinner .slds-spinner_container{
+    background: rgba(43, 40, 38, 0.7);
+    z-index: 90;
+}
+.cpq__bulk-processing-status_message{
+    z-index: 90;
+    padding-top: 100px;
+}
+.cpq__bulk-processing-status_block{
+    z-index: 90;
+    padding-top: 50px;
+}
+.cpq__bulk-processing-status_child-container {
+    max-height: 400px;
+    overflow-y: scroll;
+    padding-top: 2.6rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .cpq__async-job-status_empty-block{
+        display: none;
+    }
+    .cpq__bulk-processing-status_child-card{
+        padding-left: 12px;
+    }
+    .cpq__bulk-processing-status_child-container{
+        padding-left: 12px;
+    }
+    .cpq__async-job-status-message_text {
+        padding-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .cpq__bulk-processing-status_collapse-icon{
+        width: 30px;
+        margin: 0;
+    }
+}

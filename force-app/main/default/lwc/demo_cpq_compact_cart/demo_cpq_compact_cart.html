@@ -1,0 +1,163 @@
+<template>
+	<div class="slds-col demo-carts">
+		<div class="demo-cart container">
+
+				<div class="cart-header">
+					<div class="title">
+						{title}
+					</div>
+					<div class="cart-count">
+						<div class="slds-badge">
+							<span class="slds-badge__icon slds-badge__icon_left">
+								<span class="slds-icon_container">
+									<svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+										<use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#cart"></use>
+									</svg>
+								</span>
+							</span>
+							{lineItemCount}
+						</div>
+					</div>
+				</div>
+				<hr class="separator-header">
+
+				<!-- Line Items -->
+				<template iterator:lineitem={lineItems}>
+					<template if:false={lineitem.value.ui.isVirtual}>
+						<div key={lineitem.value.ui.code} data-is-child={lineitem.value.ui.isChild} class="cart-row">
+
+							<!-- Action Label -->
+							<div class="action" data-action={lineitem.value.ui.actionLabel} if:false={hideActions}>
+								{lineitem.value.ui.actionLabel}
+							</div>
+
+							<!-- Product Name/Details -->
+							<div class="product-details">
+								{lineitem.value.ui.name}
+							</div>				
+
+							<!-- Pricing-->
+							<div class="product-pricing">
+								<div class="pricing-values">
+									<span class="price">{lineitem.value.ui.pricingText}</span>
+								</div>
+							</div>
+
+						</div>
+					</template>
+				</template>	
+				
+				<hr class="separator-footer">
+        
+				<!-- Pricing (Sub-Total) -->
+				<div class="cart-row summary subtotal" if:true={taxRate}>
+
+					<div class="product-details">
+						Sub-Total
+					</div>
+
+					<div class="product-pricing">
+
+						<!-- show zero if both OTC and MRC are zero -->
+						<div class="pricing-values">
+							<template if:true={otcSubTotal}>
+								<p class="otc">${otcSubTotalText}</p>
+							</template>
+							<template if:false={otcSubTotal}>
+								<template if:false={mrcSubTotal}>
+									<p class="otc">$0</p>
+								</template>
+							</template>
+							<template if:true={mrcSubTotal}>
+								<p class="mrc">${mrcSubTotalText} / month</p>
+							</template>
+						</div>
+
+						<!-- <div class="pricing-frequency">
+							<template if:true={otcSubTotal}>
+								<p class="otc">  Now</p>
+							</template>
+							<template if:false={otcSubTotal}>
+								<template if:false={mrcSubTotal}>
+									<p class="otc">  Now</p>
+								</template>
+							</template>
+							<template if:true={mrcSubTotal}>
+								<p class="mrc"> /Month</p>
+							</template>
+						</div> -->
+					</div>
+
+				</div>
+
+				<!-- Pricing (Taxes & Fees) -->
+				<div class="cart-row summary subtotal" if:true={taxRate}>
+
+					<div class="product-details">
+						<p>Taxes &amp; Fees :</p>
+					</div>
+
+					<div class="product-pricing">
+
+						<!-- show zero if both OTC and MRC are zero -->
+						<div class="pricing-values">
+							<template if:true={otcTax}>
+								<p class="otc">${otcTaxText}</p>
+							</template>
+							<template if:false={otcTax}>
+								<template if:false={mrcTax}>
+									<p class="otc">$0</p>
+								</template>
+							</template>
+							<template if:true={mrcTax}>
+								<p class="mrc">${mrcTaxText}</p>
+							</template>
+						</div>
+						<div class="pricing-frequency">
+							<template if:true={otcTax}>
+								<p class="otc">  Now</p>
+							</template>
+							<template if:false={otcTax}>
+								<template if:false={mrcTax}>
+									<p class="otc">  Now</p>
+								</template>
+							</template>
+							<template if:true={mrcTax}>
+								<p class="mrc"> /Month</p>
+							</template>
+						</div>
+					</div>
+				</div>
+				<hr if:true={taxRate}/>
+
+				<!-- Pricing (Total) -->
+				<div class="cart-row summary totals">
+
+					<div class="product-details">
+						Total
+					</div>
+
+					<div class="product-pricing">
+
+						<!-- show zero if both OTC and MRC are zero -->
+						<div class="pricing-values">
+							<template if:true={otcTotal}>
+								<p class="otc">${otcTotalText}</p>
+							</template>
+							<template if:false={otcTotal}>
+								<template if:false={mrcTotal}>
+									<p class="otc">$0</p>
+								</template>
+							</template>
+							<template if:true={mrcTotal}>
+								<p class="mrc">${mrcTotalText} / month</p>
+							</template>
+						</div>
+
+					</div>
+
+				</div>
+
+		</div>
+	</div>
+</template>

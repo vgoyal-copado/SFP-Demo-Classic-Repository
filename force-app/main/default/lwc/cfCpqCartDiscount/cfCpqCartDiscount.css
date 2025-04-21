@@ -1,0 +1,105 @@
+.menu-icon .slds-dropdown{
+    text-align:left;
+}
+.cpq__see-details-container{
+    padding-left: 14px;
+}
+.cpq-discount-status-icon {
+   margin-top: 14px;
+   margin-bottom: 0px;
+}
+.cpq__cart-applied_discount{
+    background-color: #FAFAF9;
+}
+.cpq__cart_discount-border{
+    border-bottom: 0px;
+}
+.cpq__cart-discount-recurring_label, .cpq__cart-discount-one-time_label, .cpq__cart-discount-status_label{
+    color:#444444;
+}
+.discount__name-strike-through {
+    text-decoration-line: line-through;
+    color: #747474;
+}
+.cpq__discount-strike-through {
+    text-decoration-line: line-through;
+}
+.cpq__approval-status-rejected {
+    font-family: Segoe UI;
+    font-size: 16px;
+    line-height: 24px;
+    color: #939393;
+}
+.cpq__cart-one-time_charge, .cpq__cart-recurring_charge{
+    font-size:1rem;
+    text-align: right;
+}
+.cpq__cart-discount-status_value{
+    color:#E8912D;
+}
+.cpq__cart-discount-status_green{
+    color:#007A5A;
+}
+.cpq__cart-discount-status_icon .slds-icon__svg--default{
+    fill:#E8912D;
+}
+.cpq__cart-discount-status-icon_green .slds-icon__svg--default{
+    fill:#007A5A;
+}
+.cpq__cart-messages_popover .slds-popover_full-width {
+    position: absolute;
+    width: var(--lwc-sizeXSmall);
+    background-color: rgb(3, 45, 96);
+}
+@media screen and (max-width: 48rem){
+    .cpq__cart-applied-discount-detail_block{
+        width:100%;
+        position: relative;
+    }
+    .cpq__cart-discount-one-time_charge{
+        width:40%;
+        margin-right:10%;
+        font-size:1rem;
+    }
+    .cpq__cart-discount-recurring_charge{
+        width:50%;
+        font-size:1rem;
+        text-align:right;
+        padding-left: 10%;
+    }
+    .cpq__cart-discount-recurring_label, .cpq__cart-recurring_charge{
+            text-align: left;
+    }
+    .cpq__cart-applied-discount_status{
+        width: 35%;
+        text-align: left;
+        padding-top: 0px;
+        padding-left: 0%;
+    }
+    .cpq__cart-applied-discount_status .slds-form-element__label{
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+    .cpq__cart-applied-discount_charges{
+        width:100%;
+        padding-top: 5%;
+    }
+    .cpq__cart-applied-discount_menu{
+        position: absolute;
+        width: 95%;
+        text-align: end;
+        margin-top: 15px;
+    }
+    .cpq__see-details-container {
+        margin-top: 8px;
+        margin-left: 5px;
+        padding-left: 0px;
+    }
+    .cpq-discount-status-icon {
+        margin-top: 0px;
+    }
+    .cpq__cart-applied-discount_name{
+        width:100%;
+        padding-bottom: 0px;
+    }
+}

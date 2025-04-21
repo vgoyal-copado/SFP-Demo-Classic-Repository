@@ -1,0 +1,21 @@
+<template>
+  <lightning-layout multiple-rows>
+    <lightning-layout-item size="12">
+      <c-cf-demo-console-cases-header record-id={recordId}></c-cf-demo-console-cases-header>
+    </lightning-layout-item>
+    <lightning-layout-item size="12">
+      <lightning-layout>
+        <lightning-layout-item flexibility="auto, no-grow">
+          <section style="width: 300px">
+            <c-cf-demo-console-case-list record-id={recordId}></c-cf-demo-console-case-list>
+          </section>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto">
+          <section>
+            <c-cf-demo-console-case-details record-id={recordId}></c-cf-demo-console-case-details>
+          </section>
+        </lightning-layout-item>
+      </lightning-layout>
+    </lightning-layout-item>
+  </lightning-layout>
+</template>

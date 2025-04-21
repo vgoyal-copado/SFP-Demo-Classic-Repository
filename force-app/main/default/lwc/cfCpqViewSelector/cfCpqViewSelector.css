@@ -1,0 +1,26 @@
+.cpq__view-selector_container{
+    padding: 0;
+}
+
+.cpq__action-option-selector-container{
+    margin-left: auto;
+    width: auto;
+    max-width: 100%;
+}
+
+.cpq__action-option-selector{
+    width: auto;
+}
+
+.cpq__action-option-radio-selector{
+line-height: 200%;
+}
+
+.flexcards-container_small .cpq__action-option-selector{
+    margin: 5px 0 2px auto;
+}
+
+.flexcards-container_small .cpq__toggle-view_buttons{
+    width: auto;
+    margin-left: 0.25rem;
+}

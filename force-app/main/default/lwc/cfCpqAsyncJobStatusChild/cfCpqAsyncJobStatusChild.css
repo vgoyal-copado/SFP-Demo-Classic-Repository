@@ -1,0 +1,55 @@
+.cpq__bulk-processing-status_child-block .slds-text-heading_small {
+    font-size: 14px;
+}
+.cpq__bulk-processing-status_child-block .slds-progress-bar_medium {
+    height: 0.3rem;
+}
+.cpq__bulk-processing-status-progress-bar_color-success .slds-progress-bar__value {
+    background: #2E844A;
+}
+.cpq__bulk-processing-status-progress-bar_color-error .slds-progress-bar__value {
+    background: #ea001e;
+}
+.cpq__bulk-processing-status-progress-bar_color-inprogress .slds-progress-bar__value {
+    background: #FE9339;
+}
+.cpq__step-expand_icon{
+    width:40px;
+}
+.cpq__async-processing-chevron-icon_padding {
+    flex: 1;
+}
+.cpq_async-job-status_extra-block {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .cpq__async-processing-chevron-icon_padding{
+        padding-left: 20px;
+    }
+    .cpq__async-job-status-child_indent{
+        display: none;
+    }
+    .cpq_async-job-status_extra-block{
+        display: inline;
+    }
+    .cpq__async-job-status-child_block-container{
+        padding-left: 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .cpq__async-processing-chevron-icon_padding{
+        padding-left: 0;
+    }
+    .cpq__async-job-status-child_status-icon{
+        padding: 12px;
+    }
+    .cpq__async-job-status-child_progress{
+        padding: 12px;
+        padding-left: 35px;
+    }
+    .cpq__async-job-status-child-card_progress{
+        padding-top: 12px;
+    }
+}

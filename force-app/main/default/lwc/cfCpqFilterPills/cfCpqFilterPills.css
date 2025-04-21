@@ -1,0 +1,29 @@
+.pill-style{
+    width: fit-content;
+    background: #F4F6F9;
+}
+
+.empty-pill-state{
+    display: none;
+    
+}
+
+.pill-text{
+    color: #0070D2;
+}
+.max-100{
+    max-width: 95%;
+}
+.pill-container{
+    background: #F4F6F9;
+    flex-wrap: nowrap;
+    border:none;
+    align-items: center;
+    padding: 5px;
+    overflow-x: unset;
+    width: fit-content;
+}
+.fit-content{
+    width:fit-content;
+    max-width: 100%;
+}

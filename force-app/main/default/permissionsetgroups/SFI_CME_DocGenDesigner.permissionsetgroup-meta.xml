@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Groups permission sets based on DocGen designer user job functions such as creating and editing document templates.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CME DocGen Designer</label>
+    <permissionSets>DocGenInd_Design_All</permissionSets>
+    <permissionSets>DocGenInd_Docusign_Runtime_All</permissionSets>
+    <permissionSets>DocGenInd_Runtime_All</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

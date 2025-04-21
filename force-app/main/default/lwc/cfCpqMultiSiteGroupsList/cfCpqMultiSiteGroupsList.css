@@ -1,0 +1,44 @@
+.cpq__multisite-group-card-body{
+    margin: 0;
+    padding: 0;
+}
+.cpq__multisite-group-card-body-collapse .slds-button::focus,
+.cpq__multisite-group-card-body-collapse .slds-button::active{
+    box-shadow: none;
+}
+.cpq__multisite-group-status-container{
+    margin-left: auto;
+    width: auto;
+    max-width: 100%;
+}
+.cpq__multisite-group-name-container{
+    margin: auto 0;
+}
+.cpq__multisite-group-accordion-header-active{
+    background: #EAF5FE;
+    box-shadow: inset 4px 0px 0px #1589EE;
+}
+.cpq__multisite-group-accordion-header-text{
+    font-size: 0.8125rem;
+    margin: auto 0;
+    font-weight: bold;
+    line-height: 1.5rem;
+    margin-left: 0.8125rem;
+}
+.cpq__multisite-group-accordion-chevron{
+    width: 1.125rem;
+    margin: auto 0;
+}
+.cpq__multisite-group-status-icon{
+    width: 2.5rem;
+    margin: auto 0;
+}
+.cpq__multisite-group-nudge{
+    background: #C9C9C9;
+    border-radius: 1.5rem;
+    min-width: 1.5rem;;
+    padding: 0.125rem;
+    text-align: center;
+    line-height: 1.25rem;
+    font-weight: bold;
+}

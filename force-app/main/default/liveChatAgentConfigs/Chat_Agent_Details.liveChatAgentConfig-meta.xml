@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LiveChatAgentConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <profiles>
+            <profile>admin</profile>
+            <profile>demo service agent</profile>
+            <profile>demo system admin</profile>
+        </profiles>
+        <users>
+            <user>bservice.ahzwq84p8m4o.vetj80i5zxco.j0kxzpg1a0z8@communications-b2c.1678986800792</user>
+            <user>dev2.exymv1gnhppd.pgjepbxuycbl@communications-b2c.1678986800792</user>
+            <user>demo.org@communications-b2c.1678986800792</user>
+            <user>justin.harris.tcejtjetiqyh.w7iwltsbshzf@communications-b2c.1678986800792</user>
+            <user>lars.helgeson.bnxkfgbbsuee.yr0dmeqdbdfx@communications-b2c.1678986800792</user>
+            <user>mcosgrove.rvsm03h2k5av.0v9bjlh2ezjl@communications-b2c.1678986800792</user>
+            <user>ngiunta.gcduzhproecw.kcghz17ot6nb@communications-b2c.1678986800792</user>
+            <user>rustam.b5xippbudony.x8iukzk9a2rh@communications-b2c.1678986800792</user>
+            <user>sservice.ezdyfs4o3bbi.wbcvaengzz9m.letns9dlg5jr@communications-b2c.1678986800792</user>
+            <user>tim.eyq67hwdf6du.1clqzoudanhk.aewlzgyz3aah@communications-b2c.1678986800792</user>
+            <user>tyraservice.xvmauhactbg0.nkh7urf73xpw@communications-b2c.1678986800792</user>
+        </users>
+    </assignments>
+    <autoGreeting>Hello, Hello, {!LiveAgent_VisitorName}!
+How can I help you today?</autoGreeting>
+    <criticalWaitTime>20</criticalWaitTime>
+    <customAgentName>Tyra</customAgentName>
+    <disableTransferConferenceGreeting>false</disableTransferConferenceGreeting>
+    <enableAgentFileTransfer>true</enableAgentFileTransfer>
+    <enableAgentSneakPeek>true</enableAgentSneakPeek>
+    <enableAssistanceFlag>false</enableAssistanceFlag>
+    <enableAutoAwayOnDecline>false</enableAutoAwayOnDecline>
+    <enableAutoAwayOnPushTimeout>false</enableAutoAwayOnPushTimeout>
+    <enableChatConferencing>true</enableChatConferencing>
+    <enableChatMonitoring>true</enableChatMonitoring>
+    <enableChatTransferToAgent>true</enableChatTransferToAgent>
+    <enableChatTransferToButton>true</enableChatTransferToButton>
+    <enableChatTransferToSkill>true</enableChatTransferToSkill>
+    <enableLogoutSound>true</enableLogoutSound>
+    <enableNotifications>true</enableNotifications>
+    <enableRequestSound>true</enableRequestSound>
+    <enableSneakPeek>true</enableSneakPeek>
+    <enableVisitorBlocking>false</enableVisitorBlocking>
+    <enableWhisperMessage>true</enableWhisperMessage>
+    <label>Chat Agent Details</label>
+    <supervisorDefaultAgentStatusFilter>Online</supervisorDefaultAgentStatusFilter>
+    <transferableButtons>
+        <button>Demo_Multiplay</button>
+    </transferableButtons>
+</LiveChatAgentConfig>

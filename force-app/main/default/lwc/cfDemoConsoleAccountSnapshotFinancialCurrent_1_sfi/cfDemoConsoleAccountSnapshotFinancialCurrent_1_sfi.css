@@ -1,0 +1,9 @@
+.action-block div {
+justify-content: center;
+}
+
+@media only screen and (max-width: 480px) {
+.attribute-block {
+    padding: 0;
+}
+}

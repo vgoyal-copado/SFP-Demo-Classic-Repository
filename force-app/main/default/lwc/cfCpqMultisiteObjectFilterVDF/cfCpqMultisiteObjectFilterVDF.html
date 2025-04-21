@@ -1,0 +1,441 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state0element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"data-attributename","value":"{code}"},{"id":3,"label":"disabled","value":"{disabled}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":5,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small " style="      
+         ">
+          <div data-style-id="state1element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state1element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"data-attributename","value":"{code}"},{"id":3,"label":"disabled","value":"{disabled}"},{"id":4,"label":"type","value":"range"},{"id":5,"label":"min","value":"{min}"},{"id":6,"label":"max","value":"{max}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":8,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="2" data-rindex={rindex} class="cf-vlocity-state-2 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state2element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state2element0_child"   record={record}  card={card}  property-obj='\{"currency":"USD","customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":4,"label":"readOnly","value":"{readonly}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":5,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","locale":"en-IN","name":"CPQAttributeDynamicForm","readOnly":"","value":"{userValues}"}'  type="currency"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="3" data-rindex={rindex} class="cf-vlocity-state-3 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state3element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state3element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"disabled","value":"{disabled}"},{"id":1,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"min","value":"{min}"},{"id":4,"label":"max","value":"{max}"},{"id":6,"label":"data-attributename","value":"{code}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":8,"label":"value","value":"{userValues}"},{"id":9,"label":"formatter","value":"percent-fixed"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="4" data-rindex={rindex} class="cf-vlocity-state-4 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state4element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state4element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"disabled","value":"{disabled}"},{"id":1,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"min","value":"{min}"},{"id":4,"label":"max","value":"{max}"},{"id":6,"label":"data-attributename","value":"{code}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":8,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="5" data-rindex={rindex} class="cf-vlocity-state-5 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state5element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state5element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"required","value":"{required}"},{"id":1,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":5,"label":"data-attributename","value":"{code}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":5,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="email"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="6" data-rindex={rindex} class="cf-vlocity-state-6 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state6element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state6element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"type","value":"password"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"required","value":"{required}"},{"id":4,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":4,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="7" data-rindex={rindex} class="cf-vlocity-state-7 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state7element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state7element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"readOnly","value":"{readonly}"},{"id":4,"label":"pattern","value":"{pattern}"},{"id":5,"label":"value","value":"{userValues}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"fieldBinding":"","imask":"(000)000-0000","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="tel"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="8" data-rindex={rindex} class="cf-vlocity-state-8 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state8element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state8element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"readOnly","value":"{readonly}"},{"id":4,"label":"min","value":"{min}"},{"id":5,"label":"max","value":"{max}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"fieldBinding":"","format":"MM-DD-YYYY","label":"{label}","name":"CPQAttributeDynamicForm","outputFormat":"MM-DD-YYYY","readOnly":"","value":"{userValues}"}'  type="date"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="9" data-rindex={rindex} class="cf-vlocity-state-9 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state9element0" class="slds-col  attribute-title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state9element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Blabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state9element1" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state9element1_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"min","value":"{min}"},{"id":2,"label":"max","value":"{max}"},{"id":3,"label":"data-subtype","value":"min"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":7,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"format":"MM-DD-YYYY","label":"From","name":"CPQAttributeDynamicForm","outputFormat":"MM-DD-YYYY","value":"{uservalmin}"}'  type="date"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state9element2" class="slds-col  divider slds-size_2-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state9element2_child"   record={record}  card={card}  merge-field="%3Cdiv%3E-%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state9element3" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state9element3_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"min","value":"{min}"},{"id":2,"label":"max","value":"{max}"},{"id":3,"label":"data-subtype","value":"max"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":7,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"format":"MM-DD-YYYY","label":"To","name":"CPQAttributeDynamicForm","outputFormat":"MM-DD-YYYY","value":"{uservalmax}"}'  type="date"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state9element4" class="slds-col  range-text slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state9element4_child"   record={record}  card={card}  merge-field="%3Cdiv%3Ebetween%20%7Bmin%7D%20-%20%7Bmax%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="10" data-rindex={rindex} class="cf-vlocity-state-10 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state10element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state10element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"readOnly","value":"{readonly}"},{"id":4,"label":"min","value":"{min}"},{"id":5,"label":"max","value":"{max}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"fieldBinding":"","format":"hh:mm a","interval":"30","label":"{label}","name":"CPQAttributeDynamicForm","outputFormat":"hh:mm a","value":"{userValues}"}'  type="time"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="11" data-rindex={rindex} class="cf-vlocity-state-11 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state11element0" class="slds-col  datetime-style slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state11element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"min","value":"{min}"},{"id":4,"label":"max","value":"{max}"},{"id":5,"label":"value","value":"{userValues}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"disabled":"","fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","readOnly":"","value":"{userValues}"}'  type="datetime"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="12" data-rindex={rindex} class="cf-vlocity-state-12 cf-vlocity-state slds-large-size_8-of-12 slds-medium-size_12-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state12element0" class="slds-col  attribute-title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state12element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Blabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state12element1" class="slds-col  datetime-style slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state12element1_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"min","value":"{min}"},{"id":2,"label":"max","value":"{max}"},{"id":3,"label":"data-subtype","value":"min"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"From","name":"CPQAttributeDynamicForm","readOnly":"","value":"{uservalmin}"}'  type="datetime"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state12element2" class="slds-col  divider slds-size_2-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state12element2_child"   record={record}  card={card}  merge-field="%3Cdiv%3E-%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state12element3" class="slds-col  datetime-style slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state12element3_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"data-subtype","value":"max"},{"id":2,"label":"min","value":"{min}"},{"id":3,"label":"max","value":"{max}"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"To","name":"CPQAttributeDynamicForm","value":"{uservalmax}"}'  type="datetime"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state12element4" class="slds-col  range-text slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state12element4_child"   record={record}  card={card}  merge-field="%3Cdiv%3Ebetween%20%7Bmin%7D%20-%20%7Bmax%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="13" data-rindex={rindex} class="cf-vlocity-state-13 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state13element0" class="slds-col  attribute-title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state13element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Blabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state13element1" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state13element1_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"min","value":"{min}"},{"id":1,"label":"max","value":"{max}"},{"id":2,"label":"data-attributename","value":"{code}"},{"id":3,"label":"data-subtype","value":"min"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"From","name":"CPQAttributeDynamicForm","placeholder":"{min}","readOnly":"","value":"{uservalmin}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state13element2" class="slds-col  divider slds-size_2-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state13element2_child"   record={record}  card={card}  merge-field="%3Cdiv%3E-%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state13element3" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state13element3_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"min","value":"{min}"},{"id":1,"label":"max","value":"{max}"},{"id":2,"label":"data-attributename","value":"{code}"},{"id":3,"label":"data-subtype","value":"max"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"To","name":"CPQAttributeDynamicForm","placeholder":"{max}","value":"{uservalmax}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state13element4" class="slds-col  range-text slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state13element4_child"   record={record}  card={card}  merge-field="%3Cdiv%3Ebetween%20%7Bmin%7D%20-%20%7Bmax%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="14" data-rindex={rindex} class="cf-vlocity-state-14 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state14element0" class="slds-col  attribute-title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state14element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Blabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state14element1" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state14element1_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"min","value":"{min}"},{"id":1,"label":"max","value":"{max}"},{"id":2,"label":"data-attributename","value":"{code}"},{"id":3,"label":"data-subtype","value":"min"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"disabled":"","label":"From","name":"CPQAttributeDynamicForm","placeholder":"{min}","value":"{uservalmin}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state14element2" class="slds-col  divider slds-size_2-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state14element2_child"   record={record}  card={card}  merge-field="%3Cdiv%3E-%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state14element3" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state14element3_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"min","value":"{min}"},{"id":1,"label":"max","value":"{max}"},{"id":2,"label":"data-attributename","value":"{code}"},{"id":3,"label":"data-subtype","value":"max"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"To","name":"CPQAttributeDynamicForm","placeholder":"{max}","value":"{uservalmax}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state14element4" class="slds-col  range-text slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state14element4_child"   record={record}  card={card}  merge-field="%3Cdiv%3Ebetween%20%7Bmin%7D%25%20-%20%7Bmax%7D%25%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="15" data-rindex={rindex} class="cf-vlocity-state-15 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state15element0" class="slds-col  attribute-title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state15element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Blabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state15element1" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state15element1_child"   record={record}  card={card}  property-obj='\{"currency":"USD","customProperties":[{"id":0,"label":"data-subtype","value":"min"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"min","value":"{min}"},{"id":3,"label":"max","value":"{max}"},{"id":5,"label":"value","value":"{uservalmin}"},{"id":5,"label":"placeholder","value":"{min}"},{"id":6,"label":"required","value":"{required}"},{"id":7,"label":"disabled","value":"{disabled}"},{"id":8,"label":"readOnly","value":"{readonly}"},{"id":10,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"From","locale":"en-IN","name":"CPQAttributeDynamicForm","required":"","value":""}'  type="currency"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state15element2" class="slds-col  divider slds-size_2-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state15element2_child"   record={record}  card={card}  merge-field="%3Cdiv%3E-%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state15element3" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state15element3_child"   record={record}  card={card}  property-obj='\{"currency":"USD","customProperties":[{"id":0,"label":"data-subtype","value":"max"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"min","value":"{min}"},{"id":3,"label":"max","value":"{max}"},{"id":5,"label":"value","value":"{uservalmax}"},{"id":5,"label":"placeholder","value":"{max}"},{"id":6,"label":"required","value":"{required}"},{"id":7,"label":"disabled","value":"{disabled}"},{"id":8,"label":"readOnly","value":"{readonly}"},{"id":10,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"To","locale":"en-IN","name":"CPQAttributeDynamicForm","value":""}'  type="currency"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state15element4" class="slds-col  range-text slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state15element4_child"   record={record}  card={card}  merge-field="%3Cdiv%3Ebetween%20$%7Bmin%7D%20-%20$%7Bmax%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="16" data-rindex={rindex} class="cf-vlocity-state-16 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state16element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state16element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"readOnly","value":"{readonly}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":5,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","readOnly":"","styles":"{\n        \"label\": {\n            \"width\":\"auto\"\n        }\n      }","value":"{userValues}"}'  type="textarea"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="17" data-rindex={rindex} class="cf-vlocity-state-17 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state17element0" class="slds-col  checkbox-title-style slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state17element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"disabled","value":"{disabled}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":6,"label":"value","value":"{userValues}"}],"displayMode":"Vertical","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="checkboxgroup"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="18" data-rindex={rindex} class="cf-vlocity-state-18 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state18element0" class="slds-col  slds-p-right_small slds-p-top_large slds-m-bottom_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state18element0_child"   record={record}  card={card}  property-obj='\{"checked":false,"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":4,"label":"checked","value":"{userValues}"},{"id":5,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}"}'  type="checkbox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="19" data-rindex={rindex} class="cf-vlocity-state-19 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state19element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-radio-input data-style-id="state19element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"name","value":"CPQAttributeDynamicForm"}],"label":"{label}","name":"CPQAttributeDynamicForm","options":"{values}","radioDisplayValue":"radiogroup","value":"{userValue}"}'  type="radiogroup"  theme="slds"  ></vlocity_cmt-flex-radio-input>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="20" data-rindex={rindex} class="cf-vlocity-state-20 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state20element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-toggle data-style-id="state20element0_child"  record={record}  card={card}  checked="\{userValues}"  disabled="\{disabled}"  label="\{label}"  name="\{label}"  required="\{required}"  toggle-enabled-label=""  type="toggle"  theme="slds"   ></vlocity_cmt-flex-toggle>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="21" data-rindex={rindex} class="cf-vlocity-state-21 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state21element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state21element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"multiple","value":"{multiselect}"},{"id":2,"label":"deleteMultiple","value":"false"},{"id":3,"label":"data-attributename","value":"{code}"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":7,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":7,"label":"value","value":"{userValues}"}],"disabled":"","fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","options":[],"readOnly":"","type":"combobox","value":"{userValues}"}'  type="combobox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="22" data-rindex={rindex} class="cf-vlocity-state-22 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state22element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state22element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{options}"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"disabled","value":"{disabled}"},{"id":4,"label":"value","value":"{userValues}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"disabled":"","fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","readOnly":"","required":"","type":"typeahead","value":"{userValues}"}'  type="typeahead"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="23" data-rindex={rindex} class="cf-vlocity-state-23 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state23element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state23element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"options","value":"{values}"},{"id":3,"label":"disabled","value":"{disabled}"},{"id":4,"label":"viewonly","value":"{readonly}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":6,"label":"value","value":"{userValues}"}],"disabled":"","displayMode":"Combobox","fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","readOnly":"","required":"","value":"{userValues}"}'  type="pill"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="24" data-rindex={rindex} class="cf-vlocity-state-24 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-bottom_x-small " style="      
+         ">
+          <div data-style-id="state24element0" class="slds-col   slds-text-align_center slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="             " >
+    <vlocity_cmt-block data-style-id="state24element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state24element0block_element0" class="slds-col   slds-size_3-of-12  " data-rindex={rindex} style="             margin: auto;" ><vlocity_cmt-base-input-element data-style-id="state24element0block_element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"variant","value":"success"},{"id":1,"label":"extraclass","value":"vdfbutton"}],"disabled":false,"label":" ","name":"{code}","readOnly":false,"required":false,"value":"{label}"}'  styles='\{"value":{"backgroundColor":"#067EB6","color":"#FFFFFF"}}'  type="button"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state0element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"data-attributename","value":"{code}"},{"id":3,"label":"disabled","value":"{disabled}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":5,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small " style="      
+         ">
+          <div data-style-id="state1element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state1element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"data-attributename","value":"{code}"},{"id":3,"label":"disabled","value":"{disabled}"},{"id":4,"label":"type","value":"range"},{"id":5,"label":"min","value":"{min}"},{"id":6,"label":"max","value":"{max}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":8,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="2" data-rindex={rindex} class="cf-vlocity-state-2 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state2element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state2element0_child"   record={record}  card={card}  property-obj='\{"currency":"USD","customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":4,"label":"readOnly","value":"{readonly}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":5,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","locale":"en-IN","name":"CPQAttributeDynamicForm","readOnly":"","value":"{userValues}"}'  type="currency"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="3" data-rindex={rindex} class="cf-vlocity-state-3 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state3element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state3element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"disabled","value":"{disabled}"},{"id":1,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"min","value":"{min}"},{"id":4,"label":"max","value":"{max}"},{"id":6,"label":"data-attributename","value":"{code}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":8,"label":"value","value":"{userValues}"},{"id":9,"label":"formatter","value":"percent-fixed"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="4" data-rindex={rindex} class="cf-vlocity-state-4 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state4element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state4element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"disabled","value":"{disabled}"},{"id":1,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"min","value":"{min}"},{"id":4,"label":"max","value":"{max}"},{"id":6,"label":"data-attributename","value":"{code}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":8,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="5" data-rindex={rindex} class="cf-vlocity-state-5 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state5element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state5element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"required","value":"{required}"},{"id":1,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":5,"label":"data-attributename","value":"{code}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":5,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="email"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="6" data-rindex={rindex} class="cf-vlocity-state-6 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state6element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state6element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"type","value":"password"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"required","value":"{required}"},{"id":4,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":4,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="7" data-rindex={rindex} class="cf-vlocity-state-7 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state7element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state7element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"readOnly","value":"{readonly}"},{"id":4,"label":"pattern","value":"{pattern}"},{"id":5,"label":"value","value":"{userValues}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"fieldBinding":"","imask":"(000)000-0000","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="tel"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="8" data-rindex={rindex} class="cf-vlocity-state-8 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state8element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state8element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"readOnly","value":"{readonly}"},{"id":4,"label":"min","value":"{min}"},{"id":5,"label":"max","value":"{max}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"fieldBinding":"","format":"MM-DD-YYYY","label":"{label}","name":"CPQAttributeDynamicForm","outputFormat":"MM-DD-YYYY","readOnly":"","value":"{userValues}"}'  type="date"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="9" data-rindex={rindex} class="cf-vlocity-state-9 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state9element0" class="slds-col  attribute-title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state9element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Blabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state9element1" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state9element1_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"min","value":"{min}"},{"id":2,"label":"max","value":"{max}"},{"id":3,"label":"data-subtype","value":"min"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":7,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"format":"MM-DD-YYYY","label":"From","name":"CPQAttributeDynamicForm","outputFormat":"MM-DD-YYYY","value":"{uservalmin}"}'  type="date"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state9element2" class="slds-col  divider slds-size_2-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state9element2_child"   record={record}  card={card}  merge-field="%3Cdiv%3E-%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state9element3" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state9element3_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"min","value":"{min}"},{"id":2,"label":"max","value":"{max}"},{"id":3,"label":"data-subtype","value":"max"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":7,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"format":"MM-DD-YYYY","label":"To","name":"CPQAttributeDynamicForm","outputFormat":"MM-DD-YYYY","value":"{uservalmax}"}'  type="date"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state9element4" class="slds-col  range-text slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state9element4_child"   record={record}  card={card}  merge-field="%3Cdiv%3Ebetween%20%7Bmin%7D%20-%20%7Bmax%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="10" data-rindex={rindex} class="cf-vlocity-state-10 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state10element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state10element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"readOnly","value":"{readonly}"},{"id":4,"label":"min","value":"{min}"},{"id":5,"label":"max","value":"{max}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"fieldBinding":"","format":"hh:mm a","interval":"30","label":"{label}","name":"CPQAttributeDynamicForm","outputFormat":"hh:mm a","value":"{userValues}"}'  type="time"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="11" data-rindex={rindex} class="cf-vlocity-state-11 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state11element0" class="slds-col  datetime-style slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state11element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"min","value":"{min}"},{"id":4,"label":"max","value":"{max}"},{"id":5,"label":"value","value":"{userValues}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"disabled":"","fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","readOnly":"","value":"{userValues}"}'  type="datetime"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="12" data-rindex={rindex} class="cf-vlocity-state-12 cf-vlocity-state slds-large-size_8-of-12 slds-medium-size_12-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state12element0" class="slds-col  attribute-title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state12element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Blabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state12element1" class="slds-col  datetime-style slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state12element1_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"min","value":"{min}"},{"id":2,"label":"max","value":"{max}"},{"id":3,"label":"data-subtype","value":"min"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"From","name":"CPQAttributeDynamicForm","readOnly":"","value":"{uservalmin}"}'  type="datetime"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state12element2" class="slds-col  divider slds-size_2-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state12element2_child"   record={record}  card={card}  merge-field="%3Cdiv%3E-%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state12element3" class="slds-col  datetime-style slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state12element3_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"data-subtype","value":"max"},{"id":2,"label":"min","value":"{min}"},{"id":3,"label":"max","value":"{max}"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"To","name":"CPQAttributeDynamicForm","value":"{uservalmax}"}'  type="datetime"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state12element4" class="slds-col  range-text slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state12element4_child"   record={record}  card={card}  merge-field="%3Cdiv%3Ebetween%20%7Bmin%7D%20-%20%7Bmax%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="13" data-rindex={rindex} class="cf-vlocity-state-13 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state13element0" class="slds-col  attribute-title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state13element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Blabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state13element1" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state13element1_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"min","value":"{min}"},{"id":1,"label":"max","value":"{max}"},{"id":2,"label":"data-attributename","value":"{code}"},{"id":3,"label":"data-subtype","value":"min"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"From","name":"CPQAttributeDynamicForm","placeholder":"{min}","readOnly":"","value":"{uservalmin}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state13element2" class="slds-col  divider slds-size_2-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state13element2_child"   record={record}  card={card}  merge-field="%3Cdiv%3E-%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state13element3" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state13element3_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"min","value":"{min}"},{"id":1,"label":"max","value":"{max}"},{"id":2,"label":"data-attributename","value":"{code}"},{"id":3,"label":"data-subtype","value":"max"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"To","name":"CPQAttributeDynamicForm","placeholder":"{max}","value":"{uservalmax}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state13element4" class="slds-col  range-text slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state13element4_child"   record={record}  card={card}  merge-field="%3Cdiv%3Ebetween%20%7Bmin%7D%20-%20%7Bmax%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="14" data-rindex={rindex} class="cf-vlocity-state-14 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state14element0" class="slds-col  attribute-title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state14element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Blabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state14element1" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state14element1_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"min","value":"{min}"},{"id":1,"label":"max","value":"{max}"},{"id":2,"label":"data-attributename","value":"{code}"},{"id":3,"label":"data-subtype","value":"min"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"disabled":"","label":"From","name":"CPQAttributeDynamicForm","placeholder":"{min}","value":"{uservalmin}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state14element2" class="slds-col  divider slds-size_2-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state14element2_child"   record={record}  card={card}  merge-field="%3Cdiv%3E-%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state14element3" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state14element3_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"min","value":"{min}"},{"id":1,"label":"max","value":"{max}"},{"id":2,"label":"data-attributename","value":"{code}"},{"id":3,"label":"data-subtype","value":"max"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":6,"label":"readOnly","value":"{readonly}"},{"id":8,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"To","name":"CPQAttributeDynamicForm","placeholder":"{max}","value":"{uservalmax}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state14element4" class="slds-col  range-text slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state14element4_child"   record={record}  card={card}  merge-field="%3Cdiv%3Ebetween%20%7Bmin%7D%25%20-%20%7Bmax%7D%25%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="15" data-rindex={rindex} class="cf-vlocity-state-15 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state15element0" class="slds-col  attribute-title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state15element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7Blabel%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state15element1" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state15element1_child"   record={record}  card={card}  property-obj='\{"currency":"USD","customProperties":[{"id":0,"label":"data-subtype","value":"min"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"min","value":"{min}"},{"id":3,"label":"max","value":"{max}"},{"id":5,"label":"value","value":"{uservalmin}"},{"id":5,"label":"placeholder","value":"{min}"},{"id":6,"label":"required","value":"{required}"},{"id":7,"label":"disabled","value":"{disabled}"},{"id":8,"label":"readOnly","value":"{readonly}"},{"id":10,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"From","locale":"en-IN","name":"CPQAttributeDynamicForm","required":"","value":""}'  type="currency"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state15element2" class="slds-col  divider slds-size_2-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state15element2_child"   record={record}  card={card}  merge-field="%3Cdiv%3E-%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state15element3" class="slds-col   slds-size_5-of-12  " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state15element3_child"   record={record}  card={card}  property-obj='\{"currency":"USD","customProperties":[{"id":0,"label":"data-subtype","value":"max"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"min","value":"{min}"},{"id":3,"label":"max","value":"{max}"},{"id":5,"label":"value","value":"{uservalmax}"},{"id":5,"label":"placeholder","value":"{max}"},{"id":6,"label":"required","value":"{required}"},{"id":7,"label":"disabled","value":"{disabled}"},{"id":8,"label":"readOnly","value":"{readonly}"},{"id":10,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"label":"To","locale":"en-IN","name":"CPQAttributeDynamicForm","value":""}'  type="currency"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state15element4" class="slds-col  range-text slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state15element4_child"   record={record}  card={card}  merge-field="%3Cdiv%3Ebetween%20$%7Bmin%7D%20-%20$%7Bmax%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="16" data-rindex={rindex} class="cf-vlocity-state-16 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state16element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state16element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"readOnly","value":"{readonly}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":5,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","readOnly":"","styles":"{\n        \"label\": {\n            \"width\":\"auto\"\n        }\n      }","value":"{userValues}"}'  type="textarea"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="17" data-rindex={rindex} class="cf-vlocity-state-17 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state17element0" class="slds-col  checkbox-title-style slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state17element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"disabled","value":"{disabled}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":6,"label":"value","value":"{userValues}"}],"displayMode":"Vertical","label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="checkboxgroup"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="18" data-rindex={rindex} class="cf-vlocity-state-18 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state18element0" class="slds-col  slds-p-right_small slds-p-top_large slds-m-bottom_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state18element0_child"   record={record}  card={card}  property-obj='\{"checked":false,"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":4,"label":"checked","value":"{userValues}"},{"id":5,"label":"value","value":"{userValues}"}],"fieldBinding":"","label":"{label}"}'  type="checkbox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="19" data-rindex={rindex} class="cf-vlocity-state-19 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state19element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-radio-input data-style-id="state19element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"required","value":"{required}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":3,"label":"name","value":"CPQAttributeDynamicForm"}],"label":"{label}","name":"CPQAttributeDynamicForm","options":"{values}","radioDisplayValue":"radiogroup","value":"{userValue}"}'  type="radiogroup"  theme="slds"  ></vlocity_cmt-flex-radio-input>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="20" data-rindex={rindex} class="cf-vlocity-state-20 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state20element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-toggle data-style-id="state20element0_child"  record={record}  card={card}  checked="\{userValues}"  disabled="\{disabled}"  label="\{label}"  name="\{label}"  required="\{required}"  toggle-enabled-label=""  type="toggle"  theme="slds"   ></vlocity_cmt-flex-toggle>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="21" data-rindex={rindex} class="cf-vlocity-state-21 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state21element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state21element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"multiple","value":"{multiselect}"},{"id":2,"label":"deleteMultiple","value":"false"},{"id":3,"label":"data-attributename","value":"{code}"},{"id":4,"label":"required","value":"{required}"},{"id":5,"label":"disabled","value":"{disabled}"},{"id":7,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":7,"label":"value","value":"{userValues}"}],"disabled":"","fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","options":[],"readOnly":"","type":"combobox","value":"{userValues}"}'  type="combobox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="22" data-rindex={rindex} class="cf-vlocity-state-22 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state22element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state22element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{options}"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"disabled","value":"{disabled}"},{"id":4,"label":"value","value":"{userValues}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"}],"disabled":"","fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","readOnly":"","required":"","type":"typeahead","value":"{userValues}"}'  type="typeahead"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="23" data-rindex={rindex} class="cf-vlocity-state-23 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-around_none " style="      
+         ">
+          <div data-style-id="state23element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state23element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"},{"id":1,"label":"options","value":"{values}"},{"id":3,"label":"disabled","value":"{disabled}"},{"id":4,"label":"viewonly","value":"{readonly}"},{"id":5,"label":"name","value":"cpq_{recordId}_{Parent.type}_CPQAttributeDynamicForm"},{"id":6,"label":"value","value":"{userValues}"}],"disabled":"","displayMode":"Combobox","fieldBinding":"","label":"{label}","name":"CPQAttributeDynamicForm","readOnly":"","required":"","value":"{userValues}"}'  type="pill"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="24" data-rindex={rindex} class="cf-vlocity-state-24 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-around_x-small slds-m-bottom_x-small " style="      
+         ">
+          <div data-style-id="state24element0" class="slds-col   slds-text-align_center slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="             " >
+    <vlocity_cmt-block data-style-id="state24element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state24element0block_element0" class="slds-col   slds-size_3-of-12  " data-rindex={rindex} style="             margin: auto;" ><vlocity_cmt-base-input-element data-style-id="state24element0block_element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"variant","value":"success"},{"id":1,"label":"extraclass","value":"vdfbutton"}],"disabled":false,"label":" ","name":"{code}","readOnly":false,"required":false,"value":"{label}"}'  styles='\{"value":{"backgroundColor":"#067EB6","color":"#FFFFFF"}}'  type="button"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

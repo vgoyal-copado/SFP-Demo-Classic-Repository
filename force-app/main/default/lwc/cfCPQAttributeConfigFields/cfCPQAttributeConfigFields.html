@@ -1,0 +1,271 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_small " style="             ">
+          <div data-style-id="state0element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state0element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"readOnly","value":"{readonly}"},{"id":1,"label":"disabled","value":"{disabled}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state1element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state1element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="currency"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="2" data-rindex={rindex} class="cf-vlocity-state-2 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state2element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state2element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"disabled","value":"{disabled}"},{"id":1,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"min","value":"{min}"},{"id":4,"label":"max","value":"{max}"},{"id":5,"label":"messageWhenTooShort","value":"Age should be above 18 years"},{"id":6,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="3" data-rindex={rindex} class="cf-vlocity-state-3 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state3element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state3element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"required","value":"{required}"},{"id":1,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":4,"label":"pattern","value":"^[A-Za-z0-9._%+-]+@salesforce.com$"},{"id":5,"label":"messageWhenPatternMismatch","value":"Please enter salesforce email id"},{"id":5,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="email"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="4" data-rindex={rindex} class="cf-vlocity-state-4 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state4element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state4element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"type","value":"password"},{"id":1,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="5" data-rindex={rindex} class="cf-vlocity-state-5 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state5element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state5element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="tel"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="6" data-rindex={rindex} class="cf-vlocity-state-6 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state6element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state6element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="date"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="7" data-rindex={rindex} class="cf-vlocity-state-7 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state7element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state7element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="time"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="8" data-rindex={rindex} class="cf-vlocity-state-8 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state8element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state8element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="datetime"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="9" data-rindex={rindex} class="cf-vlocity-state-9 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state9element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state9element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"min","value":"{min}"},{"id":1,"label":"max","value":"{max}"},{"id":2,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="range"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="10" data-rindex={rindex} class="cf-vlocity-state-10 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state10element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state10element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="color"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="11" data-rindex={rindex} class="cf-vlocity-state-11 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state11element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state11element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="textarea"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="12" data-rindex={rindex} class="cf-vlocity-state-12 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state12element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state12element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="checkboxgroup"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="13" data-rindex={rindex} class="cf-vlocity-state-13 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state13element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state13element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"type","value":"button"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="checkboxgroup"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="14" data-rindex={rindex} class="cf-vlocity-state-14 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_7-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small " style="             ">
+          <div data-style-id="state14element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-radio-input data-style-id="state14element0_child"   record={record}  card={card}  property-obj='\{"controlHeight":"80","controlWidth":"135","customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"isColorDisplay","value":"true"},{"id":2,"label":"data-attributename","value":"{code}"}],"isImage":false,"label":"{label}","name":"CPQAttributeDynamicForm"}'  type="radiocolorpickgroup"  theme="slds"  ></vlocity_cmt-flex-radio-input>
+      </div><div data-style-id="state14element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-radio-input data-style-id="state14element1_child"   record={record}  card={card}  property-obj='\{"controlHeight":"200px","controlWidth":"100px","label":"{label}","name":"{code}"}'  type="radiocolorpickgroup"  theme="slds"  ></vlocity_cmt-flex-radio-input>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="15" data-rindex={rindex} class="cf-vlocity-state-15 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state15element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-radio-input data-style-id="state15element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="radiogroup"  theme="slds"  ></vlocity_cmt-flex-radio-input>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="16" data-rindex={rindex} class="cf-vlocity-state-16 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state16element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-radio-input data-style-id="state16element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"type","value":"button"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="radiogroup"  theme="slds"  ></vlocity_cmt-flex-radio-input>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="17" data-rindex={rindex} class="cf-vlocity-state-17 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state17element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-toggle data-style-id="state17element0_child"  record={record}  card={card}  label="\{label}"  name="\{label}"  type="toggle"  theme="slds"   ></vlocity_cmt-flex-toggle>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="18" data-rindex={rindex} class="cf-vlocity-state-18 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state18element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state18element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"multiple","value":"{multiselect}"},{"id":2,"label":"deleteMultiple","value":"true"},{"id":3,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","options":[],"value":"{userValues}"}'  type="combobox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="19" data-rindex={rindex} class="cf-vlocity-state-19 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state19element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state19element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{options}"},{"id":1,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="typeahead"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="20" data-rindex={rindex} class="cf-vlocity-state-20 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state20element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state20element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="pill"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="21" data-rindex={rindex} class="cf-vlocity-state-21 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small " style="             ">
+          <div data-style-id="state21element0" class="slds-col   slds-text-align_center slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="             " >
+    <vlocity_cmt-block data-style-id="state21element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state21element0block_element0" class="slds-col   slds-size_3-of-12  " data-rindex={rindex} style="             margin: auto;" ><vlocity_cmt-base-input-element data-style-id="state21element0block_element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"variant","value":"success"},{"id":1,"label":"extraclass","value":"vdfbutton"}],"disabled":false,"label":" ","name":"{code}","readOnly":false,"required":false,"value":"{label}"}'  styles='\{"value":{"backgroundColor":"#067EB6","color":"#FFFFFF"}}'  type="button"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_small " style="             ">
+          <div data-style-id="state0element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state0element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"readOnly","value":"{readonly}"},{"id":1,"label":"disabled","value":"{disabled}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state1element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state1element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="currency"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="2" data-rindex={rindex} class="cf-vlocity-state-2 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state2element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state2element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"disabled","value":"{disabled}"},{"id":1,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"required","value":"{required}"},{"id":3,"label":"min","value":"{min}"},{"id":4,"label":"max","value":"{max}"},{"id":5,"label":"messageWhenTooShort","value":"Age should be above 18 years"},{"id":6,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="3" data-rindex={rindex} class="cf-vlocity-state-3 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state3element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state3element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"required","value":"{required}"},{"id":1,"label":"readOnly","value":"{readonly}"},{"id":2,"label":"disabled","value":"{disabled}"},{"id":4,"label":"pattern","value":"^[A-Za-z0-9._%+-]+@salesforce.com$"},{"id":5,"label":"messageWhenPatternMismatch","value":"Please enter salesforce email id"},{"id":5,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="email"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="4" data-rindex={rindex} class="cf-vlocity-state-4 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state4element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state4element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"type","value":"password"},{"id":1,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="text"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="5" data-rindex={rindex} class="cf-vlocity-state-5 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state5element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state5element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="tel"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="6" data-rindex={rindex} class="cf-vlocity-state-6 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state6element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state6element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="date"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="7" data-rindex={rindex} class="cf-vlocity-state-7 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state7element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state7element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="time"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="8" data-rindex={rindex} class="cf-vlocity-state-8 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state8element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state8element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="datetime"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="9" data-rindex={rindex} class="cf-vlocity-state-9 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state9element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state9element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"min","value":"{min}"},{"id":1,"label":"max","value":"{max}"},{"id":2,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="range"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="10" data-rindex={rindex} class="cf-vlocity-state-10 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state10element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state10element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="color"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="11" data-rindex={rindex} class="cf-vlocity-state-11 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state11element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state11element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="textarea"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="12" data-rindex={rindex} class="cf-vlocity-state-12 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state12element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state12element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="checkboxgroup"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="13" data-rindex={rindex} class="cf-vlocity-state-13 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state13element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state13element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"type","value":"button"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="checkboxgroup"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="14" data-rindex={rindex} class="cf-vlocity-state-14 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_7-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small " style="             ">
+          <div data-style-id="state14element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-radio-input data-style-id="state14element0_child"   record={record}  card={card}  property-obj='\{"controlHeight":"80","controlWidth":"135","customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"isColorDisplay","value":"true"},{"id":2,"label":"data-attributename","value":"{code}"}],"isImage":false,"label":"{label}","name":"CPQAttributeDynamicForm"}'  type="radiocolorpickgroup"  theme="slds"  ></vlocity_cmt-flex-radio-input>
+      </div><div data-style-id="state14element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-radio-input data-style-id="state14element1_child"   record={record}  card={card}  property-obj='\{"controlHeight":"200px","controlWidth":"100px","label":"{label}","name":"{code}"}'  type="radiocolorpickgroup"  theme="slds"  ></vlocity_cmt-flex-radio-input>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="15" data-rindex={rindex} class="cf-vlocity-state-15 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state15element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-radio-input data-style-id="state15element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="radiogroup"  theme="slds"  ></vlocity_cmt-flex-radio-input>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="16" data-rindex={rindex} class="cf-vlocity-state-16 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state16element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-radio-input data-style-id="state16element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"},{"id":2,"label":"type","value":"button"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValue}"}'  type="radiogroup"  theme="slds"  ></vlocity_cmt-flex-radio-input>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="17" data-rindex={rindex} class="cf-vlocity-state-17 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state17element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-flex-toggle data-style-id="state17element0_child"  record={record}  card={card}  label="\{label}"  name="\{label}"  type="toggle"  theme="slds"   ></vlocity_cmt-flex-toggle>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="18" data-rindex={rindex} class="cf-vlocity-state-18 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state18element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state18element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"multiple","value":"{multiselect}"},{"id":2,"label":"deleteMultiple","value":"true"},{"id":3,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","options":[],"value":"{userValues}"}'  type="combobox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="19" data-rindex={rindex} class="cf-vlocity-state-19 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state19element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state19element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{options}"},{"id":1,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="typeahead"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="20" data-rindex={rindex} class="cf-vlocity-state-20 cf-vlocity-state slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none " style="             ">
+          <div data-style-id="state20element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state20element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"{values}"},{"id":1,"label":"data-attributename","value":"{code}"}],"label":"{label}","name":"CPQAttributeDynamicForm","value":"{userValues}"}'  type="pill"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="21" data-rindex={rindex} class="cf-vlocity-state-21 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small " style="             ">
+          <div data-style-id="state21element0" class="slds-col   slds-text-align_center slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="             " >
+    <vlocity_cmt-block data-style-id="state21element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state21element0block_element0" class="slds-col   slds-size_3-of-12  " data-rindex={rindex} style="             margin: auto;" ><vlocity_cmt-base-input-element data-style-id="state21element0block_element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"variant","value":"success"},{"id":1,"label":"extraclass","value":"vdfbutton"}],"disabled":false,"label":" ","name":"{code}","readOnly":false,"required":false,"value":"{label}"}'  styles='\{"value":{"backgroundColor":"#067EB6","color":"#FFFFFF"}}'  type="button"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

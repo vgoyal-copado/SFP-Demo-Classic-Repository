@@ -1,0 +1,33 @@
+<template>
+
+	<div class="demo-appointment-tiles">
+
+		<template for:each={appointments} for:item="appointment">
+			<!-- Day -->
+			<div key={appointment.date} class="slds-m-bottom_medium day">
+				<div class="day-of-week">
+					<h3 class="slds-text-heading_medium">{appointment.dayLabel}</h3>
+					<h4 class="slds-text-body_regular">{appointment.dateLabel}</h4>
+				</div>
+				<div class="slots">
+					<template for:each={appointment.timeslots} for:item="timeslot">
+						<div key={timeslot.id} class="slot">
+
+							<!-- Selected Timeslot -->
+							<template if:true={timeslot.selected}>
+								<button data-id={timeslot.id} class="vlocity-btn slds-button slds-button_brand slds-size_1-of-1 slds-p-horizontal_none slds-text-align_center selected-timeslot" type="button" onclick={selectAppointment}>{timeslot.slot}</button>
+							</template>
+
+							<!-- Unselected Timeslot -->
+							<template if:false={timeslot.selected}>
+								<button data-id={timeslot.id} class="vlocity-btn slds-button slds-button_outline-brand slds-size_1-of-1 slds-p-horizontal_none slds-text-align_center" type="button" onclick={selectAppointment}>{timeslot.slot}</button>
+							</template>
+                            
+						</div>
+					</template>
+				</div>
+			</div>
+		</template>
+	</div>
+
+</template>

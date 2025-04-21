@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Groups permission sets based on DocGen runtime user job functions such as generating documents.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CME DocGen User</label>
+    <permissionSets>DocGenInd_Docusign_Runtime_All</permissionSets>
+    <permissionSets>DocGenInd_Runtime_All</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,45 @@
+.cpq-create_discount{
+    padding: 0;
+}
+
+.cpq-create_discount .header{
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.cpq-create_discount .border-bottom{
+    border-bottom: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    margin: 20px 0px;
+}
+
+.cpq-create_discount .body{
+    background: #fafaf9;
+    padding: 12px 22px;
+    max-height: 580px;
+    overflow-y: auto;
+}
+.cpq-create_discount .body .field-container{
+    background-color: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 30px 0px;
+}
+.cpq-create_discount .body .field-container .field-row{
+    padding: 0px 20px;
+}
+
+.cpq-create_discount .cpq_footer{
+    border-top: 1px solid #D9D9D9;
+    padding: 12px 12px 0 0;
+}
+
+/* css for cpqCreateAmountDetails */
+.value label.slds-form-element__label{
+    margin-left: -25px !important;
+}

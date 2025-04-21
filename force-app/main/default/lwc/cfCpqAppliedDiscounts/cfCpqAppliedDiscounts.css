@@ -1,0 +1,69 @@
+.cpq-discounts-list_container{
+    border-bottom: 1px solid #DDDBDA !important;
+    border-radius: 0px;
+    padding: 13px 18px 13px 40px;
+}
+.cpq-discounts_fields label{
+    text-transform:capitalize ;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.cpq-discounts_fields.uppercase label{
+    text-transform: uppercase; 
+}
+.cpq-discounts_fields .field-value{
+    font-size: 16px;
+    color: #000000;
+}
+.approved__icon{
+    text-align: center;
+}
+.notsubmit__icon{
+  text-align: center;
+}
+.notsubmit__icon .slds-icon-action-approval{
+    background-color: #E8912D; 
+    border-radius: 100px;
+    margin-left: -20px;
+    text-align: center;
+}
+.approved__icon .slds-icon-action-approval{
+    background-color: #4aca81; 
+    border-radius: 100px;
+    margin-left: -20px;
+    text-align: center;
+}
+svg.slds-icon.slds-icon_container.slds-icon-action-approval.slds-icon_container--circle {
+    fill: #fff !important;
+}
+.cpq-discounts_dynamic-align{
+    text-align: center;
+}
+.cpq_discount_applies_all{
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.cpq__applied_discount__remove_container .slds-rise-from-ground{
+    visibility: hidden;
+    opacity: 0;
+}
+@media only screen and (max-width: 48em) {
+  .approved__icon{
+    text-align: left;
+    margin-left: 30px;
+  }
+  .cpq-discounts_dynamic-align{
+    text-align: left;
+  }
+  .cpq-discounts_fields .field-value {
+    font-size: 12px;
+  }
+  .cpq-discounts_fields label{
+    font-size: 9px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .cpq-discounts-list_container{
+      padding: 0px;
+  }
+}

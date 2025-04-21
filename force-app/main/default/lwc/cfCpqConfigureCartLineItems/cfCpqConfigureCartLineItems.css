@@ -1,0 +1,64 @@
+.cpq__configure-line-item-card {
+    padding: 40px 32px 32px 32px;
+    margin-top: 24px;
+    box-shadow: 0px 2px 2px 0px #0000001A;
+}
+
+.cpq__configure-line-item-price {
+    margin-top: 3px;
+}
+
+.cpq__configure-line-item-toggle_icon {
+    width: 22px;
+}
+
+.cpq__configure-line-item-name {
+    text-align: left;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    width: auto;
+    max-width: 75%;
+}
+
+.cpq__configure-line-item-description {
+    text-align: left;
+    font-size: 13px;
+    line-height: 15px;
+    color: rgba(0, 0, 0, 0.599678);
+    padding: 32px 0px 24px 0px;
+}
+.cpq__configure-cart-product-group-name {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #514F4D;
+    text-align: left;
+}
+
+.cpq__configure-cart-product-group-version {
+	font-style: italic;
+    color: #2E2E2E;
+}
+
+.cpq__configure-line-item-version {
+	font-style: italic;
+    color: #2E2E2E;
+}
+
+.cpq__configurator-bulk-delete {
+    text-decoration: line-through;
+}
+
+ @media (max-width: 1024px) {
+  .cpq-configureCartLineItem-deleteaction{
+  	position: absolute;
+    right: 0px;
+  }
+   .cpq__bulkchange-select-action{
+  	position: absolute;
+    right: 0px;
+    margin-right: 15px;
+  }
+}

@@ -1,0 +1,14 @@
+.cpq__adjust-pricing-elements_padding{
+    padding-right: 16px;
+    padding-bottom: 16px;
+}
+
+.cpq__adjust-pricing-nonlabel-elements_padding{
+    padding-top: 24px;
+}
+
+@media only screen and (max-width: 480px) {
+    .cpq__adjust-pricing-nonlabel-elements_padding{
+        padding-top: 0px;
+    }
+}

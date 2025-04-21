@@ -1,0 +1,55 @@
+/* Salesforce Colors: */
+/* usage
+div {
+	@include font-size(14px);
+}
+*/
+.footer {
+  background-color: #fff;
+  box-shadow: 0px 0px 3px #66666660;
+  margin-top: 100px; }
+  .footer .container {
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 1140px; }
+    .footer .container .slds-gutters .slds-col {
+      padding-right: 0;
+      padding-left: 0; }
+  .footer .copyright {
+    color: token(colorTextDefault);
+    font-size: 12px;
+    font-size: 0.75rem;
+    padding-top: 10px; }
+    @media all and (min-width: 968px) {
+      .footer .copyright {
+        margin-bottom: 10px;
+        text-align: left; } }
+    @media all and (min-width: 671px) and (max-width: 968px) {
+      .footer .copyright {
+        text-align: left; } }
+    @media all and (max-width: 670px) {
+      .footer .copyright {
+        text-align: center; } }
+  .footer .logo-container {
+    text-align: center; }
+    .footer .logo-container .logo {
+      height: 35px; }
+    @media all and (max-width: 670px) {
+      .footer .logo-container {
+        margin-top: 10px; } }
+  .footer .social-media-icons {
+    padding-top: 10px;
+    text-align: right; }
+    .footer .social-media-icons .icon {
+      font-size: 18px;
+      font-size: 1.125rem;
+      margin: 0 15px; }
+    @media all and (min-width: 968px) {
+      .footer .social-media-icons {
+        text-align: right; } }
+    @media all and (min-width: 671px) and (max-width: 968px) {
+      .footer .social-media-icons {
+        text-align: right; } }
+    @media all and (max-width: 670px) {
+      .footer .social-media-icons {
+        text-align: center; } }

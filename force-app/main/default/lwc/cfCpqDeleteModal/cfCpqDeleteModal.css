@@ -1,0 +1,9 @@
+.delete-btn{
+    width:fit-content;
+    margin-left: auto;
+}
+
+.delete-btn .slds-button{
+    border-radius: 0px;
+    margin-right: -1px;
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>tier3@example.com</email>
+    <name>Tier 3 Queue</name>
+    <queueMembers>
+        <users>
+            <user>bill.hzx4h3ctu4la.1g4bt1bbmon1.x6bmqabqqbgd@communications-b2c.1678986800792</user>
+            <user>cindy.foqthdcitv9k.mc8mszfkwjfe.oie3eevtvbxv@communications-b2c.1678986800792</user>
+            <user>customer.qulfmaf3gjwb.jwk6dxzyglz1.eppasfh86xuh@communications-b2c.1678986800792</user>
+            <user>demo.org@communications-b2c.1678986800792</user>
+            <user>elliot.6eioscyn4zd1.2mtowezoyjbv.02ljqsgtrhlv@communications-b2c.1678986800792</user>
+            <user>ely.n5hhq0lbfay4.qfqkcudu8l6m.2fnzaxwxrzjb@communications-b2c.1678986800792</user>
+            <user>partner.rlhrsdw5odis.lqhul2u5c7kb.hiataukzfa6i@communications-b2c.1678986800792</user>
+            <user>quinton.ogzpogqekczi.iy2dpcaoxvxm.5pseatpmdrrz@communications-b2c.1678986800792</user>
+            <user>sue.9afdirlighit.yenzvjrhkqry.zdt19edxq01c@communications-b2c.1678986800792</user>
+            <user>tim.eyq67hwdf6du.1clqzoudanhk.aewlzgyz3aah@communications-b2c.1678986800792</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

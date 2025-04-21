@@ -1,0 +1,97 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                      <vlocity_cmt-flex-card-state   data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-m-around_none " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col  slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+        color:#000000; " ><vlocity_cmt-output-field data-style-id="state0element0_child"   record={record}  card={card}  merge-field="%3Cdiv%20class=%22slds-text-heading_small%22%3E%7BLabel.CPQFilter%7D%20%7BParent.memberType%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element1" class="slds-col  cpq__multisite-object-filter-action_checkbox  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state0element1_child"   record={record}  card={card}  property-obj='\{"action":null,"checked":false,"customProperties":[{"id":0,"label":"name","value":"cpq_{recordId}_{Parent.type}_IncludeGroupedItemsCB"},{"id":1,"label":"checked","value":"{Parent.includeGroupedItemsFlagValue}"}],"fieldBinding":"","fieldLevelHelp":"","label":"{Label.MSIncludeGroupedItems}"}'  styles='\{"label":{"textAlign":""}}'  type="checkbox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element2" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="" ><c-cf-cpq-multisite-object-filter-v-d-f data-style-id="state0element2_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node="\{records}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  parent-attribute='\{"type":"{Parent.type}"}'  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-cpq-multisite-object-filter-v-d-f>
+    </div><div data-style-id="state0element3" class="slds-col   cpq__multisite-object-filter_emptyblock  slds-p-around_x-small  slds-large-size_9-of-12 slds-medium-size_7-of-12 slds-small-size_5-of-12 slds-size_2-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element3_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element4" class="slds-col  slds-text-align_right cpq__multisite-object-filter-action_clear slds-p-around_x-small  slds-large-size_1-of-12 slds-medium-size_2-of-12 slds-small-size_3-of-12 slds-size_5-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-action data-style-id="state0element4_child"  tracking-obj={_childCardTrackingObj}  class= "state0element4_child flexActionElement" 
+        data-action-element-class="state0element4_child" data-action-key="state0element4" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="action4"   state-obj={record}  record={record}  card={card}  action-list='\[{"actionIndex":0,"buttonVariant":"neutral","card":"{card}","displayAsButton":false,"draggable":false,"hideActionIcon":true,"isOpen":true,"key":"1635266219925-g6pjij14t","label":"Action","record":"{record}","stateAction":{"displayName":"{Label.CPQClearAll}","eventName":"cpq_{Parent.recordId}_{Parent.type}","id":"flex-action-1635266221794","message":"multisite_clear_filter","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"},"stateObj":"{record}","styles":{"label":{"color":"#0176D3"}}}]'  button-variant="neutral"  display-as-button="false"  flyout-details='\{}'  hide-action-icon="true"  icon-name="standard-default"  label={Label.CPQClearAll}  styles='\{"label":{"color":"#0176D3"}}'  theme="slds"  ></vlocity_cmt-flex-action>
+      </div><div data-style-id="state0element5" class="slds-col  slds-text-align_right cpq__multisite-object-filter-action_apply slds-p-around_x-small  slds-large-size_2-of-12 slds-medium-size_3-of-12 slds-small-size_4-of-12 slds-size_5-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-action data-style-id="state0element5_child"  tracking-obj={_childCardTrackingObj}  class= "state0element5_child flexActionElement" 
+        data-action-element-class="state0element5_child" data-action-key="state0element5" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="action5"   state-obj={record}  record={record}  card={card}  action-list='\[{"actionIndex":0,"buttonVariant":"brand","card":"{card}","displayAsButton":true,"draggable":false,"hideActionIcon":true,"isOpen":true,"key":"1635264318036-od796ob5t","label":"Action","record":"{record}","stateAction":{"displayName":"{Label.MSApplyFilterLabel}","eventName":"cpq_{Parent.recordId}_{Parent.type}","hasExtraParams":false,"id":"flex-action-1635266154349","message":"multisite_apply_filter","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"},"stateObj":"{record}"}]'  button-variant="brand"  display-as-button="true"  flyout-details='\{}'  hide-action-icon="true"  icon-name="standard-default"  label="\{Label.MSApplyFilterLabel}"  theme="slds"  ></vlocity_cmt-flex-action>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state   data-statue="true"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state1element0" class="slds-col   slds-size_12-of-12" data-rindex={rindex} style="" >
+    <vlocity_cmt-custom-lwc-wrapper class="" element-name="vlocity_cmt-spinner" property='\{}' data-rindex={rindex} records={records} record={record} record-id={recordId} card={card} ><vlocity_cmt-spinner   size="medium" ></vlocity_cmt-spinner></vlocity_cmt-custom-lwc-wrapper>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                </template>
+                <template if:false={hasRecords}>
+                      <vlocity_cmt-flex-card-state   data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-m-around_none " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col  slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+        color:#000000; " ><vlocity_cmt-output-field data-style-id="state0element0_child"   record={record}  card={card}  merge-field="%3Cdiv%20class=%22slds-text-heading_small%22%3E%7BLabel.CPQFilter%7D%20%7BParent.memberType%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element1" class="slds-col  cpq__multisite-object-filter-action_checkbox  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-base-input-element data-style-id="state0element1_child"   record={record}  card={card}  property-obj='\{"action":null,"checked":false,"customProperties":[{"id":0,"label":"name","value":"cpq_{recordId}_{Parent.type}_IncludeGroupedItemsCB"},{"id":1,"label":"checked","value":"{Parent.includeGroupedItemsFlagValue}"}],"fieldBinding":"","fieldLevelHelp":"","label":"{Label.MSIncludeGroupedItems}"}'  styles='\{"label":{"textAlign":""}}'  type="checkbox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element2" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="" ><c-cf-cpq-multisite-object-filter-v-d-f data-style-id="state0element2_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node="\{records}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  parent-attribute='\{"type":"{Parent.type}"}'  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-cpq-multisite-object-filter-v-d-f>
+    </div><div data-style-id="state0element3" class="slds-col   cpq__multisite-object-filter_emptyblock  slds-p-around_x-small  slds-large-size_9-of-12 slds-medium-size_7-of-12 slds-small-size_5-of-12 slds-size_2-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_cmt-block data-style-id="state0element3_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element4" class="slds-col  slds-text-align_right cpq__multisite-object-filter-action_clear slds-p-around_x-small  slds-large-size_1-of-12 slds-medium-size_2-of-12 slds-small-size_3-of-12 slds-size_5-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-action data-style-id="state0element4_child"  tracking-obj={_childCardTrackingObj}  class= "state0element4_child flexActionElement" 
+        data-action-element-class="state0element4_child" data-action-key="state0element4" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="action4"   state-obj={record}  record={record}  card={card}  action-list='\[{"actionIndex":0,"buttonVariant":"neutral","card":"{card}","displayAsButton":false,"draggable":false,"hideActionIcon":true,"isOpen":true,"key":"1635266219925-g6pjij14t","label":"Action","record":"{record}","stateAction":{"displayName":"{Label.CPQClearAll}","eventName":"cpq_{Parent.recordId}_{Parent.type}","id":"flex-action-1635266221794","message":"multisite_clear_filter","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"},"stateObj":"{record}","styles":{"label":{"color":"#0176D3"}}}]'  button-variant="neutral"  display-as-button="false"  flyout-details='\{}'  hide-action-icon="true"  icon-name="standard-default"  label={Label.CPQClearAll}  styles='\{"label":{"color":"#0176D3"}}'  theme="slds"  ></vlocity_cmt-flex-action>
+      </div><div data-style-id="state0element5" class="slds-col  slds-text-align_right cpq__multisite-object-filter-action_apply slds-p-around_x-small  slds-large-size_2-of-12 slds-medium-size_3-of-12 slds-small-size_4-of-12 slds-size_5-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_cmt-flex-action data-style-id="state0element5_child"  tracking-obj={_childCardTrackingObj}  class= "state0element5_child flexActionElement" 
+        data-action-element-class="state0element5_child" data-action-key="state0element5" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="action5"   state-obj={record}  record={record}  card={card}  action-list='\[{"actionIndex":0,"buttonVariant":"brand","card":"{card}","displayAsButton":true,"draggable":false,"hideActionIcon":true,"isOpen":true,"key":"1635264318036-od796ob5t","label":"Action","record":"{record}","stateAction":{"displayName":"{Label.MSApplyFilterLabel}","eventName":"cpq_{Parent.recordId}_{Parent.type}","hasExtraParams":false,"id":"flex-action-1635266154349","message":"multisite_apply_filter","openUrlIn":"Current Window","subType":"PubSub","type":"Event","vlocityIcon":"standard-default"},"stateObj":"{record}"}]'  button-variant="brand"  display-as-button="true"  flyout-details='\{}'  hide-action-icon="true"  icon-name="standard-default"  label="\{Label.MSApplyFilterLabel}"  theme="slds"  ></vlocity_cmt-flex-action>
+      </div>
+        </div>
+      </vlocity_cmt-flex-card-state><vlocity_cmt-flex-card-state   data-statue="false"  data-index="1" data-rindex={rindex} class="cf-vlocity-state-1 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state1element0" class="slds-col   slds-size_12-of-12" data-rindex={rindex} style="" >
+    <vlocity_cmt-custom-lwc-wrapper class="" element-name="vlocity_cmt-spinner" property='\{}' data-rindex={rindex} records={records} record={record} record-id={recordId} card={card} ><vlocity_cmt-spinner   size="medium" ></vlocity_cmt-spinner></vlocity_cmt-custom-lwc-wrapper>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

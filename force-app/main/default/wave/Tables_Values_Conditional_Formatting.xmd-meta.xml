@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dataset xsi:nil="true"/>
+    <measures>
+        <conditionalFormatting>
+            <formattingPredicates>
+                <formatValue>#FFFF93</formatValue>
+                <operator>&lt;</operator>
+                <sortIndex xsi:nil="true"/>
+                <value>1000000</value>
+            </formattingPredicates>
+            <property>backgroundColor</property>
+            <referenceField>Amount</referenceField>
+            <sortIndex xsi:nil="true"/>
+            <type>single</type>
+        </conditionalFormatting>
+        <conditionalFormatting>
+            <formattingPredicates>
+                <formatValue>#091A3E</formatValue>
+                <operator>&lt;</operator>
+                <sortIndex xsi:nil="true"/>
+                <value>1000000</value>
+            </formattingPredicates>
+            <property>color</property>
+            <referenceField>Amount</referenceField>
+            <sortIndex xsi:nil="true"/>
+            <type>single</type>
+        </conditionalFormatting>
+        <field>lens_2.Amount</field>
+        <isDerived>false</isDerived>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <conditionalFormatting>
+            <formattingBins>
+                <bin>*</bin>
+                <formatValue>#E84340</formatValue>
+                <label xsi:nil="true"/>
+                <sortIndex>0</sortIndex>
+            </formattingBins>
+            <formattingBins>
+                <bin>1000000</bin>
+                <formatValue>#006714</formatValue>
+                <label xsi:nil="true"/>
+                <sortIndex>1</sortIndex>
+            </formattingBins>
+            <formattingBins>
+                <bin>3000000</bin>
+                <formatValue>#6300B6</formatValue>
+                <label xsi:nil="true"/>
+                <sortIndex>2</sortIndex>
+            </formattingBins>
+            <property>color</property>
+            <referenceField>Amount</referenceField>
+            <sortIndex xsi:nil="true"/>
+            <type>multiple</type>
+        </conditionalFormatting>
+        <field>Clone_of__1m_step_1.Amount</field>
+        <isDerived>false</isDerived>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <type>Asset</type>
+    <waveVisualization>Tables_Values_Conditional_Formatting</waveVisualization>
+</WaveXmd>

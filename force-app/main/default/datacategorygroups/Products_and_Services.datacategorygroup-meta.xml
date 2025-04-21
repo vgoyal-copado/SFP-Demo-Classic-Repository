@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Routers</label>
+                <name>Routers</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Internet Packages</label>
+                <name>Internet_Packages</name>
+            </dataCategory>
+            <label>Internet</label>
+            <name>Internet</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>HD</label>
+                    <name>HD</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SD</label>
+                    <name>SD</name>
+                </dataCategory>
+                <label>Boxes</label>
+                <name>Boxes</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Channels and Content</label>
+                <name>Channels_and_Content</name>
+            </dataCategory>
+            <dataCategory>
+                <label>TV Packages</label>
+                <name>TV_Packages</name>
+            </dataCategory>
+            <label>TV</label>
+            <name>TV</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Android</label>
+                    <name>Android</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>iOS</label>
+                    <name>iOS</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Windows</label>
+                    <name>Windows</name>
+                </dataCategory>
+                <label>Devices</label>
+                <name>Devices</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Mobile Plans</label>
+                <name>Mobile_Plans</name>
+            </dataCategory>
+            <label>Mobile</label>
+            <name>Mobile</name>
+        </dataCategory>
+        <dataCategory>
+            <label>IP Phone</label>
+            <name>IP_Phone</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Products and Services</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

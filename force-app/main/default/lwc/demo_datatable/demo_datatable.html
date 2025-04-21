@@ -1,0 +1,20 @@
+<template>
+  <div class="demo-datatable-container">
+    
+    <!--lightning-input type="search" placeholder="filter" onchange={handleFilter}></lightning-input-->
+
+    <lightning-datatable columns={columns} 
+                         data={rows}
+                         key-field={keyField}
+                         max-row-selection={maxRowSelection}
+                         hide-checkbox-column={hideCheckboxColumn}
+                         show-row-number-column={showRowNumberColumn}
+                         sorted-by={sortedBy}
+                         sorted-direction={sortedDirection}
+                         onsort={handleSort}                         
+                         onrowselection={handleRowSelection}
+                         onsave={handleSave}
+                         draft-values={draftValues}>
+    </lightning-datatable>
+  </div>
+</template>

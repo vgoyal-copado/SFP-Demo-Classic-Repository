@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Last_Contact_Date</fullName>
+        <field>LastContactDate__c</field>
+        <formula>CreatedDate</formula>
+        <name>Update Last Contact Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Account is Created</fullName>
+        <actions>
+            <name>Update_Last_Contact_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Updates &quot;Last Contact Date&quot; to &quot;CreatedDate&quot; value when a new Account record is created. Used for Next Best Action
+Rustam 07/04/2021</description>
+        <formula>true</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

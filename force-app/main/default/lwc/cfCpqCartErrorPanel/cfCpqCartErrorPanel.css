@@ -1,0 +1,65 @@
+.cpq__cart-messages_block{
+    padding: 6px;
+    height: 40px;
+}
+.cpq__cart-message_panel-warning{
+    background-color: #706E6B;
+}
+.cpq__cart-message_panel-error{
+    background-color: #FFB75D;
+}
+.cpq__error-panel-warning_icon{
+    width:5%;
+}
+.cpq__cart-error-panel_desc, .cpq__cart-error-details_btn{
+    font-size:15pt;
+}
+.cpq__cart-error-details_btn .slds-modal__footer {
+    display: none;
+}
+.cpq__cart-error-details_btn {
+    width: fit-content;
+    padding-top: 0px;
+}
+.cpq__cart-error-panel_desc {
+    width: fit-content;
+    padding-left: 8px;
+    padding-right: 8px;
+}  
+
+@media screen and (max-width: 48rem){
+    .cpq__error-panel-warning_icon{
+        width:10%;
+        padding-top: 0px;
+        padding-left: 4px;
+    }
+    .cpq__cart-error-panel_desc .slds-rich-text-editor__output span{
+        font-size:14px !important;
+        line-height:32px;
+    }
+    .cpq__cart-error-panel_desc{
+        width: max-content;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .cpq__cart-error-details_btn{
+        width: max-content;
+        line-height:32px;
+        flex:1 1 auto;
+        padding-top: 0px;
+        font-size:12px;
+        margin-top: 0.2rem;
+    }
+    .cpq__error-panel-warning_icon .slds-icon_container{
+        height: 24px;
+        width: 24px;
+        padding-top: 8px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .cpq__cart-messages_block{
+        padding: 2px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}

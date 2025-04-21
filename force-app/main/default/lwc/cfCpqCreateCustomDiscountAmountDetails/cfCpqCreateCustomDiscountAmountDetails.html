@@ -1,0 +1,185 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_cmt-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_cmt-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_cmt-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_cmt-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_cmt-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none cpq-create_discount-amount_details" style="     : #ccc 1px solid; 
+         text-align: left;">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_x-small field-row slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         padding-bottom: 16px;" >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  section_title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQAmount%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  section_description slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQSetAmountToBeApplied%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1" class="slds-col   slds-p-around_x-small field-row slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="slds-col  amt_checkbox slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state0element1block_element0_child"   record={record}  card={card}  property-obj='\{"checked":false,"customProperties":[{"id":0,"label":"data-field","value":"onetimecheck"},{"id":1,"label":"data-fieldtype","value":"amountcheck"},{"id":2,"label":"name","value":"customDiscoutField"}],"label":"{Label.OneTime}","name":"customDiscoutField","value":"onetime"}'  type="checkbox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element1block_element1" class="slds-col   slds-p-around_x-small slds-size_12-of-12 condition-element" data-rindex={rindex} style=""  data-conditions='\{"group":[{"field":"onetimecheck","hasMergeField":false,"id":"state-new-condition-9","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"onetimecheck","hasMergeField":false,"id":"state-new-condition-9","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element1block_element0" class="slds-col   slds-p-around_x-small  slds-large-size_5-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12 slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1block_element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element1block_element0block_element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state0element1block_element1block_element0block_element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"[{\"label\":\"Absolute\", \"value\":\"$\"},{\"label\":\"Percent\", \"value\":\"%\"}]"},{"id":1,"label":"data-field","value":"onetimeadjustby"},{"id":3,"label":"name","value":"customDiscoutField"}],"label":"{Label.CPQAdjustBy}","name":"customDiscoutField","type":"combobox","value":"$"}'  type="combobox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1block_element1block_element1" class="slds-col   slds-p-around_x-small relative slds-large-size_3-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12 slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1block_element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element1block_element1block_element0" class="slds-col  value slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state0element1block_element1block_element1block_element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"name","value":"customDiscoutField"},{"id":1,"label":"data-field","value":"onetime"}],"imask":"","label":"{Label.PCValue}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element1block_element1block_element1block_element1" class="slds-col  custom_icon slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-output-field data-style-id="state0element1block_element1block_element1block_element1_child"   record={record}  card={card}  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  merge-field="%3Cdiv%3E%7Bonetimevalueicon%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element2" class="slds-col   slds-p-around_x-small field-row slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0" class="slds-col  amt_checkbox slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state0element2block_element0_child"   record={record}  card={card}  property-obj='\{"checked":false,"customProperties":[{"id":1,"label":"data-field","value":"recurringcheck"},{"id":1,"label":"data-fieldtype","value":"amountcheck"},{"id":2,"label":"name","value":"customDiscoutField"}],"label":"{Label.Recurring}","name":"customDiscoutField","value":"recurring"}'  type="checkbox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element2block_element1" class="slds-col   slds-p-around_x-small slds-size_12-of-12 condition-element" data-rindex={rindex} style=""  data-conditions='\{"group":[{"field":"recurringcheck","hasMergeField":false,"id":"state-new-condition-9","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element2block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"recurringcheck","hasMergeField":false,"id":"state-new-condition-9","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element0" class="slds-col   slds-p-around_x-small  slds-large-size_5-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12 slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element2block_element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element0block_element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state0element2block_element1block_element0block_element0_child"   record={record}  card={card}  action='\{"actionData":{"card":"{card}","stateAction":{"Web Page":{"targetName":"/apex"},"displayName":"Action","eventName":"setValues","fieldValues":[{"fieldName":"Session.recurringvalueicon","fieldValue":"{action.value}"}],"id":"flex-action-1625125003671","openUrlIn":"Current Window","targetType":"Web Page","type":"cardAction","vlocityIcon":"standard-default"},"stateObj":"{record}"},"eventType":"onchange","iconName":"standard-default","label":"Action","name":"","actionList":[{"card":"{card}","stateAction":{"Web Page":{"targetName":"/apex"},"displayName":"Action","eventName":"setValues","fieldValues":[{"fieldName":"Session.recurringvalueicon","fieldValue":"{action.value}"}],"id":"flex-action-1625125003671","openUrlIn":"Current Window","targetType":"Web Page","type":"cardAction","vlocityIcon":"standard-default"},"stateObj":"{record}"}]}'  property-obj='\{"action":null,"customProperties":[{"id":0,"label":"options","value":"[{\"label\":\"Absolute\", \"value\":\"$\"},{\"label\":\"Percent\", \"value\":\"%\"}]"},{"id":1,"label":"data-field","value":"recurringadjustby"},{"id":3,"label":"name","value":"customDiscoutField"}],"label":"{Label.CPQAdjustBy}","name":"customDiscoutField","type":"combobox","value":"$"}'  type="combobox"  extraclass=" slds-text-link_reset"  theme="slds" onchange={executeAction} data-element-label="block1block1block0combobox0" data-action-key="state0element2block_element1block_element0block_element0" ></vlocity_cmt-base-input-element>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element2block_element1block_element1" class="slds-col   slds-p-around_x-small relative slds-large-size_3-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12 slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element2block_element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element1block_element0" class="slds-col  value slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state0element2block_element1block_element1block_element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"name","value":"customDiscoutField"},{"id":1,"label":"data-field","value":"recurring"}],"imask":"","label":"{Label.PCValue}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element2block_element1block_element1block_element1" class="slds-col  custom_icon slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-output-field data-style-id="state0element2block_element1block_element1block_element1_child"   record={record}  card={card}  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  merge-field="%3Cdiv%3E%7Brecurringvalueicon%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element2block_element1block_element2" class="slds-col    slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12 slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element2block_element1block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element2block_element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><c-cf-cpq-time-plan data-style-id="state0element2block_element1block_element2block_element0_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node=""  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-cpq-time-plan>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_cmt-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-around_none cpq-create_discount-amount_details" style="     : #ccc 1px solid; 
+         text-align: left;">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_x-small field-row slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         padding-bottom: 16px;" >
+    <vlocity_cmt-block data-style-id="state0element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  section_title slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element0_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQAmount%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  section_description slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-output-field data-style-id="state0element0block_element1_child"   record={record}  card={card}  merge-field="%3Cdiv%3E%7BLabel.CPQSetAmountToBeApplied%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1" class="slds-col   slds-p-around_x-small field-row slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="slds-col  amt_checkbox slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state0element1block_element0_child"   record={record}  card={card}  property-obj='\{"checked":false,"customProperties":[{"id":0,"label":"data-field","value":"onetimecheck"},{"id":1,"label":"data-fieldtype","value":"amountcheck"},{"id":2,"label":"name","value":"customDiscoutField"}],"label":"{Label.OneTime}","name":"customDiscoutField","value":"onetime"}'  type="checkbox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element1block_element1" class="slds-col   slds-p-around_x-small slds-size_12-of-12 condition-element" data-rindex={rindex} style=""  data-conditions='\{"group":[{"field":"onetimecheck","hasMergeField":false,"id":"state-new-condition-9","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"onetimecheck","hasMergeField":false,"id":"state-new-condition-9","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element1block_element0" class="slds-col   slds-p-around_x-small  slds-large-size_5-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12 slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1block_element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element1block_element0block_element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state0element1block_element1block_element0block_element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"options","value":"[{\"label\":\"Absolute\", \"value\":\"$\"},{\"label\":\"Percent\", \"value\":\"%\"}]"},{"id":1,"label":"data-field","value":"onetimeadjustby"},{"id":3,"label":"name","value":"customDiscoutField"}],"label":"{Label.CPQAdjustBy}","name":"customDiscoutField","type":"combobox","value":"$"}'  type="combobox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element1block_element1block_element1" class="slds-col   slds-p-around_x-small relative slds-large-size_3-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12 slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element1block_element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element1block_element1block_element0" class="slds-col  value slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state0element1block_element1block_element1block_element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"name","value":"customDiscoutField"},{"id":1,"label":"data-field","value":"onetime"}],"imask":"","label":"{Label.PCValue}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element1block_element1block_element1block_element1" class="slds-col  custom_icon slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-output-field data-style-id="state0element1block_element1block_element1block_element1_child"   record={record}  card={card}  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  merge-field="%3Cdiv%3E%7Bonetimevalueicon%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element2" class="slds-col   slds-p-around_x-small field-row slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0" class="slds-col  amt_checkbox slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state0element2block_element0_child"   record={record}  card={card}  property-obj='\{"checked":false,"customProperties":[{"id":1,"label":"data-field","value":"recurringcheck"},{"id":1,"label":"data-fieldtype","value":"amountcheck"},{"id":2,"label":"name","value":"customDiscoutField"}],"label":"{Label.Recurring}","name":"customDiscoutField","value":"recurring"}'  type="checkbox"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element2block_element1" class="slds-col   slds-p-around_x-small slds-size_12-of-12 condition-element" data-rindex={rindex} style=""  data-conditions='\{"group":[{"field":"recurringcheck","hasMergeField":false,"id":"state-new-condition-9","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}' >
+    <vlocity_cmt-block data-style-id="state0element2block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  data-conditions='\{"group":[{"field":"recurringcheck","hasMergeField":false,"id":"state-new-condition-9","operator":"==","type":"custom","value":"true"}],"id":"state-condition-object","isParent":true}'  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element0" class="slds-col   slds-p-around_x-small  slds-large-size_5-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12 slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element2block_element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element0block_element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><vlocity_cmt-base-input-element data-style-id="state0element2block_element1block_element0block_element0_child"   record={record}  card={card}  action='\{"actionData":{"card":"{card}","stateAction":{"Web Page":{"targetName":"/apex"},"displayName":"Action","eventName":"setValues","fieldValues":[{"fieldName":"Session.recurringvalueicon","fieldValue":"{action.value}"}],"id":"flex-action-1625125003671","openUrlIn":"Current Window","targetType":"Web Page","type":"cardAction","vlocityIcon":"standard-default"},"stateObj":"{record}"},"eventType":"onchange","iconName":"standard-default","label":"Action","name":"","actionList":[{"card":"{card}","stateAction":{"Web Page":{"targetName":"/apex"},"displayName":"Action","eventName":"setValues","fieldValues":[{"fieldName":"Session.recurringvalueicon","fieldValue":"{action.value}"}],"id":"flex-action-1625125003671","openUrlIn":"Current Window","targetType":"Web Page","type":"cardAction","vlocityIcon":"standard-default"},"stateObj":"{record}"}]}'  property-obj='\{"action":null,"customProperties":[{"id":0,"label":"options","value":"[{\"label\":\"Absolute\", \"value\":\"$\"},{\"label\":\"Percent\", \"value\":\"%\"}]"},{"id":1,"label":"data-field","value":"recurringadjustby"},{"id":3,"label":"name","value":"customDiscoutField"}],"label":"{Label.CPQAdjustBy}","name":"customDiscoutField","type":"combobox","value":"$"}'  type="combobox"  extraclass=" slds-text-link_reset"  theme="slds" onchange={executeAction} data-element-label="block1block1block0combobox0" data-action-key="state0element2block_element1block_element0block_element0" ></vlocity_cmt-base-input-element>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element2block_element1block_element1" class="slds-col   slds-p-around_x-small relative slds-large-size_3-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12 slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element2block_element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element1block_element0" class="slds-col  value slds-size_12-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " ><vlocity_cmt-base-input-element data-style-id="state0element2block_element1block_element1block_element0_child"   record={record}  card={card}  property-obj='\{"customProperties":[{"id":0,"label":"name","value":"customDiscoutField"},{"id":1,"label":"data-field","value":"recurring"}],"imask":"","label":"{Label.PCValue}"}'  type="number"  theme="slds"  ></vlocity_cmt-base-input-element>
+      </div><div data-style-id="state0element2block_element1block_element1block_element1" class="slds-col  custom_icon slds-size_12-of-12  condition-element" data-rindex={rindex} style="     : #ccc 1px solid; 
+         "  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}' ><vlocity_cmt-output-field data-style-id="state0element2block_element1block_element1block_element1_child"   record={record}  card={card}  data-conditions='\{"group":[],"id":"state-condition-object","isParent":true}'  merge-field="%3Cdiv%3E%7Brecurringvalueicon%7D%3C/div%3E"  theme="slds"  ></vlocity_cmt-output-field>
+      </div>
+        </div></vlocity_cmt-block>
+    </div><div data-style-id="state0element2block_element1block_element2" class="slds-col    slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12 slds-size_6-of-12  " data-rindex={rindex} style="     : #ccc 1px solid; 
+         " >
+    <vlocity_cmt-block data-style-id="state0element2block_element1block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element2block_element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><c-cf-cpq-time-plan data-style-id="state0element2block_element1block_element2block_element0_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node=""  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-cpq-time-plan>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div></vlocity_cmt-block>
+    </div>
+        </div>
+      </vlocity_cmt-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_cmt-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_cmt-action>
+  
+            <vlocity_cmt-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_cmt-action>
+            </div>
+          </template>

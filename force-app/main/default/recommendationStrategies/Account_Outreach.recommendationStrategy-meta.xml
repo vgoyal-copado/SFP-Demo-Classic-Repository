@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contextRecordType>Account</contextRecordType>
+    <description>Send email to an Account owned by a running user.</description>
+    <filter>
+        <childNode>AccountsToFollowUp</childNode>
+        <label>Filter Records</label>
+        <name>Filter_Records</name>
+        <expression>IsActionActive = True</expression>
+    </filter>
+    <invocableAction>
+        <label>AccountsToFollowUp</label>
+        <name>AccountsToFollowUp</name>
+        <action>Generate_GetAccountsToFollowUp</action>
+        <argument>
+            <name>inputData</name>
+            <value>$User.Id</value>
+        </argument>
+        <isGenerator>true</isGenerator>
+        <type>apex</type>
+    </invocableAction>
+    <label>Account Outreach</label>
+    <map>
+        <childNode>Filter_Records</childNode>
+        <label>Pass Account Id</label>
+        <name>Pass_Account_Id</name>
+        <mapExpression>
+            <expression>AccountId__c</expression>
+            <name>accountId</name>
+            <type>Text</type>
+        </mapExpression>
+    </map>
+    <union>
+        <childNode>Pass_Account_Id</childNode>
+        <label>Output</label>
+        <name>Output_4c65940573f84f26b9c8b89c2244234c</name>
+    </union>
+</RecommendationStrategy>

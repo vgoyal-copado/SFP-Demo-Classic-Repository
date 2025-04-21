@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>51.0</apiVersion>
+	<isExposed>true</isExposed>
+	<masterLabel xmlns=''>de-layout-feature-multiplay-lwc</masterLabel>
+	<description>Comms B2C Community LWC for the home page feature for Multi-Play.</description>
+	<targets xmlns='http://soap.sforce.com/2006/04/metadata'>
+		<target>lightningCommunity__Page</target>
+		<target>lightningCommunity__Default</target>
+	</targets>
+</LightningComponentBundle>
