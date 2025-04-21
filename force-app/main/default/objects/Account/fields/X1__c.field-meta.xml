@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1__c</fullName>
+    <description>new desc test case - mahi</description>
+    <externalId>false</externalId>
+    <label>test field - mahi</label>
+    <type>AutoNumber</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Catalog__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The default catalog to use with Digital Commerce APIs</description>
+    <inlineHelpText>The default catalog to use with Digital Commerce APIs</inlineHelpText>
+    <label>Default Catalog</label>
+    <referenceTo>vlocity_cmt__Catalog__c</referenceTo>
+    <relationshipLabel>Demo Configs</relationshipLabel>
+    <relationshipName>Demo_Configs</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

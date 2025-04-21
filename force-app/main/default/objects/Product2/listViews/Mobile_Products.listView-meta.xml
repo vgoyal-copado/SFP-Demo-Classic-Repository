@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobile_Products</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>vlocity_cmt__ObjectTypeId__c</columns>
+    <columns>vlocity_cmt__ProductSpecId__c</columns>
+    <columns>vlocity_cmt__SpecificationType__c</columns>
+    <columns>vlocity_cmt__SpecificationSubType__c</columns>
+    <columns>vlocity_cmt__Type__c</columns>
+    <columns>vlocity_cmt__SubType__c</columns>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <columns>vlocity_cmt__IsOrderable__c</columns>
+    <columns>vlocity_cmt__VersionLabel__c</columns>
+    <columns>PRODUCT2.RECORD_TYPE</columns>
+    <columns>PRODUCT2.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>Mobile</value>
+    </filters>
+    <label>Mobile Products</label>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Debug_Mode__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Enables extra (debug) steps and messages during OmniScript execution.</description>
+    <inlineHelpText>Enables extra (debug) steps and messages during OmniScript execution.</inlineHelpText>
+    <label>Debug Mode</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

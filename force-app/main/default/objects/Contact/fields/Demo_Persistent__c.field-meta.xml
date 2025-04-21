@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demo_Persistent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Demo Persistent = true indicates records that will persist after executing demo data cleanup.</description>
+    <inlineHelpText>Check this field on records that should persist after executing a demo data cleanup.</inlineHelpText>
+    <label>Demo Persistent</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

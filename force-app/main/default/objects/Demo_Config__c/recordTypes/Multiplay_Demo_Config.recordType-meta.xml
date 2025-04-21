@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Multiplay_Demo_Config</fullName>
+    <active>true</active>
+    <description>Demo configuration related to the Multiplay demo</description>
+    <label>Multiplay Demo Config</label>
+    <picklistValues>
+        <picklist>CPQ_API__c</picklist>
+        <values>
+            <fullName>cpqv2</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>dc</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

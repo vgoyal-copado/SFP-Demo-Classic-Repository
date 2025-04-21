@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__BillCycle__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Grouping that controls when a bill is produced.</description>
+    <label>Bill Cycle</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FirstOfMonth</fullName>
+                <default>true</default>
+                <label>1st of Month</label>
+            </value>
+            <value>
+                <fullName>FifteenthOfMonth</fullName>
+                <default>false</default>
+                <label>15th of Month</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

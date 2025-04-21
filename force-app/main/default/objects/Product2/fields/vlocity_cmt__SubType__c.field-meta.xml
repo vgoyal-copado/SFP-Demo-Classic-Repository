@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__SubType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Product Sub Type can be used to drive implementations/engines, as well as filtering products in the Catalog/Pricebook. These values may be constrained by the Product Type.</description>
+    <label>Sub Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>vlocity_cmt__Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Core</fullName>
+                <default>false</default>
+                <label>Core</label>
+            </value>
+            <value>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+                <label>Equipment</label>
+            </value>
+            <value>
+                <fullName>Hardware</fullName>
+                <default>false</default>
+                <label>Hardware</label>
+            </value>
+            <value>
+                <fullName>Installation</fullName>
+                <default>false</default>
+                <label>Installation</label>
+            </value>
+            <value>
+                <fullName>On Demand</fullName>
+                <default>false</default>
+                <label>On Demand</label>
+            </value>
+            <value>
+                <fullName>Postpaid</fullName>
+                <default>false</default>
+                <label>Postpaid</label>
+            </value>
+            <value>
+                <fullName>Premium</fullName>
+                <default>false</default>
+                <label>Premium</label>
+            </value>
+            <value>
+                <fullName>Prepaid</fullName>
+                <default>false</default>
+                <label>Prepaid</label>
+            </value>
+            <value>
+                <fullName>Software</fullName>
+                <default>false</default>
+                <label>Software</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Plan</controllingFieldValue>
+            <controllingFieldValue>Bundle</controllingFieldValue>
+            <valueName>Core</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Plan</controllingFieldValue>
+            <valueName>Postpaid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Plan</controllingFieldValue>
+            <controllingFieldValue>Bundle</controllingFieldValue>
+            <valueName>Premium</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Plan</controllingFieldValue>
+            <valueName>Prepaid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service</controllingFieldValue>
+            <valueName>Installation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Add On</controllingFieldValue>
+            <controllingFieldValue>Handset</controllingFieldValue>
+            <valueName>Hardware</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Add On</controllingFieldValue>
+            <valueName>On Demand</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Add On</controllingFieldValue>
+            <valueName>Software</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CPE</controllingFieldValue>
+            <valueName>Equipment</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

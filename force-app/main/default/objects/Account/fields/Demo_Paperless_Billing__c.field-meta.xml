@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demo_Paperless_Billing__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Demo field added for communications and ad preference selections (self-service.). This field will be tracked in a trigger and when changed, it will update vlocity_cmt__BillDeliveryMethod__c.  Checked = Electronic Statement Online, Unchecked = Paper Billing.</description>
+    <label>Paperless Billing</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

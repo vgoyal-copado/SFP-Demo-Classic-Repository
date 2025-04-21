@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Articles</fullName>
+    <columns>TITLE</columns>
+    <columns>PUBLISH_STATUS</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>LAST_PUBLISHED_DATE</columns>
+    <columns>IS_CHANNEL_PKB</columns>
+    <columns>IS_CHANNEL_CSP</columns>
+    <columns>IS_CHANNEL_PRM</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Articles</label>
+</ListView>
